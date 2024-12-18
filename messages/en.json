@@ -1,0 +1,75 @@
+{
+  "HomePage": {
+    "title": "Technological solutions that transform businesses.",
+    "subtitle": "We are a technology development and consulting company that combines innovation and experience to create custom digital solutions. Our specialized team transforms complex challenges into growth opportunities for your business."
+  },
+  "Header": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "ourWork": "Our Work",
+    "ourProcess": "Our Process",
+    "ourOffices": "Our offices",
+    "contactUs": "Contact us",
+    "Blog": "Blog",
+    "FollowUs": "Follow us"
+  },
+  "NewsletterForm": {
+    "subscribe": "Sign up for our newsletter",
+    "subscribeDescription": "Subscribe to get the latest design news, articles, resources and inspiration.",
+    "placeholder": "Email address"
+  },
+  "Footer": {
+    "seeAll": "See all",
+    "navHeaders": {
+      "work": "Work",
+      "company": "Company",
+      "connect": "Connect"
+    },
+    "navItems": {
+      "zeloclub": "Zeloclub",
+      "activ8": "Activ8",
+      "unseal": "Unseal",
+      "about": "About",
+      "process": "Process",
+      "blog": "Blog",
+      "contactUs": "Contact us"
+    }
+  },
+  "Clients": {
+    "title": "We work with hundreds of amazing people",
+    "Testimonials": {
+      "cartier": {
+        "name": "Cartier",
+        "quote": "The DIV Technology team exceeded our expectations by developing an e-commerce solution that combines Cartier's sophistication with an extraordinarily smooth shopping experience. They perfectly understood the importance of every detail for our luxury brand."
+      }
+    }
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "We help you identify, explore and respond to new opportunities.",
+    "subtitle": "As long as these opportunities involve giving us money to repurpose old projects — we can create an infinite number of them.",
+    "items": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "We develop high-performance websites and web applications, focusing on user experience and business results. Our team uses the most modern technologies to create scalable and customized solutions."
+      },
+      "mobileDevelopment": {
+        "title": "Mobile Development",
+        "description": "Our expertise in mobile development covers native and hybrid applications, using modern frameworks like React Native and Flutter. We deliver solutions that combine performance and usability."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "We create complete and customized e-commerce solutions, integrating payment systems, inventory management and logistics. We work with leading platforms like VTEX, Shopify and WooCommerce, always adapted to the specific needs of your business."
+      },
+      "consulting": {
+        "title": "Consultoria em Tecnologia",
+        "description": "Nossa equipe de consultoria em tecnologia ajuda a identificar oportunidades de inovação e a definir estratégias para a transformação digital do seu negócio. Combinamos experiência e conhecimento técnico para criar soluções personalizadas que impulsionam o crescimento e a eficiência da sua empresa."
+      }
+    }
+  },
+  "ContactSection": {
+    "title": "Tell us about your project",
+    "helloBtn": "Say hello",
+    "ourOffices": "Our offices"
+  }
+}

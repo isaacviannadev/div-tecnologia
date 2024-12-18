@@ -1,0 +1,75 @@
+{
+  "HomePage": {
+    "title": "Soluções tecnológicas que transformam negócios.",
+    "subtitle": "Somos uma empresa de desenvolvimento e consultoria em tecnologia que une inovação e experiência para criar soluções digitais sob medida. Nosso time especializado transforma desafios complexos em oportunidades de crescimento para seu negócio."
+  },
+  "Header": {
+    "home": "Home",
+    "aboutUs": "Sobre nós",
+    "ourWork": "Nosso Trabalho",
+    "ourProcess": "Nosso Processo",
+    "ourOffices": "Nossos Escritórios",
+    "contactUs": "Contate-nos",
+    "Blog": "Blog",
+    "FollowUs": "Siga-nos"
+  },
+  "NewsletterForm": {
+    "subscribe": "Inscreva-se em nossa newsletter",
+    "subscribeDescription": "Inscreva-se para receber as últimas notícias de design, artigos, recursos e inspiração.",
+    "placeholder": "Endereço de e-mail"
+  },
+  "Footer": {
+    "seeAll": "Ver todos",
+    "navHeaders": {
+      "work": "Trabalho",
+      "company": "Empresa",
+      "connect": "Conecte-se"
+    },
+    "navItems": {
+      "zeloclub": "Zeloclub",
+      "activ8": "Activ8",
+      "unseal": "Unseal",
+      "about": "Sobre",
+      "process": "Processo",
+      "blog": "Blog",
+      "contactUs": "Contate-nos"
+    }
+  },
+  "Clients": {
+    "title": "Trabalhamos com centenas de pessoas incríveis",
+    "Testimonials": {
+      "cartier": {
+        "name": "Cartier",
+        "quote": "A equipe da DIV Tecnologia superou nossas expectativas ao desenvolver uma solução de e-commerce que combina a sofisticação da Cartier com uma experiência de compra extraordinariamente fluida. Eles entenderam perfeitamente a importância de cada detalhe para nossa marca de luxo."
+      }
+    }
+  },
+  "Services": {
+    "eyebrow": "Serviços",
+    "title": "Ajudamos você a identificar, explorar e responder a novas oportunidades.",
+    "subtitle": "Enquanto essas oportunidades envolverem nos dar dinheiro para reaproveitar projetos antigos — podemos criar um número infinito deles.",
+    "items": {
+      "webDevelopment": {
+        "title": "Desenvolvimento Web",
+        "description": "Desenvolvemos websites e aplicações web de alto desempenho, com foco em experiência do usuário e resultados de negócio. Nossa equipe utiliza as tecnologias mais modernas para criar soluções escaláveis e personalizadas."
+      },
+      "mobileDevelopment": {
+        "title": "Desenvolvimento de Aplicativos",
+        "description": "Nossa expertise em desenvolvimento mobile abrange aplicativos nativos e híbridos, utilizando frameworks modernos como React Native e Flutter. Entregamos soluções que combinam performance e usabilidade."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Criamos soluções de e-commerce completas e personalizadas, integrando sistemas de pagamento, gestão de estoque e logística. Trabalhamos com plataformas líderes como VTEX, Shopify e WooCommerce, sempre adaptadas às necessidades específicas do seu negócio."
+      },
+      "consulting": {
+        "title": "Consultoria em Tecnologia",
+        "description": "Oferecemos consultoria estratégica em transformação digital, arquitetura de sistemas e otimização de processos. Nosso time experiente ajuda sua empresa a tomar as melhores decisões tecnológicas alinhadas aos seus objetivos de negócio."
+      }
+    }
+  },
+  "ContactSection": {
+    "title": "Conte-nos sobre seu projeto",
+    "helloBtn": "Diga olá",
+    "ourOffices": "Nossos Escritórios"
+  }
+}
