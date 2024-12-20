@@ -21,7 +21,7 @@ export function Footer() {
             <Logo className='h-8' />
           </Link>
           <p className='text-sm text-neutral-700'>
-            © DIV Tecnologia ltda. {new Date().getFullYear()}
+            © DIV Tecnologia ltda. 2024
           </p>
         </div>
       </FadeIn>

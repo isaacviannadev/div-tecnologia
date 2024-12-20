@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
+import { RootLayout } from '@div/components/RootLayout';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 
-import { RootLayout } from '@div/components/RootLayout';
-
+import SWRProvider from '@div/components/Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -27,9 +27,11 @@ export default async function Layout({
   return (
     <html lang={locale} className='h-full bg-neutral-950 text-base antialiased'>
       <body className='flex min-h-full flex-col'>
-        <NextIntlClientProvider messages={messages}>
-          <RootLayout>{children}</RootLayout>
-        </NextIntlClientProvider>
+        <SWRProvider>
+          <NextIntlClientProvider messages={messages}>
+            <RootLayout>{children}</RootLayout>
+          </NextIntlClientProvider>
+        </SWRProvider>
       </body>
     </html>
   );

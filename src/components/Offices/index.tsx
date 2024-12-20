@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import Office from './office';
 
 type OfficesProps = {
@@ -7,20 +8,22 @@ type OfficesProps = {
 };
 
 export function Offices({ invert = false, className, ...props }: OfficesProps) {
+  const t = useTranslations('Offices');
+
   return (
     <ul className={className} {...props}>
       <li>
-        <Office name='Rio de Janeiro' invert={invert}>
-          R. Diogo Camarão, 18 - Jd. Panamá
+        <Office name={t('brazil')} invert={invert}>
+          R. Diogo Camarão, 18 - Duque de Caxias
           <br />
-          Duque de Caxias, Brazil
+          Rio de Janeiro
         </Office>
       </li>
       <li>
-        <Office name='Leiria' invert={invert}>
+        <Office name={t('portugal')} invert={invert}>
           R. dos Vinagres, 27 - Pombal
           <br />
-          Leiria, Portugal
+          Leiria
         </Office>
       </li>
     </ul>

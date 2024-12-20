@@ -71,5 +71,15 @@
     "title": "Conte-nos sobre seu projeto",
     "helloBtn": "Diga olá",
     "ourOffices": "Nossos Escritórios"
+  },
+  "Offices": {
+    "brazil": "Brasil",
+    "portugal": "Portugal"
+  },
+  "NotFound": {
+    "title": "404",
+    "subtitle": "Página não encontrada",
+    "description": "A página que você está procurando não existe. Você pode voltar para a página inicial ou nos contatar se precisar de ajuda.",
+    "backToHome": "Voltar para a página inicial"
   }
 }
