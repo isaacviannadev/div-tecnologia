@@ -124,6 +124,19 @@ function ArrowIcon({ className, props }: IconProps) {
   );
 }
 
+function ArrowIcon2({ className, props }: IconProps) {
+  return (
+    <svg viewBox='0 0 24 6' aria-hidden='true' className={className} {...props}>
+      <path
+        fill='currentColor'
+        fillRule='evenodd'
+        clipRule='evenodd'
+        d='M24 3 18 .5v2H0v1h18v2L24 3Z'
+      />
+    </svg>
+  );
+}
+
 const Icons = {
   XIcon,
   MenuIcon,
@@ -133,6 +146,7 @@ const Icons = {
   GitHubIcon,
   DribbbleIcon,
   ArrowIcon,
+  ArrowIcon2,
 };
 
 export default Icons;

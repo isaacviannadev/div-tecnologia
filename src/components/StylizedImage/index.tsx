@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image, { ImageProps } from 'next/image';
 import { useId } from 'react';
 
-type StylizedImageProps = {
+export type StylizedImageProps = {
   shape?: number;
   className?: string;
 } & Omit<ImageProps, 'width' | 'height'>;
