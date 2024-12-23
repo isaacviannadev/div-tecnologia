@@ -1,6 +1,6 @@
 import logo from '@div/images/clients/phobia/logomark-dark.svg'
 import imageHero from './hero.jpg'
-import imageJennyWilson from './jenny-wilson.jpeg'
+import imageJennyWilson from './jenny-wilson.jpg'
 
 export const caseStudy = {
   client: 'Phobia',
@@ -12,7 +12,7 @@ export const caseStudy = {
     'We worked with Phobia to develop a new onboarding flow. A user is shown pictures of common phobias and we use the microphone to detect which ones make them scream, feeding the results into the matching algorithm.',
   ],
   logo,
-  image: { src: imageHero },
+  image: { src: imageHero, alt: 'Phobia app on a phone', width: 1200, height: 800 },
   date: '2022-06',
   service: 'App development',
   testimonial: {
@@ -48,7 +48,7 @@ The next phase is a VR version of the onboarding flow where users are subjected 
 
 <Blockquote
   author={{ name: 'Jenny Wilson', role: 'CPO of Phobia' }}
-  image={{ src: imageJennyWilson }}
+  image={{ src: imageJennyWilson, alt: 'Jenny Wilson', width: 64, height: 64 }}
 >
   The team at Studio went above and beyond with our onboarding, even finding a
   way to access the user’s microphone without triggering one of those annoying

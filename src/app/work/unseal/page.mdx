@@ -1,6 +1,6 @@
 import logo from '@div/images/clients/unseal/logomark-dark.svg'
 import imageHero from './hero.jpg'
-import imageEmilySelman from './emily-selman.jpeg'
+import imageEmilySelman from './emily-selman.jpg'
 
 export const caseStudy = {
   client: 'Unseal',
@@ -12,7 +12,7 @@ export const caseStudy = {
     'We built out the blockchain infrastructure that supports Unseal. Unfortunately, we took a massive loss on this project when Unseal’s cryptocurrency, PlaceboCoin, went to zero.',
   ],
   logo,
-  image: { src: imageHero },
+  image: { src: imageHero, alt: 'Unseal hero image' , with: 1200, height: 800},
   date: '2022-10',
   service: 'Blockchain development',
   testimonial: {
@@ -45,7 +45,7 @@ After reaching a high of $12k, PlaceboCoin went to zero in a matter of hours. Be
 
 <Blockquote
   author={{ name: 'Emily Selman', role: 'Head of Engineering at Unseal' }}
-  image={{ src: imageEmilySelman }}
+  image={{ src: imageEmilySelman, alt: 'Emily Selman', with: 64, height: 64 }}
 >
   Studio did an amazing job building out our core blockchain infrastructure and
   I’m sure once PlaceboCoin rallies they’ll be able to finish the project.
@@ -57,3 +57,4 @@ After reaching a high of $12k, PlaceboCoin went to zero in a matter of hours. Be
   <StatListItem value="1000ms" label="Transaction latency" />
   <StatListItem value="3" label="Active nodes" />
 </StatList>
+

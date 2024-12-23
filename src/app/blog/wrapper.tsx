@@ -1,49 +1,45 @@
-import { ContactSection } from '@div/components/ContactSection';
-import { Container } from '@div/components/Container';
-import { FadeIn } from '@div/components/FadeIn';
-import { MDXComponents } from '@div/components/MDXComponents';
-import { PageLinks } from '@div/components/PageLinks';
-import { formatDate } from '@div/lib/formatDate';
-import { loadMDXMetadata } from '@div/lib/loadMDXMetadata';
-
-type BlogArticleWrapperProps = {
-  children: React.ReactNode;
-  _segments: string[];
-};
+import { ContactSection } from '@div/components/ContactSection'
+import { Container } from '@div/components/Container'
+import { FadeIn } from '@div/components/FadeIn'
+import { MDXComponents } from '@div/components/MDXComponents'
+import { PageLinks } from '@div/components/PageLinks'
+import { formatDate } from '@div/lib/formatDate'
+import { type Article, type MDXEntry, loadArticles } from '@div/lib/mdx'
 
 export default async function BlogArticleWrapper({
+  article,
   children,
-  _segments,
-}: BlogArticleWrapperProps) {
-  const id = _segments.at(-2);
-  const allArticles = await loadMDXMetadata('blog');
-  const article = allArticles.find((article) => article.id === id);
+}: {
+  article: MDXEntry<Article>
+  children: React.ReactNode
+}) {
+  const allArticles = await loadArticles()
   const moreArticles = allArticles
-    .filter((article) => article.id !== id)
-    .slice(0, 2);
+    .filter(({ metadata }) => metadata !== article)
+    .slice(0, 2)
 
   return (
     <>
-      <Container as='article' className='mt-24 sm:mt-32 lg:mt-40'>
+      <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
-          <header className='mx-auto flex max-w-5xl flex-col text-center'>
-            <h1 className='mt-6 font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl'>
+          <header className="mx-auto flex max-w-5xl flex-col text-center">
+            <h1 className="mt-6 font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl">
               {article.title}
             </h1>
             <time
               dateTime={article.date}
-              className='order-first text-sm text-neutral-950'
+              className="order-first text-sm text-neutral-950"
             >
               {formatDate(article.date)}
             </time>
-            <p className='mt-6 text-sm font-semibold text-neutral-950'>
+            <p className="mt-6 text-sm font-semibold text-neutral-950">
               by {article.author.name}, {article.author.role}
             </p>
           </header>
         </FadeIn>
 
         <FadeIn>
-          <MDXComponents.wrapper className='mt-24 sm:mt-32 lg:mt-40'>
+          <MDXComponents.wrapper className="mt-24 sm:mt-32 lg:mt-40">
             {children}
           </MDXComponents.wrapper>
         </FadeIn>
@@ -51,13 +47,13 @@ export default async function BlogArticleWrapper({
 
       {moreArticles.length > 0 && (
         <PageLinks
-          className='mt-24 sm:mt-32 lg:mt-40'
-          title='More articles'
+          className="mt-24 sm:mt-32 lg:mt-40"
+          title="More articles"
           pages={moreArticles}
         />
       )}
 
       <ContactSection />
     </>
-  );
+  )
 }

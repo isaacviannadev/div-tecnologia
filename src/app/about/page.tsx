@@ -1,58 +1,59 @@
-import Image from 'next/image';
+import { type Metadata } from 'next'
+import Image from 'next/image'
 
-import { Border } from '@div/components/Border';
-import { ContactSection } from '@div/components/ContactSection';
-import { Container } from '@div/components/Container';
-import { FadeIn, FadeInStagger } from '@div/components/FadeIn';
-import { GridList, GridListItem } from '@div/components/GridList';
-import { PageIntro } from '@div/components/PageIntro';
-import { PageLinks } from '@div/components/PageLinks';
-import { SectionIntro } from '@div/components/SectionIntro';
-import { StatList, StatListItem } from '@div/components/StatList';
-import imageAngelaFisher from '@div/images/team/angela-fisher.jpeg';
-import imageBenjaminRussel from '@div/images/team/benjamin-russel.jpeg';
-import imageBlakeReid from '@div/images/team/blake-reid.jpeg';
-import imageChelseaHagon from '@div/images/team/chelsea-hagon.jpeg';
-import imageDriesVincent from '@div/images/team/dries-vincent.jpeg';
-import imageEmmaDorsey from '@div/images/team/emma-dorsey.jpeg';
-import imageJeffreyWebb from '@div/images/team/jeffrey-webb.jpeg';
-import imageKathrynMurphy from '@div/images/team/kathryn-murphy.jpeg';
-import imageLeonardKrasner from '@div/images/team/leonard-krasner.jpeg';
-import imageLeslieAlexander from '@div/images/team/leslie-alexander.jpeg';
-import imageMichaelFoster from '@div/images/team/michael-foster.jpeg';
-import imageWhitneyFrancis from '@div/images/team/whitney-francis.jpeg';
-import { loadMDXMetadata } from '@div/lib/loadMDXMetadata';
+import { Border } from '@div/components/Border'
+import { ContactSection } from '@div/components/ContactSection'
+import { Container } from '@div/components/Container'
+import { FadeIn, FadeInStagger } from '@div/components/FadeIn'
+import { GridList, GridListItem } from '@div/components/GridList'
+import { PageIntro } from '@div/components/PageIntro'
+import { PageLinks } from '@div/components/PageLinks'
+import { SectionIntro } from '@div/components/SectionIntro'
+import { StatList, StatListItem } from '@div/components/StatList'
+import imageAngelaFisher from '@div/images/team/angela-fisher.jpeg'
+import imageBenjaminRussel from '@div/images/team/benjamin-russel.jpeg'
+import imageBlakeReid from '@div/images/team/blake-reid.jpeg'
+import imageChelseaHagon from '@div/images/team/chelsea-hagon.jpeg'
+import imageDriesVincent from '@div/images/team/dries-vincent.jpeg'
+import imageEmmaDorsey from '@div/images/team/emma-dorsey.jpeg'
+import imageJeffreyWebb from '@div/images/team/jeffrey-webb.jpeg'
+import imageKathrynMurphy from '@div/images/team/kathryn-murphy.jpeg'
+import imageLeonardKrasner from '@div/images/team/leonard-krasner.jpeg'
+import imageLeslieAlexander from '@div/images/team/leslie-alexander.jpeg'
+import imageMichaelFoster from '@div/images/team/michael-foster.jpeg'
+import imageWhitneyFrancis from '@div/images/team/whitney-francis.jpeg'
+import { loadArticles } from '@div/lib/mdx'
 
 function Culture() {
   return (
-    <div className='mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32'>
+    <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
-        eyebrow='Our culture'
-        title='Balance your passion with your passion for life.'
+        eyebrow="Our culture"
+        title="Balance your passion with your passion for life."
         invert
       >
         <p>
           We are a group of like-minded people who share the same core values.
         </p>
       </SectionIntro>
-      <Container className='mt-16'>
+      <Container className="mt-16">
         <GridList>
-          <GridListItem title='Loyalty' invert>
+          <GridListItem title="Loyalty" invert>
             Our team has been with us since the beginning because none of them
             are allowed to have LinkedIn profiles.
           </GridListItem>
-          <GridListItem title='Trust' invert>
+          <GridListItem title="Trust" invert>
             We don’t care when our team works just as long as they are working
             every waking second.
           </GridListItem>
-          <GridListItem title='Compassion' invert>
+          <GridListItem title="Compassion" invert>
             You never know what someone is going through at home and we make
             sure to never find out.
           </GridListItem>
         </GridList>
       </Container>
     </div>
-  );
+  )
 }
 
 const team = [
@@ -126,37 +127,37 @@ const team = [
       },
     ],
   },
-];
+]
 
 function Team() {
   return (
-    <Container className='mt-24 sm:mt-32 lg:mt-40'>
-      <div className='space-y-24'>
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <div className="space-y-24">
         {team.map((group) => (
           <FadeInStagger key={group.title}>
             <Border as={FadeIn} />
-            <div className='grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8'>
+            <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
               <FadeIn>
-                <h2 className='font-display text-2xl font-semibold text-neutral-950'>
+                <h2 className="font-display text-2xl font-semibold text-neutral-950">
                   {group.title}
                 </h2>
               </FadeIn>
-              <div className='lg:col-span-3'>
-                <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8'>
+              <div className="lg:col-span-3">
+                <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
                   {group.people.map((person) => (
                     <li key={person.name}>
                       <FadeIn>
-                        <div className='group relative overflow-hidden rounded-3xl bg-neutral-100'>
+                        <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
                           <Image
-                            alt=''
+                            alt=""
                             {...person.image}
-                            className='h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105'
+                            className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
                           />
-                          <div className='absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-black/0 to-40% p-6'>
-                            <p className='font-display text-base/6 font-semibold tracking-wide text-white'>
+                          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-black/0 to-40% p-6">
+                            <p className="font-display text-base/6 font-semibold tracking-wide text-white">
                               {person.name}
                             </p>
-                            <p className='mt-2 text-sm text-white'>
+                            <p className="mt-2 text-sm text-white">
                               {person.role}
                             </p>
                           </div>
@@ -171,26 +172,26 @@ function Team() {
         ))}
       </div>
     </Container>
-  );
+  )
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'About Us',
   description:
     'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-};
+}
 
 export default async function About() {
-  const blogArticles = (await loadMDXMetadata('blog')).slice(0, 2);
+  const blogArticles = (await loadArticles()).slice(0, 2)
 
   return (
     <>
-      <PageIntro eyebrow='About us' title='Our strength is collaboration'>
+      <PageIntro eyebrow="About us" title="Our strength is collaboration">
         <p>
           We believe that our strength lies in our collaborative approach, which
           puts our clients at the center of everything we do.
         </p>
-        <div className='mt-10 max-w-2xl space-y-6 text-base'>
+        <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
             Studio was started by three friends who noticed that developer
             studios were charging clients double what an in-house team would
@@ -205,11 +206,11 @@ export default async function About() {
           </p>
         </div>
       </PageIntro>
-      <Container className='mt-16'>
+      <Container className="mt-16">
         <StatList>
-          <StatListItem value='35' label='Underpaid employees' />
-          <StatListItem value='52' label='Placated clients' />
-          <StatListItem value='$25M' label='Invoices billed' />
+          <StatListItem value="35" label="Underpaid employees" />
+          <StatListItem value="52" label="Placated clients" />
+          <StatListItem value="$25M" label="Invoices billed" />
         </StatList>
       </Container>
 
@@ -218,13 +219,13 @@ export default async function About() {
       <Team />
 
       <PageLinks
-        className='mt-24 sm:mt-32 lg:mt-40'
-        title='From the blog'
-        intro='Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design.'
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="From the blog"
+        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
         pages={blogArticles}
       />
 
       <ContactSection />
     </>
-  );
+  )
 }
