@@ -10,3 +10,9 @@
   font-stretch: 75% 125%;
   src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

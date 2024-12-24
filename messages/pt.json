@@ -81,5 +81,42 @@
     "subtitle": "Página não encontrada",
     "description": "A página que você está procurando não existe. Você pode voltar para a página inicial ou nos contatar se precisar de ajuda.",
     "backToHome": "Voltar para a página inicial"
+  },
+  "Contact": {
+    "eyebrow": "Contate-nos",
+    "title": "Vamos trabalhar juntos",
+    "subtitle": "Mal podemos esperar para ouvir de você.",
+    "form": {
+      "title": "Propostas de trabalho",
+      "name": "Nome",
+      "email": "E-mail",
+      "company": "Empresa",
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "send": "Vamos trabalhar juntos",
+      "budget": "Orçamento",
+      "errorMessage": "Por favor, preencha todos os campos.",
+      "budgetOptions": {
+        "upTo10k": "Até R$10k",
+        "10kTo50k": "R$10k a R$50k",
+        "50kTo100k": "R$50k a R$100k",
+        "moreThan100k": "Mais de R$100k"
+      },
+      "errors": {
+        "name": "Por favor, insira seu nome.",
+        "email": "Por favor, insira um e-mail válido.",
+        "company": "Por favor, insira o nome da sua empresa.",
+        "phone": "Por favor, insira um número de telefone válido.",
+        "message": "Por favor, insira uma mensagem.",
+        "budget": "Por favor, selecione um orçamento."
+      }
+    },
+    "details": {
+      "ourOffices": "Nossos escritórios",
+      "officeDescription": "Prefere fazer as coisas pessoalmente? Atendemos principalmente online, mas você pode encontrar nossos endereços físicos aqui.",
+      "emailUs": "E-mail",
+      "emailContato": "Contatos",
+      "followUs": "Siga-nos"
+    }
   }
 }

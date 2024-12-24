@@ -81,5 +81,42 @@
     "subtitle": "Page not found",
     "description": "Sorry, we couldn’t find the page you’re looking for.",
     "backToHome": "Go to the home page"
+  },
+  "Contact": {
+    "eyebrow": "Contact us",
+    "title": "Let’s work together",
+    "subtitle": "We can’t wait to hear from you.",
+    "form": {
+      "title": "Work inquiries",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Let’s work together",
+      "budget": "Budget",
+      "errorMessage": "Please fill in all fields.",
+      "budgetOptions": {
+        "upTo10k": "Up to $10k",
+        "10kTo50k": "$10k to $50k",
+        "50kTo100k": "$50k to $100k",
+        "moreThan100k": "More than $100k"
+      },
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email.",
+        "company": "Please enter your company name.",
+        "phone": "Please enter a valid phone number.",
+        "message": "Please enter a message.",
+        "budget": "Please select a budget."
+      }
+    },
+    "details": {
+      "ourOffices": "Our offices",
+      "officeDescription": "Prefer doing things in person? We don’t but we have to list our addresses here for legal reasons.",
+      "emailUs": "Email us",
+      "emailContato": "Contact",
+      "followUs": "Follow us"
+    }
   }
 }
