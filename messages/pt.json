@@ -118,5 +118,25 @@
       "emailContato": "Contatos",
       "followUs": "Siga-nos"
     }
+  },
+  "Process": {
+    "eyebrow": "Nosso Processo",
+    "title": "Como trabalhamos",
+    "subtitle": "Acreditamos na eficiência e em maximizar nossos recursos para oferecer o melhor valor aos nossos clientes. A principal maneira de fazer isso é reaproveitando os mesmos cinco projetos que desenvolvemos na última década.",
+    "discover": {
+      "title": "Descoberta",
+      "paragraph1": "Trabalhamos em estreita colaboração com nossos clientes para entender suas <strong>necessidades</strong> e objetivos, nos inserindo em suas operações diárias para compreender o que faz seu negócio funcionar.",
+      "paragraph2": "Nossa equipe de investigadores particulares segue os diretores da empresa por várias semanas enquanto nossos gerentes de contas se concentram em vasculhar seu lixo. Nossos especialistas em segurança sênior então realizam hacks de engenharia social para obter acesso às suas contas <strong>empresariais</strong> — entregando essas informações à nossa equipe de contabilidade forense.",
+      "paragraph3": "Uma vez que a auditoria completa é concluída, reportamos com um <strong>plano</strong> abrangente e, mais importante, um orçamento.",
+      "included": "Incluído nesta etapa:",
+      "tags": {
+        "tag1": "Questionários detalhados",
+        "tag2": "Estudos de viabilidade",
+        "tag3": "Análise de concorrência",
+        "tag4": "Pesquisas com funcionários",
+        "tag5": "Provas de conceito",
+        "tag6": "Auditoria forense"
+      }
+    }
   }
 }

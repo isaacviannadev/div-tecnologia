@@ -15,6 +15,7 @@ import { TagList, TagListItem } from '@div/components/TagList'
 import imageLaptop from '@div/images/laptop.jpg'
 import imageMeeting from '@div/images/meeting.jpg'
 import imageWhiteboard from '@div/images/whiteboard.jpg'
+import { useTranslations } from 'next-intl'
 
 function Section({
   title,
@@ -55,44 +56,53 @@ function Section({
 }
 
 function Discover() {
+  const t = useTranslations('Process')
+
   return (
     <Section
-      title="Discover"
+      title={t('discover.title')}
       image={{ src: imageWhiteboard, alt: 'Whiteboard' }}
     >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          {t.rich('discover.paragraph1', {
+            strong: (children) => (
+              <strong className="font-semibold text-neutral-950">
+                {children}
+              </strong>
+            ),
+          })}
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          {t.rich('discover.paragraph2', {
+            strong: (children) => (
+              <strong className="font-semibold text-neutral-950">
+                {children}
+              </strong>
+            ),
+          })}
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          {t.rich('discover.paragraph3', {
+            strong: (children) => (
+              <strong className="font-semibold text-neutral-950">
+                {children}
+              </strong>
+            ),
+          })}
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        {t('discover.included')}
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem> {t('discover.tags.tag1')}</TagListItem>
+        <TagListItem> {t('discover.tags.tag2')}</TagListItem>
+        <TagListItem> {t('discover.tags.tag3')}</TagListItem>
+        <TagListItem> {t('discover.tags.tag4')}</TagListItem>
+        <TagListItem> {t('discover.tags.tag5')}</TagListItem>
+        <TagListItem> {t('discover.tags.tag6')}</TagListItem>
       </TagList>
     </Section>
   )
@@ -256,14 +266,12 @@ export const metadata: Metadata = {
 }
 
 export default function Process() {
+  const t = useTranslations('Process')
+
   return (
     <>
-      <PageIntro eyebrow="Our process" title="How we work">
-        <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
-        </p>
+      <PageIntro eyebrow={t('eyebrow')} title={t('title')}>
+        <p>{t('subtitle')}</p>
       </PageIntro>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">

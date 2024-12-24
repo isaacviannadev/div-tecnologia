@@ -118,5 +118,25 @@
       "emailContato": "Contact",
       "followUs": "Follow us"
     }
+  },
+  "Process": {
+    "eyebrow": "Our Process",
+    "title": "How we work",
+    "subtitle": "We believe in efficiency and maximizing our resources to provide the best value to our clients. The primary way we do that is by re-using the same five projects we’ve been developing for the past decade.",
+    "discover": {
+      "title": "Discover",
+      "paragraph1": "We work closely with our clients to understand their <strong>needs</strong> and goals, embedding ourselves in their every day operations to understand what makes their business tick.",
+      "paragraph2": "Our team of private investigators shadow the company director’s for several weeks while our account managers focus on going through their trash. Our senior security experts then perform social engineering hacks to gain access to their <strong>business</strong> accounts — handing that information over to our forensic accounting team.",
+      "paragraph3": "Once the full audit is complete, we report back with a comprehensive <strong>plan</strong> and, more importantly, a budget.",
+      "included": "Included in this phase",
+      "tags": {
+        "tag1": "In-depth questionnaires",
+        "tag2": "Feasibility studies",
+        "tag3": "Blood samples",
+        "tag4": "Employee surveys",
+        "tag5": "Proofs-of-concept",
+        "tag6": "Forensic audit"
+      }
+    }
   }
 }
