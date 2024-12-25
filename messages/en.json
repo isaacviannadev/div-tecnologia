@@ -195,5 +195,18 @@
         }
       }
     }
+  },
+  "Works": {
+    "eyebrow": "Our Work",
+    "title": "Proven solutions for real-world problems.",
+    "subtitle": "Our experience in digital transformation spans various segments and challenges. Understand how we help companies accelerate their growth through innovative technological solutions, from startups to large corporations.",
+    "testimonial": "<em>DIV Technology's</em> team has been a key partner in our digital transformation journey. Their technical expertise and strategic vision have helped us achieve our business goals and exceed our customers' expectations.",
+    "clients": {
+      "title": " You’re in good company"
+    },
+    "caseStudies": {
+      "title": "Case Studies",
+      "readBtn": "Read case study"
+    }
   }
 }

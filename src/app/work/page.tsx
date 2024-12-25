@@ -10,27 +10,34 @@ import { Container } from '@div/components/Container'
 import { FadeIn, FadeInStagger } from '@div/components/FadeIn'
 import { PageIntro } from '@div/components/PageIntro'
 import { Testimonial } from '@div/components/Testimonial'
-import logoBrightPath from '@div/images/clients/bright-path/logo-dark.svg'
-import logoFamilyFund from '@div/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@div/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@div/images/clients/home-work/logo-dark.svg'
-import logoMailSmirk from '@div/images/clients/mail-smirk/logo-dark.svg'
-import logoNorthAdventures from '@div/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@div/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@div/images/clients/unseal/logo-dark.svg'
+import {
+  cartier,
+  farfetch,
+  ferragamo,
+  hurb,
+  mgm,
+  netlinks,
+  qconcursos,
+  wella,
+  worten,
+} from '@div/images/brands'
 import { formatDate } from '@div/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@div/lib/mdx'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
 function CaseStudies({
   caseStudies,
 }: {
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
+  const t = useTranslations('Works')
+
   return (
     <Container className="mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
+          {t('caseStudies.title')}
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
@@ -75,7 +82,7 @@ function CaseStudies({
                       href={caseStudy.href}
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      {t('caseStudies.readBtn')}
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -97,22 +104,24 @@ function CaseStudies({
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['Wella', wella],
+  ['Worten', worten],
+  ['MGM Resorts', mgm],
+  ['Ferragamo', ferragamo],
+  ['Farfetch', farfetch],
+  ['Hurb', hurb],
+  ['Cartier', cartier],
+  ['QConcursos', qconcursos],
 ]
 
 function Clients() {
+  const t = useTranslations('Works')
+
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
+          {t('clients.title')}
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -120,9 +129,14 @@ function Clients() {
         <ul className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {clients.map(([client, logo]) => (
             <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
+              <FadeIn className="text overflow-hidden">
                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image
+                    src={logo}
+                    alt={client}
+                    unoptimized
+                    className="w-44 invert"
+                  />
                 </Border>
               </FadeIn>
             </li>
@@ -141,28 +155,23 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   const caseStudies = await loadCaseStudies()
+  const t = await getTranslations('Works')
 
   return (
     <>
-      <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
-      >
-        <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
-        </p>
+      <PageIntro eyebrow={t('eyebrow')} title={t('title')}>
+        <p>{t('subtitle')}</p>
       </PageIntro>
 
       <CaseStudies caseStudies={caseStudies} />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        client={{ name: 'Israel Novaes', logo: netlinks }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
+        {t.rich('testimonial', {
+          em: (children) => <em className="font-semibold">{children}</em>,
+        })}
       </Testimonial>
 
       <Clients />

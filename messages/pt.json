@@ -195,5 +195,18 @@
         }
       }
     }
+  },
+  "Works": {
+    "eyebrow": "Nosso Trabalho",
+    "title": "Soluções comprovadas para problemas do mundo real.",
+    "subtitle": "Nossa experiência em transformação digital abrange diversos segmentos e desafios. Entenda como ajudamos empresas a acelerar seu crescimento através de soluções tecnológicas inovadoras, desde startups até grandes corporações.",
+    "testimonial": "A <em>DIV </em> tem sido um parceiro chave em nossa jornada de transformação digital. Sua expertise técnica e visão estratégica nos ajudaram a alcançar nossos objetivos de negócio e superar as expectativas de nossos clientes.",
+    "clients": {
+      "title": "Você está em boa companhia"
+    },
+    "caseStudies": {
+      "title": "Estudos de Caso",
+      "readBtn": "Ler o estudo de caso"
+    }
   }
 }
