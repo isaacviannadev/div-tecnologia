@@ -1,0 +1,62 @@
+import logo from '@div/images/clients/activ8/activ8-dark.svg'
+import imageHero from './hero-activ8.jpg'
+import imageMarcosCosta from './marcos.jpeg'
+
+export const caseStudy = {
+ client: 'Activ8',
+ title: 'Share experiences, create moments',
+ description: 'Activ8 is a platform that connects people with similar interests for shared activities and experiences, creating meaningful connections through memorable moments.',
+ summary: [
+   'Activ8 is a platform that connects people based on interests and location to share activities and experiences. Our intelligent platform facilitates meetups for sports, hobbies, and cultural activities.',
+   'We developed a matching algorithm that considers multiple factors such as location, interests, availability, and ratings to suggest the best connections.',
+ ],
+ logo,
+ image: { src: imageHero, alt: 'Activ8 app in use', width: 1200, height: 800 },
+ date: '2023-06',
+ service: 'App development',
+ testimonial: {
+   author: { name: 'Marcos Costa', role: 'CPO at Activ8' },
+   content: 'The platform transformed how people connect through common interests. The intelligent matching algorithm and smooth user experience were key to our success.',
+ },
+}
+
+export const metadata = {
+ title: `${caseStudy.client} Case Study`,
+ description: caseStudy.description,
+}
+
+## Overview
+<br/>
+
+With increasing social isolation and difficulty forming genuine connections, Activ8 emerged to facilitate meetups between people with common interests in a natural and safe way.
+<br/>
+
+Our solution needed to solve two main challenges: creating an efficient matching system based on multiple criteria and ensuring user safety and reliability through verification and ratings.
+<br/>
+
+We developed an algorithm that analyzes profiles, interests, location, and activity history to suggest the best connections. We also implemented a robust verification and moderation system to keep the community safe.
+<br/>
+
+## What we did
+
+<TagList>
+ <TagListItem>Mobile (React Native)</TagListItem>
+ <TagListItem>Backend (Node.js)</TagListItem>
+ <TagListItem>Matching Algorithm</TagListItem>
+ <TagListItem>Geolocation</TagListItem>
+</TagList>
+
+<Blockquote
+ author={{ name: 'Marcos Costa', role: 'CPO at Activ8' }}
+ image={{ src: imageMarcosCosta, alt: 'Marcos Costa', width: 64, height: 64 }}
+>
+ The team perfectly understood our vision of creating meaningful connections through shared interests.
+ The result was a platform that truly facilitates natural meetups and memorable experiences.
+</Blockquote>
+
+<StatList>
+ <StatListItem value="92%" label="User satisfaction" />
+ <StatListItem value="50k+" label="Activities completed" />
+ <StatListItem value="78%" label="Match rate" />
+ <StatListItem value="4.8" label="App store rating" />
+</StatList>

@@ -1,24 +1,22 @@
-import logo from '@div/images/clients/phobia/logomark-dark.svg'
-import imageHero from './hero.jpg'
-import imageJennyWilson from './jenny-wilson.jpg'
+import logo from '@div/images/clients/activ8/activ8-dark.svg'
+import imageHero from './hero-activ8.jpg'
+import imageMarcosCosta from './marcos.jpeg'
 
 export const caseStudy = {
- client: 'Phobia',
- title: 'Supere seus medos, encontre seu par',
- description:
-   'Encontre amor diante do medo — Phobia é um aplicativo de relacionamento que conecta usuários com base em suas fobias mútuas para que possam ter medo juntos.',
+ client: 'Activ8',
+ title: 'Compartilhe experiências, viva momentos',
+ description: 'Activ8 é uma plataforma que conecta pessoas com interesses semelhantes para atividades e experiências compartilhadas, criando conexões significativas através de momentos memoráveis.',
  summary: [
-   'Encontre amor diante do medo — Phobia é um aplicativo de relacionamento que conecta usuários com base em suas fobias mútuas para que possam ter medo juntos.',
-   'Trabalhamos com a Phobia para desenvolver um novo fluxo de entrada. O usuário vê imagens de fobias comuns e usamos o microfone para detectar quais fazem ele gritar, alimentando os resultados no algoritmo de combinação.',
+   'Activ8 é uma plataforma que conecta pessoas por interesses e localização para compartilhar atividades e experiências. Nossa plataforma inteligente facilita encontros para praticar esportes, hobbies e atividades culturais.',
+   'Desenvolvemos um algoritmo de matching que considera múltiplos fatores como localização, interesses, disponibilidade e avaliações para sugerir as melhores conexões.',
  ],
  logo,
- image: { src: imageHero, alt: 'App Phobia em um telefone', width: 1200, height: 800 },
- date: '2022-06',
+ image: { src: imageHero, alt: 'App Activ8 em uso', width: 1200, height: 800 },
+ date: '2023-06',
  service: 'Desenvolvimento de aplicativo',
  testimonial: {
-   author: { name: 'Jenny Wilson', role: 'CPO da Phobia' },
-   content:
-     'A equipe do Studio foi além com nosso processo de onboarding, até encontrando uma maneira de acessar o microfone do usuário sem acionar aquelas irritantes janelas de permissão.',
+   author: { name: 'Marcos Costa', role: 'CPO da Activ8' },
+   content: 'A plataforma transformou a maneira como as pessoas se conectam através de interesses comuns. O algoritmo de matching inteligente e a experiência do usuário fluida foram fundamentais para nosso sucesso.',
  },
 }
 
@@ -28,35 +26,36 @@ export const metadata = {
 }
 
 ## Visão Geral
+<br/>
+Com o aumento do isolamento social e a dificuldade de formar conexões genuínas, a Activ8 surgiu para facilitar encontros entre pessoas com interesses em comum de forma natural e segura.
+<br/>
 
-Notando um abandono incrivelmente alto, a equipe da Phobia chegou à conclusão de que, em vez de ter uma ideia de negócio fundamentalmente falha, precisava melhorar seu processo de onboarding.
+Nossa solução precisava resolver dois desafios principais: criar um sistema eficiente de matching baseado em múltiplos critérios e garantir a segurança e confiabilidade dos usuários através de verificação e avaliações.
+<br/>
 
-Anteriormente, os usuários selecionavam suas fobias manualmente, mas isso levava alguns usuários a selecionar coisas das quais não tinham realmente medo para aumentar suas combinações.
-
-Para combater isso, desenvolvemos um sistema que exibe uma apresentação de fobias comuns durante o onboarding. Em seguida, usamos malware para acessar secretamente o microfone e detectar quando há reações audíveis. Medimos o tom, volume e duração dos gritos e alimentamos essas informações no algoritmo de combinação.
-
-A próxima fase é uma versão VR do fluxo de onboarding onde os usuários são submetidos a uma série de cenários que determinarão seus medos. Atualmente estamos desenvolvendo o primeiro cenário, título provisório: "Pulando de um avião cheio de aranhas".
+Desenvolvemos um algoritmo que analisa perfis, interesses, localização e histórico de atividades para sugerir as melhores conexões. Implementamos também um robusto sistema de verificação e moderação para manter a comunidade segura.
+<br/>
 
 ## O que fizemos
 
 <TagList>
- <TagListItem>Android</TagListItem>
- <TagListItem>iOS</TagListItem>
- <TagListItem>Malware</TagListItem>
- <TagListItem>VR</TagListItem>
+  <TagListItem>Dispositivos Móveis (React Native)</TagListItem>
+  <TagListItem>Backend (Node.js)</TagListItem>
+  <TagListItem>Algoritmo de Correspondência</TagListItem>
+  <TagListItem>Geolocalização</TagListItem>
 </TagList>
 
 <Blockquote
- author={{ name: 'Jenny Wilson', role: 'CPO da Phobia' }}
- image={{ src: imageJennyWilson, alt: 'Jenny Wilson', width: 64, height: 64 }}
+ author={{ name: 'Marcos Costa', role: 'CPO da Activ8' }}
+ image={{ src: imageMarcosCosta, alt: 'Marcos Costa', width: 64, height: 64 }}
 >
- A equipe do Studio foi além com nosso onboarding, até encontrando uma maneira de 
- acessar o microfone do usuário sem acionar aquelas irritantes janelas de permissão.
+ A equipe entendeu perfeitamente nossa visão de criar conexões significativas através de interesses compartilhados. 
+ O resultado foi uma plataforma que realmente facilita encontros naturais e experiências memoráveis.
 </Blockquote>
 
 <StatList>
- <StatListItem value="20%" label="Taxa de abandono" />
- <StatListItem value="5x" label="Desinstalações" />
- <StatListItem value="2.3" label="Avaliação na loja" />
- <StatListItem value="8" label="Processos pendentes" />
+ <StatListItem value="92%" label="Satisfação dos usuários" />
+ <StatListItem value="50k+" label="Atividades realizadas" />
+ <StatListItem value="78%" label="Match rate" />
+ <StatListItem value="4.8" label="Avaliação na loja" />
 </StatList>
