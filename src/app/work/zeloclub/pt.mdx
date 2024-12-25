@@ -1,0 +1,63 @@
+import logo from '@div/images/brands/zelo-heart.svg'
+import imageHero from './hero-zelo.jpg'
+import imageIsaacVianna from './isaac-vianna.jpeg'
+
+export const caseStudy = {
+  client: 'zeloclub',
+  title: 'Conectando corações, cuidando de vidas',
+  description:
+    'Zeloclub é uma plataforma que conecta famílias a cuidadores profissionais de idosos, garantindo assistência de qualidade e tranquilidade para quem você ama.',
+  summary: [
+    'O zeloclub é a plataforma perfeita para conectar cuidadores com pessoas que precisam de cuidados para seus entes queridos. Nossa plataforma, segura e intuitiva facilita o encontro de cuidadores para que eles possam auxiliar a rotina das pessoas proporcionando qualidade de vida.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023-01',
+  service: 'Web development, CMS, MVP',
+  testimonial: {
+    author: { name: 'Isaac Vianna', role: 'CEO of zeloclub' },
+    content:
+      'Nossa missão é trazer paz de espírito para as famílias, garantindo que seus entes queridos recebam o melhor cuidado possível de profissionais comprometidos e qualificados.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Visão Geral
+<br/>
+Após desenvolver um modelo inovador de cuidados para idosos, o **zeloclub** nos procurou para criar uma plataforma que conectasse famílias a cuidadores profissionais de forma segura e eficiente.
+<br/>
+A plataforma precisava resolver dois desafios principais:
+- Garantir a qualidade e confiabilidade dos cuidadores através de verificação rigorosa de antecedentes e sistema de avaliações em tempo real
+- Proporcionar experiência fluida de agendamento e pagamento com matching inteligente baseado em localização, experiência e disponibilidade
+<br/>
+
+Implementamos um painel administrativo robusto para monitorar satisfação e performance, além de um algoritmo otimizado que considera múltiplos fatores para encontrar o cuidador ideal para cada família.
+<br/>
+
+## O que fizemos
+
+<TagList>
+  <TagListItem>Frontend (Next.js)</TagListItem>
+  <TagListItem>CMS Customizado</TagListItem>
+  <TagListItem>SEO</TagListItem>
+  <TagListItem>Infraestrutura</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Isaac Vianna', role: 'CEO of zeloclub' }}
+  image={{ src: imageIsaacVianna, alt: 'Isaac Vianna', width: 64, height: 64 }}>
+   Trabalhar com a <em>DIV</em> foi como ter um verdadeiro parceiro, não apenas um fornecedor. 
+   Eles entenderam nossa missão de transformar o cuidado com idosos em algo mais humano e profissional, 
+   trazendo tranquilidade para as famílias brasileiras.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="98%" label="Satisfação dos usuários" />
+ <StatListItem value="2000+" label="Cuidadores verificados" />
+ <StatListItem value="85%" label="Taxa de recorrência " />
+ <StatListItem value="30k+" label="Horas de cuidados" />
+</StatList>

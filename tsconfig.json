@@ -24,7 +24,13 @@
       "@div/components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/work/zeloclub/page.tsx"
+  ],
 
   "exclude": ["node_modules"]
 }

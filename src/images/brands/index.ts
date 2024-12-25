@@ -14,6 +14,8 @@ import netlinks from './netlinks.svg'
 import qconcursos from './qconcursos.svg'
 import wella from './wella-logo.svg'
 import worten from './worten.svg'
+import zeloHeart from './zelo-heart.svg'
+import zeloclub from './zeloclub.svg'
 
 export {
   adentis,
@@ -32,4 +34,6 @@ export {
   qconcursos,
   wella,
   worten,
+  zeloclub,
+  zeloHeart,
 }

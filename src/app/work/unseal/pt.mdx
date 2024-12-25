@@ -1,0 +1,59 @@
+import logo from '@div/images/clients/unseal/logomark-dark.svg'
+import imageHero from './hero.jpg'
+import imageEmilySelman from './emily-selman.jpg'
+
+export const caseStudy = {
+ client: 'Unseal',
+ title: 'Tome conta da sua saúde',
+ description:
+   'Unseal é a primeira plataforma NFT onde usuários podem criar e negociar NFTs de seus próprios registros médicos, permitindo que tenham controle sobre seus dados.',
+ summary: [
+   'Unseal é a primeira plataforma NFT onde usuários podem criar e negociar NFTs de seus próprios registros médicos, permitindo que tenham controle sobre seus dados.',
+   'Construímos a infraestrutura blockchain que suporta a Unseal. Infelizmente, tivemos uma grande perda neste projeto quando a criptomoeda da Unseal, PlaceboCoin, foi a zero.',
+ ],
+ logo,
+ image: { src: imageHero, alt: 'Imagem principal Unseal', with: 1200, height: 800},
+ date: '2022-10',
+ service: 'Desenvolvimento blockchain',
+ testimonial: {
+   author: { name: 'Emily Selman', role: 'Head de Engenharia na Unseal' },
+   content:
+     'O Studio fez um trabalho incrível construindo nossa infraestrutura blockchain core e tenho certeza que assim que a PlaceboCoin se recuperar eles poderão finalizar o projeto.',
+ },
+}
+
+export const metadata = {
+ title: `${caseStudy.client} Case Study`,
+ description: caseStudy.description,
+}
+
+## Visão Geral
+
+Irritado porque o ginecologista de sua esposa não divulgaria os resultados do exame papanicolau, o fundador da Unseal, Kevin, teve a ideia de usar blockchain para armazenar registros médicos individuais.
+
+A Unseal nos procurou no início de seu desenvolvimento, tendo acabado de levantar fundos através de um ICO de sua criptomoeda PlaceboCoin. Como nunca havíamos trabalhado com um produto web3, decidimos terceirizar o projeto para uma agência em Kiev e obter lucros. Apesar das frequentes reclamações sobre ataques de mísseis e falta de energia, os ucranianos entregaram o projeto antes do prazo.
+
+Depois de atingir um pico de $12k, a PlaceboCoin foi a zero em questão de horas. Como recebemos o pagamento em PlaceboCoin mas nossos subcontratados insistiram em ser pagos em USD, tivemos uma enorme perda financeira neste projeto.
+
+## O que fizemos
+
+<TagList>
+ <TagListItem>Desenvolvimento blockchain</TagListItem>
+ <TagListItem>Backend (Solidity)</TagListItem>
+ <TagListItem>Contratos inteligentes</TagListItem>
+</TagList>
+
+<Blockquote
+ author={{ name: 'Emily Selman', role: 'Head de Engenharia na Unseal' }}
+ image={{ src: imageEmilySelman, alt: 'Emily Selman', with: 64, height: 64 }}
+>
+ O Studio fez um trabalho incrível construindo nossa infraestrutura blockchain core e
+ tenho certeza que assim que a PlaceboCoin se recuperar eles poderão finalizar o projeto.
+</Blockquote>
+
+<StatList>
+ <StatListItem value="34%" label="Menos transações" />
+ <StatListItem value="10%" label="Transações mais lentas" />
+ <StatListItem value="1000ms" label="Latência de transação" />
+ <StatListItem value="3" label="Nós ativos" />
+</StatList>

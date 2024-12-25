@@ -1,0 +1,62 @@
+import logo from '@div/images/clients/phobia/logomark-dark.svg'
+import imageHero from './hero.jpg'
+import imageJennyWilson from './jenny-wilson.jpg'
+
+export const caseStudy = {
+ client: 'Phobia',
+ title: 'Supere seus medos, encontre seu par',
+ description:
+   'Encontre amor diante do medo — Phobia é um aplicativo de relacionamento que conecta usuários com base em suas fobias mútuas para que possam ter medo juntos.',
+ summary: [
+   'Encontre amor diante do medo — Phobia é um aplicativo de relacionamento que conecta usuários com base em suas fobias mútuas para que possam ter medo juntos.',
+   'Trabalhamos com a Phobia para desenvolver um novo fluxo de entrada. O usuário vê imagens de fobias comuns e usamos o microfone para detectar quais fazem ele gritar, alimentando os resultados no algoritmo de combinação.',
+ ],
+ logo,
+ image: { src: imageHero, alt: 'App Phobia em um telefone', width: 1200, height: 800 },
+ date: '2022-06',
+ service: 'Desenvolvimento de aplicativo',
+ testimonial: {
+   author: { name: 'Jenny Wilson', role: 'CPO da Phobia' },
+   content:
+     'A equipe do Studio foi além com nosso processo de onboarding, até encontrando uma maneira de acessar o microfone do usuário sem acionar aquelas irritantes janelas de permissão.',
+ },
+}
+
+export const metadata = {
+ title: `${caseStudy.client} Case Study`,
+ description: caseStudy.description,
+}
+
+## Visão Geral
+
+Notando um abandono incrivelmente alto, a equipe da Phobia chegou à conclusão de que, em vez de ter uma ideia de negócio fundamentalmente falha, precisava melhorar seu processo de onboarding.
+
+Anteriormente, os usuários selecionavam suas fobias manualmente, mas isso levava alguns usuários a selecionar coisas das quais não tinham realmente medo para aumentar suas combinações.
+
+Para combater isso, desenvolvemos um sistema que exibe uma apresentação de fobias comuns durante o onboarding. Em seguida, usamos malware para acessar secretamente o microfone e detectar quando há reações audíveis. Medimos o tom, volume e duração dos gritos e alimentamos essas informações no algoritmo de combinação.
+
+A próxima fase é uma versão VR do fluxo de onboarding onde os usuários são submetidos a uma série de cenários que determinarão seus medos. Atualmente estamos desenvolvendo o primeiro cenário, título provisório: "Pulando de um avião cheio de aranhas".
+
+## O que fizemos
+
+<TagList>
+ <TagListItem>Android</TagListItem>
+ <TagListItem>iOS</TagListItem>
+ <TagListItem>Malware</TagListItem>
+ <TagListItem>VR</TagListItem>
+</TagList>
+
+<Blockquote
+ author={{ name: 'Jenny Wilson', role: 'CPO da Phobia' }}
+ image={{ src: imageJennyWilson, alt: 'Jenny Wilson', width: 64, height: 64 }}
+>
+ A equipe do Studio foi além com nosso onboarding, até encontrando uma maneira de 
+ acessar o microfone do usuário sem acionar aquelas irritantes janelas de permissão.
+</Blockquote>
+
+<StatList>
+ <StatListItem value="20%" label="Taxa de abandono" />
+ <StatListItem value="5x" label="Desinstalações" />
+ <StatListItem value="2.3" label="Avaliação na loja" />
+ <StatListItem value="8" label="Processos pendentes" />
+</StatList>

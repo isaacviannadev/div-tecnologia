@@ -1,0 +1,63 @@
+import logo from '@div/images/brands/zelo-heart.svg'
+import imageHero from './hero-zelo.jpg'
+import imageIsaacVianna from './isaac-vianna.jpeg'
+
+export const caseStudy = {
+  client: 'zeloclub',
+  title: 'Connecting hearts, caring for lives',
+  description:
+    'Zeloclub is a platform that connects families with professional elderly caregivers, ensuring quality care and peace of mind for your loved ones.',
+  summary: [
+    'Zeloclub is the perfect platform for connecting caregivers with people who need care for their loved ones. Our secure and intuitive platform facilitates finding caregivers who can assist in daily routines, providing quality of life.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023-01',
+  service: 'Web development, CMS, MVP',
+  testimonial: {
+    author: { name: 'Isaac Vianna', role: 'CEO of zeloclub' },
+    content:
+      'Our mission is to bring peace of mind to families, ensuring their loved ones receive the best possible care from committed and qualified professionals.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+<br/>
+After developing an innovative elderly care model, **zeloclub** approached us to create a platform that would safely and efficiently connect families with professional caregivers.
+<br/>
+The platform needed to solve two main challenges:
+- Ensure caregiver quality and reliability through rigorous background checks and real-time rating system
+- Provide smooth scheduling and payment experience with intelligent matching based on location, experience, and availability
+<br/>
+
+We implemented a robust administrative dashboard to monitor satisfaction and performance, plus an optimized algorithm that considers multiple factors to find the ideal caregiver for each family.
+<br/>
+
+## What we did
+
+<TagList>
+  <TagListItem>Frontend (Next.js)</TagListItem>
+  <TagListItem>Custom CMS</TagListItem>
+  <TagListItem>SEO</TagListItem>
+  <TagListItem>Infrastructure</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Isaac Vianna', role: 'CEO of zeloclub' }}
+  image={{ src: imageIsaacVianna, alt: 'Isaac Vianna', width: 64, height: 64 }}>
+   Working with <em>DIV</em> was like having a true partner, not just a vendor. 
+   They understood our mission to transform elderly care into something more human and professional, 
+   bringing peace of mind to Brazilian families.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="98%" label="User satisfaction" />
+  <StatListItem value="2000+" label="Verified caregivers" />
+  <StatListItem value="85%" label="Retention rate" />
+  <StatListItem value="30k+" label="Hours of care" />
+</StatList>
