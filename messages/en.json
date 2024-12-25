@@ -206,7 +206,11 @@
     },
     "caseStudies": {
       "title": "Case Studies",
-      "readBtn": "Read case study"
+      "readBtn": "Read case study",
+      "client": "Client",
+      "year": "Year",
+      "service": "Service",
+      "more": "More case studies"
     }
   }
 }

@@ -206,7 +206,11 @@
     },
     "caseStudies": {
       "title": "Estudos de Caso",
-      "readBtn": "Ler o estudo de caso"
+      "readBtn": "Ler o estudo de caso",
+      "client": "Cliente",
+      "year": "Ano",
+      "service": "Serviço",
+      "more": "Mais estudos de caso"
     }
   }
 }
