@@ -10,6 +10,7 @@ import { FadeIn } from '@div/components/FadeIn'
 import { PageIntro } from '@div/components/PageIntro'
 import { formatDate } from '@div/lib/formatDate'
 import { loadArticles } from '@div/lib/mdx'
+import { getTranslations } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -19,14 +20,12 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   const articles = await loadArticles()
+  const t = await getTranslations('Blog')
 
   return (
     <>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
-        <p>
-          Stay up-to-date with the latest industry news as our marketing teams
-          finds new ways to re-purpose old CSS tricks articles.
-        </p>
+      <PageIntro eyebrow={t('eyebrow')} title={t('title')}>
+        <p>{t('subtitle')}</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
@@ -41,13 +40,13 @@ export default async function Blog() {
                         <Link href={article.href}>{article.title}</Link>
                       </h2>
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
-                        <dt className="sr-only">Published</dt>
+                        <dt className="sr-only">{t('published')}</dt>
                         <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
                           <time dateTime={article.date}>
                             {formatDate(article.date)}
                           </time>
                         </dd>
-                        <dt className="sr-only">Author</dt>
+                        <dt className="sr-only">{t('author')}</dt>
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                             <Image
@@ -72,7 +71,7 @@ export default async function Blog() {
                         aria-label={`Read more: ${article.title}`}
                         className="mt-8"
                       >
-                        Read more
+                        {t('readMore')}
                       </Button>
                     </div>
                   </div>

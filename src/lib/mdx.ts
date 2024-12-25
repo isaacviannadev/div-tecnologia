@@ -10,19 +10,21 @@ async function loadEntries<T extends { date: string }>(
 
   return (
     await Promise.all(
-      (await glob(`**/${locale}.mdx`, { cwd: `src/app/${directory}` })).map(
-        async (filename) => {
-          console.log(filename, 'filename')
-          const metadata = (await import(`../app/${directory}/${filename}`))[
-            metaName
-          ] as T
-          return {
-            ...metadata,
-            metadata,
-            href: `/${directory}/${filename.replace(/\/(pt|en|page)\.mdx$/, '')}`,
-          }
-        },
-      ),
+      (
+        await glob(`**/${locale ?? 'page'}.mdx`, {
+          cwd: `src/app/${directory}`,
+        })
+      ).map(async (filename) => {
+        console.log(filename, 'filename')
+        const metadata = (await import(`../app/${directory}/${filename}`))[
+          metaName
+        ] as T
+        return {
+          ...metadata,
+          metadata,
+          href: `/${directory}/${filename.replace(/\/(pt|en|page)\.mdx$/, '')}`,
+        }
+      }),
     )
   ).sort((a, b) => b.date.localeCompare(a.date))
 }

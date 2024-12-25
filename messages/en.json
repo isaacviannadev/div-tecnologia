@@ -212,5 +212,13 @@
       "service": "Service",
       "more": "More case studies"
     }
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Stay up to date with the latest trends in technology and design.",
+    "subtitle": "Our blog is a space for sharing knowledge and insights about the digital world. We publish articles, tutorials, and case studies that help you stay ahead in the market.",
+    "published": "Published",
+    "author": "Author",
+    "readMore": "Read more"
   }
 }
