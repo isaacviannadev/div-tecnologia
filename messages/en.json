@@ -47,7 +47,7 @@
   "Services": {
     "eyebrow": "Services",
     "title": "We help you identify, explore and respond to new opportunities.",
-    "subtitle": "As long as these opportunities involve giving us money to repurpose old projects — we can create an infinite number of them.",
+    "subtitle": "We transform challenges into innovative solutions, developing custom projects that drive the growth of your business.",
     "items": {
       "webDevelopment": {
         "title": "Web Development",
@@ -122,76 +122,76 @@
   "Process": {
     "eyebrow": "Our Process",
     "title": "How we work",
-    "subtitle": "We believe in efficiency and maximizing our resources to provide the best value to our clients. The primary way we do that is by re-using the same five projects we’ve been developing for the past decade.",
+    "subtitle": "Our agile methodology combines strategic planning and iterative development to deliver efficient solutions. Each step is documented and validated with the client, ensuring transparency and results aligned with business objectives.",
     "discover": {
       "title": "Discover",
-      "paragraph1": "We work closely with our clients to understand their <strong>needs</strong> and goals, embedding ourselves in their every day operations to understand what makes their business tick.",
-      "paragraph2": "Our team of private investigators shadow the company director’s for several weeks while our account managers focus on going through their trash. Our senior security experts then perform social engineering hacks to gain access to their <strong>business</strong> accounts — handing that information over to our forensic accounting team.",
-      "paragraph3": "Once the full audit is complete, we report back with a comprehensive <strong>plan</strong> and, more importantly, a budget.",
+      "paragraph1": "We work closely with our clients to deeply understand their business <strong>needs and objectives</strong> , aligning technology with their strategic vision.",
+      "paragraph2": "Our technical team conducts a complete diagnosis through workshops and structured meetings, mapping existing <strong>processes</strong> and identifying <strong>opportunities</strong> for innovation through technology.",
+      "paragraph3": "Based on the analysis, we develop a detailed <strong>technical proposal</strong> that includes solution architecture, technology choices, and estimates of time and investment.",
       "included": "Included in this phase",
       "tags": {
-        "tag1": "In-depth questionnaires",
+        "tag1": "Technical requirements analysis",
         "tag2": "Feasibility studies",
-        "tag3": "Blood samples",
-        "tag4": "Employee surveys",
-        "tag5": "Proofs-of-concept",
-        "tag6": "Forensic audit"
+        "tag3": "Competitor analysis",
+        "tag4": "Process mapping",
+        "tag5": "Proofs of concept",
+        "tag6": "KPI definition"
       }
     },
     "build": {
       "title": "Build",
-      "paragraph1": "Based off of the discovery phase, we develop a comprehensive roadmap for each product and start working towards delivery. The roadmap is an intricately tangled mess of technical nonsense designed to drag the project out as long as possible.",
-      "paragraph2": "Each client is assigned a key account manager to keep lines of communication open and obscure the actual progress of the project. They act as a buffer between the client’s incessant nagging and the development team who are hard at work scouring open source projects for code to re-purpose.",
-      "paragraph3": "Our account managers are trained to only reply to client emails after 9pm, several days after the initial email. This reinforces the general aura that we are very busy and dissuades clients from asking for changes.",
-      "blockquote": "Studio were so regular with their progress updates we almost began to think they were automated!"
+      "paragraph1": "Based on technical planning, we begin development using agile methodologies and modern software engineering practices. Our team works in weekly sprints, with incremental deliveries that allow continuous validation and course adjustments when necessary.",
+      "paragraph2": "During this phase, we maintain full transparency through weekly follow-up meetings and a real-time updated dashboard. Each feature undergoes rigorous quality control, including automated testing, code review, and requirements validation before being integrated into the project.",
+      "paragraph3": "Communication is managed by a dedicated Product Owner, who acts as a bridge between the technical team and stakeholders, ensuring constant alignment and quick response to feedback. We use tools like Jira and GitHub to document the entire development process and facilitate collaboration between teams.",
+      "blockquote": "DIV's team demonstrated technical excellence and transparent communication throughout development. Their consistent deliveries and code quality gave us complete confidence in the project."
     },
     "deliver": {
       "title": "Deliver",
-      "paragraph1": "About halfway through the Build phase, we push each project out by 6 weeks due to a change in <strong>requirements</strong>. This allows us to increase the budget a final time before launch.",
-      "paragraph2": "Despite largely using pre-built components, most of the <strong>progress</strong> on each project takes place in the final 24 hours. The development time allocated to each client is actually spent making augmented reality demos that go viral on social media.",
-      "paragraph3": "We ensure that the main pages of the site are <strong>fully functional</strong> at launch — the auxiliary pages will, of course, be lorem ipusm shells which get updated as part of our exorbitant <strong>maintenance</strong> retainer.",
+      "paragraph1": "We conduct a series of technical and business validations to ensure that the delivered solution <strong>creates real impact</strong>. We document all test results, performance metrics, and proofs of concept to demonstrate the generated value.",
+      "paragraph2": "During deployment, we execute a structured go-live plan that includes <strong>real-time</strong> monitoring, security backups, and rollback procedures. Our team provides <strong>dedicated support</strong> in the first few weeks to ensure a smooth transition.",
+      "paragraph3": "We deliver complete <strong>documentation</strong> of the project, including technical manuals, user guides, and performance reports. We also conduct knowledge transfer sessions to empower your team.",
       "included": "Included in this phase",
       "item1": {
         "title": "Testing",
-        "description": "Our projects always have 100% test coverage, which would be impressive if our tests weren’t as porous as a sieve."
+        "description": "We perform comprehensive integration, load, and security tests to ensure the robustness and reliability of the solution before production launch."
       },
       "item2": {
         "title": "Infrastructure",
-        "description": "To ensure reliability we only use the best Digital Ocean droplets that $4 a month can buy."
+        "description": "We deploy in a high-availability cloud environment, with 24/7 monitoring, automated backups, and disaster recovery procedures."
       },
       "item3": {
         "title": "Support",
-        "description": "Because we hold the API keys for every critical service your business uses, you can expect a lifetime of support, and invoices, from us."
+        "description": "We provide specialized technical support with defined SLAs, complete documentation, and continuous post-deployment follow-up."
       }
     },
     "values": {
       "eyebrow": "Our Values",
       "title": "Balancing reliability and innovation",
-      "subtitle": "We strive to stay at the forefront of emerging trends and technologies, while completely ignoring them and forking that old Rails project we feel comfortable using. We stand by our core values to justify that decision.",
+      "subtitle": "Our pursuit of technical excellence is guided by the balance between adopting modern technologies and maintaining stable and tested solutions. We constantly invest in research and development, maintaining a high standard of quality.",
       "items": {
         "meticulous": {
           "title": "Meticulous",
-          "description": "The first part of any partnership is getting our designer to put your logo in our template. The second step is getting them to do the colors."
+          "description": "We apply rigorous quality standards to every line of code, ensuring robust and scalable solutions."
         },
         "efficient": {
           "title": "Efficient",
-          "description": " We pride ourselves on never missing a deadline which is easy because most of the work was done years ago."
+          "description": "We use agile methodologies and automation to maximize productivity without compromising quality."
         },
         "adaptable": {
           "title": "Adaptable",
-          "description": "Every business has unique needs and our greatest challenge is shoe-horning those needs into something we already built."
+          "description": "We develop flexible solutions that evolve with your business needs."
         },
         "honest": {
           "title": "Honest",
-          "description": "We are transparent about all of our processes, banking on the simple fact our clients never actually read anything."
+          "description": "We maintain transparent communication about deadlines, costs, and technical challenges."
         },
         "loyal": {
           "title": "Loyal",
-          "description": " We foster long-term relationships with our clients that go beyond just delivering a product, allowing us to invoice them for decades."
+          "description": "We build lasting partnerships based on trust and consistent results."
         },
         "innovative": {
           "title": "Innovative",
-          "description": "The technological landscape is always evolving and so are we. We are constantly on the lookout for new open source projects to clone."
+          "description": "We explore new technologies and methodologies to deliver increasingly efficient solutions."
         }
       }
     }

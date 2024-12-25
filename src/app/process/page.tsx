@@ -123,7 +123,7 @@ function Build() {
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{ name: 'Alan Marques', role: 'CTO of Hurb' }}
         className="mt-12"
       >
         <p>{t('build.blockquote')}</p>

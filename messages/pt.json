@@ -47,7 +47,7 @@
   "Services": {
     "eyebrow": "Serviços",
     "title": "Ajudamos você a identificar, explorar e responder a novas oportunidades.",
-    "subtitle": "Enquanto essas oportunidades envolverem nos dar dinheiro para reaproveitar projetos antigos — podemos criar um número infinito deles.",
+    "subtitle": "Transformamos desafios em soluções inovadoras, desenvolvendo projetos personalizados que impulsionam o crescimento do seu negócio.",
     "items": {
       "webDevelopment": {
         "title": "Desenvolvimento Web",
@@ -122,76 +122,76 @@
   "Process": {
     "eyebrow": "Nosso Processo",
     "title": "Como trabalhamos",
-    "subtitle": "Acreditamos na eficiência e em maximizar nossos recursos para oferecer o melhor valor aos nossos clientes. A principal maneira de fazer isso é reaproveitando os mesmos cinco projetos que desenvolvemos na última década.",
+    "subtitle": "Nossa metodologia ágil combina planejamento estratégico e desenvolvimento iterativo para entregar soluções eficientes. Cada etapa é documentada e validada com o cliente, garantindo transparência e resultados alinhados aos objetivos do negócio.",
     "discover": {
       "title": "Descoberta",
-      "paragraph1": "Trabalhamos em estreita colaboração com nossos clientes para entender suas <strong>necessidades</strong> e objetivos, nos inserindo em suas operações diárias para compreender o que faz seu negócio funcionar.",
-      "paragraph2": "Nossa equipe de investigadores particulares segue os diretores da empresa por várias semanas enquanto nossos gerentes de contas se concentram em vasculhar seu lixo. Nossos especialistas em segurança sênior então realizam hacks de engenharia social para obter acesso às suas contas <strong>empresariais</strong> — entregando essas informações à nossa equipe de contabilidade forense.",
-      "paragraph3": "Uma vez que a auditoria completa é concluída, reportamos com um <strong>plano</strong> abrangente e, mais importante, um orçamento.",
+      "paragraph1": "Trabalhamos em estreita colaboração com nossos clientes para entender profundamente suas <strong>necessidades e objetivos</strong> de negócio, alinhando a tecnologia com sua visão estratégica.",
+      "paragraph2": "Nossa equipe técnica realiza um diagnóstico completo através de workshops e reuniões estruturadas, mapeando <strong>processos</strong> existentes e identificando <strong>oportunidades</strong> de inovação através da tecnologia.",
+      "paragraph3": "Com base na análise, desenvolvemos uma <strong>proposta técnica</strong> detalhada que inclui arquitetura da solução, escolha de tecnologias e estimativas de prazo e investimento.",
       "included": "Incluído nesta etapa:",
       "tags": {
-        "tag1": "Questionários detalhados",
+        "tag1": "Análise de requisitos técnicos",
         "tag2": "Estudos de viabilidade",
         "tag3": "Análise de concorrência",
-        "tag4": "Pesquisas com funcionários",
+        "tag4": "Mapeamento de processos",
         "tag5": "Provas de conceito",
-        "tag6": "Auditoria forense"
+        "tag6": "Definição de KPI"
       }
     },
     "build": {
       "title": "Construção",
-      "paragraph1": "Com base na fase de descoberta, desenvolvemos um roteiro abrangente para cada produto e começamos a trabalhar para a entrega. O roteiro é uma bagunça intricadamente emaranhada de nonsense técnico projetado para arrastar o projeto o máximo possível.",
-      "paragraph2": "Cada cliente é designado a um gerente de contas chave para manter as linhas de comunicação abertas e obscurecer o progresso real do projeto. Eles atuam como um buffer entre a insistência incessante do cliente e a equipe de desenvolvimento que está trabalhando arduamente vasculhando projetos de código aberto para reaproveitar código.",
-      "paragraph3": "Nossos gerentes de contas são treinados para responder aos e-mails dos clientes apenas após as 21h, vários dias após o e-mail inicial. Isso reforça a aura geral de que estamos muito ocupados e dissuade os clientes de pedir mudanças.",
-      "blockquote": "A equipe do estúdio era tão regular com suas atualizações de progresso que quase começamos a pensar que eram automatizadas!"
+      "paragraph1": "Com base no planejamento técnico, iniciamos o desenvolvimento utilizando metodologias ágeis e práticas modernas de engenharia de software. Nossa equipe trabalha em sprints semanais, com entregas incrementais que permitem validação contínua e ajustes de curso quando necessário.",
+      "paragraph2": "Durante esta fase, mantemos total transparência através de reuniões semanais de acompanhamento e um dashboard atualizado em tempo real. Cada feature passa por rigoroso controle de qualidade, incluindo testes automatizados, revisão de código e validação de requisitos antes de ser integrada ao projeto.",
+      "paragraph3": "A comunicação é gerenciada por um Product Owner dedicado, que atua como ponte entre o time técnico e stakeholders, garantindo alinhamento constante e resposta rápida a feedbacks. Utilizamos ferramentas como Jira e GitHub para documentar todo o processo de desenvolvimento e facilitar a colaboração entre equipes.",
+      "blockquote": "A equipe da DIV demonstrou excelência técnica e comunicação transparente durante todo o desenvolvimento. As entregas consistentes e a qualidade do código nos deram total confiança no projeto."
     },
     "deliver": {
       "title": "Entrega",
-      "paragraph1": "Cerca de metade da fase de Construção, adiamos cada projeto em 6 semanas devido a uma mudança nos <strong>requisitos</strong>. Isso nos permite aumentar o orçamento uma última vez antes do lançamento.",
-      "paragraph2": "Apesar de usar principalmente componentes pré-construídos, a maior parte do <strong>progresso</strong> em cada projeto ocorre nas últimas 24 horas. O tempo de desenvolvimento alocado para cada cliente é realmente gasto fazendo demos de realidade aumentada que se tornam virais nas redes sociais.",
-      "paragraph3": "Garantimos que as principais páginas do site estejam <strong>totalmente funcionais</strong> no lançamento — as páginas auxiliares serão, é claro, shells de lorem ipsum que serão atualizadas como parte do nosso exorbitante retentor de <strong>manutenção</strong>.",
+      "paragraph1": "Realizamos uma série de validações técnicas e de negócio para garantir que a solução entregue <strong>gere impacto real</strong>. Documentamos todos os resultados de testes, métricas de performance e provas de conceito para evidenciar o valor gerado.",
+      "paragraph2": "Na implantação, executamos um plano estruturado de go-live que inclui monitoramento em <strong>tempo real</strong>, backups de segurança e procedimentos de rollback. Nossa equipe oferece <strong>suporte dedicado</strong> nas primeiras semanas para garantir uma transição suave.",
+      "paragraph3": "Entregamos <strong>documentação</strong> completa do projeto, incluindo manuais técnicos, guias de usuário e relatórios de performance. Realizamos também sessões de transferência de conhecimento para capacitar sua equipe.",
       "included": "Incluído nesta fase",
       "item1": {
         "title": "Testes",
-        "description": "Nossos projetos sempre têm 100% de cobertura de teste, o que seria impressionante se nossos testes não fossem tão porosos quanto uma peneira."
+        "description": "Realizamos testes abrangentes de integração, carga e segurança para garantir a robustez e confiabilidade da solução antes do lançamento em produção."
       },
       "item2": {
         "title": "Infraestrutura",
-        "description": "Para garantir a confiabilidade, usamos apenas os melhores droplets do Digital Ocean que $4 por mês podem comprar."
+        "description": "Implantamos em ambiente cloud de alta disponibilidade, com monitoramento 24/7, backups automatizados e procedimentos de disaster recovery."
       },
       "item3": {
         "title": "Suporte",
-        "description": "Como possuímos as chaves da API para todos os serviços críticos que sua empresa usa, você pode esperar uma vida inteira de suporte, e faturas, de nós."
+        "description": "Fornecemos suporte técnico especializado com SLAs definidos, documentação completa e acompanhamento contínuo pós-implantação."
       }
     },
     "values": {
       "eyebrow": "Nossos Valores",
       "title": "Equilibrando confiabilidade e inovação",
-      "subtitle": "Nos esforçamos para estar na vanguarda das tendências e tecnologias emergentes, enquanto as ignoramos completamente e bifurcamos aquele antigo projeto Rails com o qual nos sentimos confortáveis. Defendemos nossos valores fundamentais para justificar essa decisão.",
+      "subtitle": "Nossa busca por excelência técnica é guiada pelo equilíbrio entre adoção de tecnologias modernas e manutenção de soluções estáveis e testadas. Investimos constantemente em pesquisa e desenvolvimento, mantendo alto padrão de qualidade.",
       "items": {
         "meticulous": {
           "title": "Meticulosos",
-          "description": "A primeira parte de qualquer parceria é fazer nosso designer colocar seu logotipo em nosso template. O segundo passo é fazer com que eles escolham as cores."
+          "description": "Aplicamos rigorosos padrões de qualidade em cada linha de código, garantindo soluções robustas e escaláveis."
         },
         "efficient": {
           "title": "Eficientes",
-          "description": "Nos orgulhamos de nunca perder um prazo, o que é fácil porque a maior parte do trabalho foi feita anos atrás."
+          "description": "Utilizamos metodologias ágeis e automação para maximizar produtividade sem comprometer qualidade."
         },
         "adaptable": {
           "title": "Adaptáveis",
-          "description": "Cada negócio tem necessidades únicas e nosso maior desafio é encaixar essas necessidades em algo que já construímos."
+          "description": "Desenvolvemos soluções flexíveis que evoluem com as necessidades do seu negócio."
         },
         "honest": {
           "title": "Honestos",
-          "description": "Somos transparentes sobre todos os nossos processos, contando com o simples fato de que nossos clientes nunca realmente leem nada."
+          "description": "Mantemos comunicação transparente sobre prazos, custos e desafios técnicos."
         },
         "loyal": {
           "title": "Leais",
-          "description": "Fomentamos relacionamentos de longo prazo com nossos clientes que vão além de apenas entregar um produto, permitindo-nos faturar por décadas."
+          "description": "Construímos parcerias duradouras baseadas em confiança e resultados consistentes."
         },
         "innovative": {
           "title": "Inovadores",
-          "description": "O cenário tecnológico está sempre evoluindo e nós também. Estamos constantemente em busca de novos projetos de código aberto para clonar."
+          "description": "Exploramos novas tecnologias e metodologias para entregar soluções cada vez mais eficientes."
         }
       }
     }
