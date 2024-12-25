@@ -137,6 +137,63 @@
         "tag5": "Provas de conceito",
         "tag6": "Auditoria forense"
       }
+    },
+    "build": {
+      "title": "Construção",
+      "paragraph1": "Com base na fase de descoberta, desenvolvemos um roteiro abrangente para cada produto e começamos a trabalhar para a entrega. O roteiro é uma bagunça intricadamente emaranhada de nonsense técnico projetado para arrastar o projeto o máximo possível.",
+      "paragraph2": "Cada cliente é designado a um gerente de contas chave para manter as linhas de comunicação abertas e obscurecer o progresso real do projeto. Eles atuam como um buffer entre a insistência incessante do cliente e a equipe de desenvolvimento que está trabalhando arduamente vasculhando projetos de código aberto para reaproveitar código.",
+      "paragraph3": "Nossos gerentes de contas são treinados para responder aos e-mails dos clientes apenas após as 21h, vários dias após o e-mail inicial. Isso reforça a aura geral de que estamos muito ocupados e dissuade os clientes de pedir mudanças.",
+      "blockquote": "A equipe do estúdio era tão regular com suas atualizações de progresso que quase começamos a pensar que eram automatizadas!"
+    },
+    "deliver": {
+      "title": "Entrega",
+      "paragraph1": "Cerca de metade da fase de Construção, adiamos cada projeto em 6 semanas devido a uma mudança nos <strong>requisitos</strong>. Isso nos permite aumentar o orçamento uma última vez antes do lançamento.",
+      "paragraph2": "Apesar de usar principalmente componentes pré-construídos, a maior parte do <strong>progresso</strong> em cada projeto ocorre nas últimas 24 horas. O tempo de desenvolvimento alocado para cada cliente é realmente gasto fazendo demos de realidade aumentada que se tornam virais nas redes sociais.",
+      "paragraph3": "Garantimos que as principais páginas do site estejam <strong>totalmente funcionais</strong> no lançamento — as páginas auxiliares serão, é claro, shells de lorem ipsum que serão atualizadas como parte do nosso exorbitante retentor de <strong>manutenção</strong>.",
+      "included": "Incluído nesta fase",
+      "item1": {
+        "title": "Testes",
+        "description": "Nossos projetos sempre têm 100% de cobertura de teste, o que seria impressionante se nossos testes não fossem tão porosos quanto uma peneira."
+      },
+      "item2": {
+        "title": "Infraestrutura",
+        "description": "Para garantir a confiabilidade, usamos apenas os melhores droplets do Digital Ocean que $4 por mês podem comprar."
+      },
+      "item3": {
+        "title": "Suporte",
+        "description": "Como possuímos as chaves da API para todos os serviços críticos que sua empresa usa, você pode esperar uma vida inteira de suporte, e faturas, de nós."
+      }
+    },
+    "values": {
+      "eyebrow": "Nossos Valores",
+      "title": "Equilibrando confiabilidade e inovação",
+      "subtitle": "Nos esforçamos para estar na vanguarda das tendências e tecnologias emergentes, enquanto as ignoramos completamente e bifurcamos aquele antigo projeto Rails com o qual nos sentimos confortáveis. Defendemos nossos valores fundamentais para justificar essa decisão.",
+      "items": {
+        "meticulous": {
+          "title": "Meticulosos",
+          "description": "A primeira parte de qualquer parceria é fazer nosso designer colocar seu logotipo em nosso template. O segundo passo é fazer com que eles escolham as cores."
+        },
+        "efficient": {
+          "title": "Eficientes",
+          "description": "Nos orgulhamos de nunca perder um prazo, o que é fácil porque a maior parte do trabalho foi feita anos atrás."
+        },
+        "adaptable": {
+          "title": "Adaptáveis",
+          "description": "Cada negócio tem necessidades únicas e nosso maior desafio é encaixar essas necessidades em algo que já construímos."
+        },
+        "honest": {
+          "title": "Honestos",
+          "description": "Somos transparentes sobre todos os nossos processos, contando com o simples fato de que nossos clientes nunca realmente leem nada."
+        },
+        "loyal": {
+          "title": "Leais",
+          "description": "Fomentamos relacionamentos de longo prazo com nossos clientes que vão além de apenas entregar um produto, permitindo-nos faturar por décadas."
+        },
+        "innovative": {
+          "title": "Inovadores",
+          "description": "O cenário tecnológico está sempre evoluindo e nós também. Estamos constantemente em busca de novos projetos de código aberto para clonar."
+        }
+      }
     }
   }
 }
