@@ -220,5 +220,53 @@
     "published": "Published",
     "author": "Author",
     "readMore": "Read more"
+  },
+  "About": {
+    "eyebrow": "About us",
+    "hero_title": "Our strength lies in technical innovation",
+    "hero_subtitle": "We believe that our strength lies in our advanced technological approach, which places measurable results at the center of every solution.",
+    "main_paragraph": "Div Technology was founded by technology experts who identified the need for a development partner that combined technical excellence with business results. From the beginning, our commitment has been to deliver innovative solutions that generate real impact.",
+    "secondary_paragraph": "At Div Technology, we are more than a software company - we are architects of digital transformation. Our team of experts works with the most advanced technologies and agile methodologies, ensuring high-quality deliveries that exceed expectations.",
+    "stats": {
+      "projects": {
+        "value": "35",
+        "label": "Projects delivered"
+      },
+      "clients": {
+        "value": "52",
+        "label": "Satisfied clients"
+      },
+      "revenue": {
+        "value": "$2.5M",
+        "label": "Value generated"
+      }
+    },
+    "culture": {
+      "eyebrow": "Our culture",
+      "title": "Culture of innovation and excellence",
+      "subtitle": "Our culture is based on values that promote innovation, technical excellence, and collaboration. We believe that the diversity of experiences and perspectives is essential for creating innovative and effective solutions.",
+      "values": {
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly seek new technologies and methodologies to create innovative solutions that drive our clients' growth."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Our pursuit of technical excellence is reflected in every line of code we write and in every solution we deliver."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "We believe that collaboration is essential for success. We work closely with our clients to ensure their needs are met."
+        }
+      }
+    },
+    "team": {
+      "leadership": "Leadership",
+      "team": "Team"
+    },
+    "pageLinks": {
+      "title": "From the blog",
+      "intro": "Learn more about Div Technology and our innovative approach to developing technological solutions."
+    }
   }
 }

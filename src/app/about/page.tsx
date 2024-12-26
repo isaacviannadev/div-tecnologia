@@ -10,45 +10,36 @@ import { PageIntro } from '@div/components/PageIntro'
 import { PageLinks } from '@div/components/PageLinks'
 import { SectionIntro } from '@div/components/SectionIntro'
 import { StatList, StatListItem } from '@div/components/StatList'
-import imageAngelaFisher from '@div/images/team/angela-fisher.jpeg'
-import imageBenjaminRussel from '@div/images/team/benjamin-russel.jpeg'
-import imageBlakeReid from '@div/images/team/blake-reid.jpeg'
-import imageChelseaHagon from '@div/images/team/chelsea-hagon.jpeg'
-import imageDriesVincent from '@div/images/team/dries-vincent.jpeg'
-import imageEmmaDorsey from '@div/images/team/emma-dorsey.jpeg'
-import imageJeffreyWebb from '@div/images/team/jeffrey-webb.jpeg'
-import imageKathrynMurphy from '@div/images/team/kathryn-murphy.jpeg'
-import imageLeonardKrasner from '@div/images/team/leonard-krasner.jpeg'
-import imageLeslieAlexander from '@div/images/team/leslie-alexander.jpeg'
-import imageMichaelFoster from '@div/images/team/michael-foster.jpeg'
-import imageWhitneyFrancis from '@div/images/team/whitney-francis.jpeg'
+import imageEricSilva from '@div/images/team/eric-silva.jpeg'
+import imageGuilhermeChagas from '@div/images/team/guilherme-chagas.jpeg'
+import imageIsaacVianna from '@div/images/team/isaac-vianna.jpeg'
+import imageLeoSgarbi from '@div/images/team/leo-sgarbi.jpeg'
+import imageMarcosRoberto from '@div/images/team/marcos.jpeg'
+import imageMatheusGomes from '@div/images/team/matheus-gomes.jpeg'
+import imageMyllenaFerreira from '@div/images/team/myllena-ferreira.jpeg'
+import imageRodrigoLuparelli from '@div/images/team/rodrigo-luparelli.jpeg'
 import { loadArticles } from '@div/lib/mdx'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
 function Culture() {
+  const t = useTranslations('About.culture')
+
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
-      <SectionIntro
-        eyebrow="Our culture"
-        title="Balance your passion with your passion for life."
-        invert
-      >
-        <p>
-          We are a group of like-minded people who share the same core values.
-        </p>
+      <SectionIntro eyebrow={t('eyebrow')} title={t('title')} invert>
+        <p>{t('subtitle')}</p>
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
+          <GridListItem title={t('values.innovation.title')} invert>
+            {t('values.innovation.description')}
           </GridListItem>
-          <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
-            every waking second.
+          <GridListItem title={t('values.excellence.title')} invert>
+            {t('values.excellence.description')}
           </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
+          <GridListItem title={t('values.collaboration.title')} invert>
+            {t('values.collaboration.description')}
           </GridListItem>
         </GridList>
       </Container>
@@ -56,80 +47,62 @@ function Culture() {
   )
 }
 
-const team = [
-  {
-    title: 'Leadership',
-    people: [
-      {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
-        image: { src: imageLeslieAlexander },
-      },
-      {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        image: { src: imageMichaelFoster },
-      },
-      {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
-        image: { src: imageDriesVincent },
-      },
-    ],
-  },
-  {
-    title: 'Team',
-    people: [
-      {
-        name: 'Chelsea Hagon',
-        role: 'Senior Developer',
-        image: { src: imageChelseaHagon },
-      },
-      {
-        name: 'Emma Dorsey',
-        role: 'Senior Designer',
-        image: { src: imageEmmaDorsey },
-      },
-      {
-        name: 'Leonard Krasner',
-        role: 'VP, User Experience',
-        image: { src: imageLeonardKrasner },
-      },
-      {
-        name: 'Blake Reid',
-        role: 'Junior Copywriter',
-        image: { src: imageBlakeReid },
-      },
-      {
-        name: 'Kathryn Murphy',
-        role: 'VP, Human Resources',
-        image: { src: imageKathrynMurphy },
-      },
-      {
-        name: 'Whitney Francis',
-        role: 'Content Specialist',
-        image: { src: imageWhitneyFrancis },
-      },
-      {
-        name: 'Jeffrey Webb',
-        role: 'Account Coordinator',
-        image: { src: imageJeffreyWebb },
-      },
-      {
-        name: 'Benjamin Russel',
-        role: 'Senior Developer',
-        image: { src: imageBenjaminRussel },
-      },
-      {
-        name: 'Angela Fisher',
-        role: 'Front-end Developer',
-        image: { src: imageAngelaFisher },
-      },
-    ],
-  },
-]
-
 function Team() {
+  const t = useTranslations('About.team')
+
+  const team = [
+    {
+      title: t('leadership'),
+      people: [
+        {
+          name: 'Isaac Vianna',
+          role: 'Co-Founder / CEO',
+          image: { src: imageIsaacVianna },
+        },
+        {
+          name: 'Guilherme Chagas',
+          role: 'Co-Founder / CPO',
+          image: { src: imageGuilhermeChagas },
+        },
+        {
+          name: 'Matheus Gomes',
+          role: 'Co-Founder / CTO',
+          image: { src: imageMatheusGomes },
+        },
+      ],
+    },
+    {
+      title: t('team'),
+      people: [
+        {
+          name: 'Myllena Ferreira',
+          role: 'Compliance Officer, QA',
+          image: { src: imageMyllenaFerreira },
+        },
+        {
+          name: 'Eric Silva',
+          role: 'UX Designer',
+          image: { src: imageEricSilva },
+        },
+        {
+          name: 'Rodrigo Luparelli',
+          role: 'Senior Developer',
+          image: { src: imageRodrigoLuparelli },
+        },
+        {
+          name: 'Marcos Roberto',
+          role: 'Data Analyst',
+          image: { src: imageMarcosRoberto },
+        },
+        {
+          name: 'Léo Sgarbi',
+          role: 'Junior Developer',
+          image: { src: imageLeoSgarbi },
+        },
+      ],
+    },
+  ]
+
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <div className="space-y-24">
@@ -183,34 +156,31 @@ export const metadata: Metadata = {
 
 export default async function About() {
   const blogArticles = (await loadArticles()).slice(0, 2)
+  const t = await getTranslations('About')
 
   return (
     <>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
-        <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
-        </p>
+      <PageIntro eyebrow={t('eyebrow')} title={t('hero_title')}>
+        <p>{t('hero_subtitle')}</p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
-          <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
-          </p>
-          <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
-          </p>
+          <p>{t('main_paragraph')}</p>
+          <p>{t('secondary_paragraph')}</p>
         </div>
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem
+            value={t('stats.projects.value')}
+            label={t('stats.projects.label')}
+          />
+          <StatListItem
+            value={t('stats.clients.value')}
+            label={t('stats.clients.label')}
+          />
+          <StatListItem
+            value={t('stats.revenue.value')}
+            label={t('stats.revenue.label')}
+          />
         </StatList>
       </Container>
 
@@ -220,8 +190,8 @@ export default async function About() {
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
-        title="From the blog"
-        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
+        title={t('pageLinks.title')}
+        intro={t('pageLinks.intro')}
         pages={blogArticles}
       />
 

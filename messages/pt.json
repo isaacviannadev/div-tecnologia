@@ -220,5 +220,53 @@
     "published": "Publicado",
     "author": "Autor",
     "readMore": "Leia mais"
+  },
+  "About": {
+    "eyebrow": "Sobre nós",
+    "hero_title": "Nossa força está na inovação técnica",
+    "hero_subtitle": "Acreditamos que nossa força está em nossa abordagem tecnológica avançada, que coloca resultados mensuráveis no centro de cada solução.",
+    "main_paragraph": "A Div Tecnologia foi fundada por especialistas em tecnologia que identificaram a necessidade de um parceiro de desenvolvimento que combinasse excelência técnica com resultados de negócio. Desde o início, nosso compromisso tem sido entregar soluções inovadoras que geram impacto real.",
+    "secondary_paragraph": "Na Div Tecnologia, somos mais que uma empresa de software - somos arquitetos de transformação digital. Nosso time de especialistas trabalha com as mais avançadas tecnologias e metodologias ágeis, garantindo entregas de alta qualidade que superam expectativas.",
+    "stats": {
+      "projects": {
+        "value": "35",
+        "label": "Projetos entregues"
+      },
+      "clients": {
+        "value": "52",
+        "label": "Clientes satisfeitos"
+      },
+      "revenue": {
+        "value": "R$2.5M",
+        "label": "Valor gerado"
+      }
+    },
+    "culture": {
+      "eyebrow": "Nossa cultura",
+      "title": "Cultura de inovação e excelência",
+      "subtitle": "Nossa cultura é baseada em valores que promovem a inovação, a excelência técnica e a colaboração. Acreditamos que a diversidade de experiências e perspectivas é essencial para a criação de soluções inovadoras e eficazes.",
+      "values": {
+        "innovation": {
+          "title": "Inovação",
+          "description": "Buscamos constantemente novas tecnologias e metodologias para criar soluções inovadoras que impulsionam o crescimento dos nossos clientes."
+        },
+        "excellence": {
+          "title": "Excelência",
+          "description": "Nossa busca pela excelência técnica é refletida em cada linha de código que escrevemos e em cada solução que entregamos."
+        },
+        "collaboration": {
+          "title": "Colaboração",
+          "description": "Acreditamos que a colaboração é essencial para o sucesso. Trabalhamos em estreita parceria com nossos clientes para garantir que suas necessidades sejam atendidas."
+        }
+      }
+    },
+    "team": {
+      "leadership": "Liderança",
+      "team": "Equipe"
+    },
+    "pageLinks": {
+      "title": "Do blog",
+      "intro": "Conheça mais sobre a Div Tecnologia e nossa abordagem inovadora para o desenvolvimento de soluções tecnológicas."
+    }
   }
 }
