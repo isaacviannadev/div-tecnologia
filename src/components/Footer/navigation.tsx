@@ -25,7 +25,7 @@ function Navigation() {
       links: [
         { title: t('navItems.zeloclub'), href: '/work/zeloclub' },
         { title: t('navItems.activ8'), href: '/work/activ8' },
-        { title: t('navItems.unseal'), href: '/work/unseal' },
+        { title: t('navItems.worten'), href: '/work/worten' },
         {
           title: (
             <>

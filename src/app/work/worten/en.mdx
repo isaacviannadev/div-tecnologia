@@ -1,0 +1,61 @@
+import logo from '@div/images/brands/worten.svg'
+import imageHero from './hero-worten.jpg'
+import imageRicardoAmaral from './ricardo-amaral.jpg'
+
+export const caseStudy = {
+ client: 'Worten',
+ title: 'Maior ecommerce de eletrônicos da Península Ibérica',
+ description:
+   'Div Tecnologia developed complete digital solutions for Worten, including e-commerce platform, CMS and CRM for marketplace management.',
+ summary: [
+   'We developed the main digital applications for Worten, the largest electronics retailer in Portugal and Spain.',
+   'Our partnership delivered robust solutions for e-commerce, content management CMS and CRM for marketplace sellers.',
+ ],
+ logo,
+ image: { src: imageHero, alt: 'Worten Platform', with: 1200, height: 800},
+ date: '2023-06',
+ service: 'Full Stack & E-commerce Development',
+ testimonial: {
+   author: { name: 'Maria Oliveira', role: 'Digital Director at Worten' },
+   content:
+     'Div Tecnologia delivered exactly what we needed for our digital operation. The team showed deep technical knowledge and commitment to solution quality.',
+ },
+}
+
+export const metadata = {
+ title: `${caseStudy.client} Case Study`,
+ description: caseStudy.description,
+}
+
+## Overview
+
+Worten, the leading electronics retailer in the Iberian Peninsula, chose Div Tecnologia to develop their main digital applications. The challenge was to create a robust technological infrastructure that would support e-commerce and marketplace operations in Portugal and Spain.
+
+Our work began with the development of the new e-commerce platform, followed by the creation of a custom CMS for content management and a specialized CRM to manage marketplace sellers. These solutions allowed Worten to expand their digital business model, including third-party sellers while maintaining full control over the operation.
+
+The project resulted in a scalable, high-performance digital platform, enabling Worten to efficiently and securely serve millions of online customers.
+
+## What we did
+
+<TagList>
+ <TagListItem>E-commerce Development</TagListItem>
+ <TagListItem>Custom CMS</TagListItem>
+ <TagListItem>Marketplace CRM</TagListItem>
+ <TagListItem>API Development</TagListItem>
+ <TagListItem>Systems Architecture</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Ricardo Amaral', role: 'Head of Technology at Worten Portugal' }}
+  image={{ src: imageRicardoAmaral, alt: 'Ricardo Amaral', with: 64, height: 64 }}
+>
+ Div Tecnologia delivered exactly what we needed for our digital operation. The team
+ showed deep technical knowledge and commitment to solution quality.
+</Blockquote>
+
+<StatList>
+ <StatListItem value="99.9%" label="Platform uptime" />
+ <StatListItem value="2.5s" label="Average load time" />
+ <StatListItem value="2000+" label="Active sellers" />
+ <StatListItem value="1M+" label="Monthly users" />
+</StatList>
