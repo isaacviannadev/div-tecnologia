@@ -37,7 +37,9 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<typeof StatList>) {
     return (
-      <StatList className={clsx('my-32 !max-w-none', className)} {...props} />
+      <StatList className={clsx('my-32 !max-w-none', className)} {...props}>
+        {props.children}
+      </StatList>
     )
   },
   StatListItem,
