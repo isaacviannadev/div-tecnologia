@@ -5,6 +5,7 @@ import { MDXComponents } from '@div/components/MDXComponents'
 import { PageLinks } from '@div/components/PageLinks'
 import { formatDate } from '@div/lib/formatDate'
 import { type Article, type MDXEntry, loadArticles } from '@div/lib/mdx'
+import { getTranslations } from 'next-intl/server'
 
 export default async function BlogArticleWrapper({
   article,
@@ -17,6 +18,7 @@ export default async function BlogArticleWrapper({
   const moreArticles = allArticles
     .filter(({ metadata }) => metadata !== article)
     .slice(0, 2)
+  const t = await getTranslations('Blog')
 
   return (
     <>
@@ -33,7 +35,7 @@ export default async function BlogArticleWrapper({
               {formatDate(article.date)}
             </time>
             <p className="mt-6 text-sm font-semibold text-neutral-950">
-              by {article.author.name}, {article.author.role}
+              {t('by')} {article.author.name}, {article.author.role}
             </p>
           </header>
         </FadeIn>
@@ -48,7 +50,7 @@ export default async function BlogArticleWrapper({
       {moreArticles.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
-          title="More articles"
+          title={t('moreArticles')}
           pages={moreArticles}
         />
       )}

@@ -3,14 +3,16 @@ import Link from 'next/link'
 import Icons from '../Icons'
 
 export const socialMediaProfiles = [
-  { title: 'Facebook', href: 'https://facebook.com', icon: Icons.FacebookIcon },
   {
-    title: 'Instagram',
-    href: 'https://instagram.com',
-    icon: Icons.InstagramIcon,
+    title: 'GitHub',
+    href: 'https://github.com/CodeTheApp',
+    icon: Icons.GitHubIcon,
   },
-  { title: 'GitHub', href: 'https://github.com', icon: Icons.GitHubIcon },
-  { title: 'Dribbble', href: 'https://dribbble.com', icon: Icons.DribbbleIcon },
+  {
+    title: 'LinkedIn',
+    href: 'https://linkedin.com/company/div-tecnologia',
+    icon: Icons.LinkedInIcon,
+  },
 ]
 
 export function SocialMedia({

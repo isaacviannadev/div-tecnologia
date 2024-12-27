@@ -219,7 +219,9 @@
     "subtitle": "Our blog is a space for sharing knowledge and insights about the digital world. We publish articles, tutorials, and case studies that help you stay ahead in the market.",
     "published": "Published",
     "author": "Author",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "by": "by",
+    "moreArticles": "More articles"
   },
   "About": {
     "eyebrow": "About us",

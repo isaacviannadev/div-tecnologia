@@ -219,7 +219,9 @@
     "subtitle": "Nosso blog é um espaço para compartilhar conhecimento e insights sobre o mundo digital. Publicamos artigos, tutoriais e estudos de caso que ajudam você a se manter à frente no mercado.",
     "published": "Publicado",
     "author": "Autor",
-    "readMore": "Leia mais"
+    "readMore": "Leia mais",
+    "by": "por",
+    "moreArticles": "Mais artigos"
   },
   "About": {
     "eyebrow": "Sobre nós",
