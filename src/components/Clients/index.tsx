@@ -4,25 +4,42 @@ import Image from 'next/image'
 import { Container } from '@div/components/Container'
 import { FadeIn, FadeInStagger } from '@div/components/FadeIn'
 import {
+  adentis,
   cartier,
+  crowd,
   farfetch,
   ferragamo,
+  ferrari,
   hurb,
+  lilly,
   mgm,
+  netlinks,
   qconcursos,
+  sana,
   wella,
   worten,
+  zeloclub,
 } from '@div/images/brands'
 
 const clients = [
+  ['Ferrari', ferrari],
+  ['MGM Resorts', mgm],
   ['Wella', wella],
+  ['Cartier', cartier],
   ['Worten', worten],
   ['Farfetch', farfetch],
   ['Ferragamo', ferragamo],
+  ['Sana', sana],
+]
+
+const minorClients = [
+  ['Zelo Club', zeloclub],
   ['Hurb', hurb],
-  ['MGM Resorts', mgm],
   ['Qconcursos', qconcursos],
-  ['Cartier', cartier],
+  ['Adentis', adentis],
+  ['Crowd', crowd],
+  ['Netlinks', netlinks],
+  ['Lilly', lilly],
 ]
 
 function Clients() {
@@ -43,7 +60,26 @@ function Clients() {
               <li key={client} className="place-content-center">
                 <FadeIn>
                   <Image
-                    className="h-auto w-48 text-white"
+                    className="h-auto max-h-24 w-36 text-white"
+                    src={logo}
+                    alt={client}
+                    unoptimized
+                  />
+                </FadeIn>
+              </li>
+            ))}
+          </ul>
+        </FadeInStagger>
+      </Container>
+
+      <Container>
+        <FadeInStagger faster>
+          <ul className="mt-20 grid grid-cols-4 gap-x-8 gap-y-14 lg:grid-cols-7">
+            {minorClients.map(([client, logo]) => (
+              <li key={client} className="place-content-center">
+                <FadeIn>
+                  <Image
+                    className="h-auto max-h-12 w-20 text-white"
                     src={logo}
                     alt={client}
                     unoptimized

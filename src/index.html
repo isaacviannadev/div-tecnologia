@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: #26282C;
+    }
+
+    .slide {
+      width: 1024px;
+      height: 768px;
+      margin: 20px auto;
+      padding: 40px;
+      background: white;
+      position: relative;
+      page-break-after: always;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .capa {
+      background: linear-gradient(45deg, #033D6C 0%, #2F77A7 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Passion One', cursive;
+      text-transform: uppercase;
+      margin: 0 0 20px 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #033D6C;
+    }
+
+    .capa h1 {
+      color: white;
+      font-size: 72px;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #519DC4;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.5;
+      margin: 0 0 15px 0;
+    }
+
+    ul {
+      font-size: 24px;
+      line-height: 1.5;
+      margin: 0 0 15px 0;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 150px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .fase {
+      background: #F3F4F6;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .fase h3 {
+      color: #033D6C;
+      margin: 0 0 10px 0;
+      font-size: 28px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Capa -->
+  <div class="slide capa">
+    <img src="/api/placeholder/200/80" alt="DIV Tecnologia" class="logo">
+    <h1>Proposta Técnica e Comercial</h1>
+    <h2>Projeto Barra Limpa</h2>
+    <p style="text-align: center; margin-top: 40px;">Janeiro 2025</p>
+  </div>
+
+  <!-- Sobre a DIV -->
+  <div class="slide">
+    <h1>Sobre a DIV Tecnologia</h1>
+    <ul>
+      <li>Consultoria especializada em desenvolvimento de software</li>
+      <li>Foco em soluções escaláveis e de alta performance</li>
+      <li>Metodologias ágeis e tecnologias modernas</li>
+      <li>Expertise em transformação digital</li>
+      <li>Atendimento personalizado e focado em resultados</li>
+    </ul>
+  </div>
+
+  <!-- Contextualização -->
+  <div class="slide">
+    <h1>Contextualização</h1>
+    <p>O projeto Barra Limpa é uma plataforma de denúncias ambientais que visa facilitar o registro e gerenciamento de
+      ocorrências na região da Barra da Tijuca, Rio de Janeiro.</p>
+    <div class="grid-2">
+      <div>
+        <h2>Cenário Atual</h2>
+        <ul>
+          <li>Baixa performance</li>
+          <li>Dificuldade de escala</li>
+          <li>Processos manuais</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Oportunidades</h2>
+        <ul>
+          <li>Modernização tecnológica</li>
+          <li>Automação de processos</li>
+          <li>Preparação para crescimento</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnóstico -->
+  <div class="slide">
+    <h1>Diagnóstico das Dores</h1>
+    <ul>
+      <li>Ausência de cache, resultando em baixa performance</li>
+      <li>Performance comprometida em geral</li>
+      <li>Ausência de processo de CI/CD</li>
+      <li>Falta de documentação técnica</li>
+      <li>Inexistência de ambiente de testes</li>
+      <li>Dificuldade de escalar para novos clientes</li>
+    </ul>
+  </div>
+
+  <!-- Solução Proposta - Arquitetura -->
+  <div class="slide">
+    <h1>Solução Proposta</h1>
+    <h2>Arquitetura e Infraestrutura</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Modernização</h3>
+        <ul>
+          <li>Arquitetura multi-tenant</li>
+          <li>Microsserviços</li>
+          <li>Cache distribuído</li>
+          <li>Containerização</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cloud</h3>
+        <ul>
+          <li>Azure Kubernetes Service</li>
+          <li>CDN</li>
+          <li>Load Balancing</li>
+          <li>Application Insights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend -->
+  <div class="slide">
+    <h1>Backend</h1>
+    <div class="grid-2">
+      <div>
+        <h2>Otimizações</h2>
+        <ul>
+          <li>Cache em múltiplas camadas</li>
+          <li>Otimização de queries</li>
+          <li>Processamento assíncrono</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Padronização</h2>
+        <ul>
+          <li>Clean Architecture</li>
+          <li>Documentação Swagger</li>
+          <li>Testes automatizados</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frontend -->
+  <div class="slide">
+    <h1>Frontend</h1>
+    <div class="grid-2">
+      <div>
+        <h2>Performance</h2>
+        <ul>
+          <li>PWA</li>
+          <li>Lazy loading</li>
+          <li>Otimização de bundle</li>
+          <li>Cache de assets</li>
+        </ul>
+      </div>
+      <div>
+        <h2>UX/UI</h2>
+        <ul>
+          <li>Design System</li>
+          <li>Feedback visual</li>
+          <li>Acessibilidade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DevOps -->
+  <div class="slide">
+    <h1>DevOps</h1>
+    <div class="grid-2">
+      <div>
+        <h2>CI/CD</h2>
+        <ul>
+          <li>Azure DevOps Pipeline</li>
+          <li>Múltiplos ambientes</li>
+          <li>Testes automatizados</li>
+          <li>Deploy automático</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Monitoramento</h2>
+        <ul>
+          <li>Logs estruturados</li>
+          <li>Dashboards</li>
+          <li>Alertas automáticos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time -->
+  <div class="slide">
+    <h1>Nosso Time</h1>
+    <div class="grid-2">
+      <div>
+        <h2>Product Owner</h2>
+        <ul>
+          <li>Gestão do backlog</li>
+          <li>Priorização de demandas</li>
+          <li>Interface com stakeholders</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Desenvolvedores</h2>
+        <ul>
+          <li>Frontend + UI/UX</li>
+          <li>Backend + Arquitetura</li>
+          <li>DevOps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cronograma -->
+  <div class="slide">
+    <h1>Cronograma</h1>
+    <div class="fase">
+      <h3>Fase 1 - 2 meses</h3>
+      <ul>
+        <li>Setup inicial de infraestrutura</li>
+        <li>Implementação de CI/CD</li>
+        <li>Desenvolvimento da arquitetura multi-tenant</li>
+      </ul>
+    </div>
+    <div class="fase">
+      <h3>Fase 2 - 3 meses</h3>
+      <ul>
+        <li>Desenvolvimento das funcionalidades core</li>
+        <li>Implementação de cache</li>
+        <li>Otimizações de performance</li>
+      </ul>
+    </div>
+    <div class="fase">
+      <h3>Fase 3 - 1 mês</h3>
+      <ul>
+        <li>Migração de dados</li>
+        <li>Ajustes finais</li>
+        <li>Treinamento e Go-live</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Investimento -->
+  <div class="slide">
+    <h1>Investimento</h1>
+    <p>Projeto estimado em 960 horas totais, distribuídas em 6 meses:</p>
+    <ul>
+      <li>Product Owner: 320 horas</li>
+      <li>Frontend/UI/UX: 320 horas</li>
+      <li>Backend/Arquiteto: 320 horas</li>
+    </ul>
+    <div style="margin-top: 40px;">
+      <h2>Garantias</h2>
+      <ul>
+        <li>Garantia técnica de 3 meses</li>
+        <li>Suporte durante todo o projeto</li>
+        <li>Documentação completa</li>
+        <li>Código fonte versionado</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contato -->
+  <div class="slide">
+    <h1>Entre em Contato</h1>
+    <div style="text-align: center; margin-top: 100px;">
+      <p>DIV Tecnologia</p>
+      <p>contato@divtecnologia.com.br</p>
+      <p>(XX) XXXX-XXXX</p>
+      <p>www.divtecnologia.com.br</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

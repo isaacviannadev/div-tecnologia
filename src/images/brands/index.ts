@@ -7,11 +7,13 @@ import farfetchBlack from './farfetch-black.svg'
 import farfetch from './farfetchX.svg'
 import ferragamoBlack from './ferragamoX-black.svg'
 import ferragamo from './ferragamoX.svg'
+import ferrari from './ferrari.svg'
 import hurb from './hurb.svg'
 import lilly from './lilly.svg'
 import mgm from './mgm.png'
 import netlinks from './netlinks.svg'
 import qconcursos from './qconcursos.svg'
+import sana from './sana-logo.svg'
 import wella from './wella-logo.svg'
 import worten from './worten.svg'
 import zeloHeart from './zelo-heart.svg'
@@ -27,11 +29,13 @@ export {
   farfetchBlack,
   ferragamo,
   ferragamoBlack,
+  ferrari,
   hurb,
   lilly,
   mgm,
   netlinks,
   qconcursos,
+  sana,
   wella,
   worten,
   zeloclub,
