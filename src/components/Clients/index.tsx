@@ -58,7 +58,7 @@ function Clients() {
           <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
             {clients.map(([client, logo]) => (
               <li key={client} className="place-content-center">
-                <FadeIn>
+                <FadeIn className="flex items-center justify-center">
                   <Image
                     className="h-auto max-h-24 w-36 text-white"
                     src={logo}
@@ -74,10 +74,10 @@ function Clients() {
 
       <Container>
         <FadeInStagger faster>
-          <ul className="mt-20 grid grid-cols-4 gap-x-8 gap-y-14 lg:grid-cols-7">
+          <ul className="mt-20 grid grid-cols-3 gap-x-8 gap-y-14 lg:grid-cols-7">
             {minorClients.map(([client, logo]) => (
               <li key={client} className="place-content-center">
-                <FadeIn>
+                <FadeIn className="flex items-center justify-center">
                   <Image
                     className="h-auto max-h-12 w-20 text-white"
                     src={logo}
