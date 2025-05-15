@@ -30,7 +30,7 @@ function Header({
         <Link href="/" aria-label="Home">
           <Logo
             className={clsx(
-              'h-12 sm:block',
+              'h-12 w-fit sm:block',
               expanded ? 'text-white' : 'neutral-950',
             )}
           />
