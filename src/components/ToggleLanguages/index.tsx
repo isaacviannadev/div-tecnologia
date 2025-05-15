@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Cookies from 'js-cookie'
 import { useLocale } from 'next-intl'
 import { useState } from 'react'
+import Icons from '../Icons'
 
 type ToggleLanguagesProps = {
   className?: string
@@ -17,6 +18,7 @@ const ToggleLanguages = ({ className = '' }: ToggleLanguagesProps) => {
     setLanguage(newLanguage)
     // Define o cookie com a nova preferência de idioma
     Cookies.set(LANGUAGE_COOKIE, newLanguage, { path: '/' })
+    // document.cookie = `${LANGUAGE_COOKIE}=${newLanguage};path=/`
     // Recarrega a página para aplicar o novo idioma
     window.location.reload()
   }
@@ -26,20 +28,20 @@ const ToggleLanguages = ({ className = '' }: ToggleLanguagesProps) => {
       <button
         onClick={() => toggleLanguage('pt')}
         className={clsx(
-          'rounded p-1 text-2xl transition-all duration-200 hover:bg-black/5',
-          language === 'pt' ? 'bg-black/10 opacity-100' : 'opacity-50',
+          'h-6 w-6 rounded transition-all duration-200 hover:scale-110 hover:bg-black/5 hover:saturate-100',
+          language === 'pt' ? 'bg-black/10 opacity-100' : 'saturate-0',
         )}
       >
-        🇧🇷
+        <Icons.BrazilFlagIcon className="h-full w-full" />
       </button>
       <button
         onClick={() => toggleLanguage('en')}
         className={clsx(
-          'rounded p-1 text-2xl transition-all duration-200 hover:bg-black/5',
-          language === 'en' ? 'bg-black/10 opacity-100' : 'opacity-50',
+          'h-6 w-6 rounded transition-all duration-200 hover:scale-105 hover:bg-black/5 hover:saturate-100',
+          language === 'en' ? 'bg-black/10 opacity-100' : 'saturate-0',
         )}
       >
-        🇺🇸
+        <Icons.USAFlagIcon className="h-full w-full" />
       </button>
     </div>
   )
