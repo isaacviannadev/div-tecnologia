@@ -18,7 +18,6 @@ const ToggleLanguages = ({ className = '' }: ToggleLanguagesProps) => {
     setLanguage(newLanguage)
     // Define o cookie com a nova preferência de idioma
     Cookies.set(LANGUAGE_COOKIE, newLanguage, { path: '/' })
-    // document.cookie = `${LANGUAGE_COOKIE}=${newLanguage};path=/`
     // Recarrega a página para aplicar o novo idioma
     window.location.reload()
   }

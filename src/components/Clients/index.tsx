@@ -12,7 +12,6 @@ import {
   ferrari,
   hurb,
   lilly,
-  mgm,
   netlinks,
   qconcursos,
   sana,
@@ -23,7 +22,7 @@ import {
 
 const clients = [
   ['Ferrari', ferrari],
-  ['MGM Resorts', mgm],
+  ['Zelo Club', zeloclub],
   ['Wella', wella],
   ['Cartier', cartier],
   ['Worten', worten],
@@ -33,7 +32,7 @@ const clients = [
 ]
 
 const minorClients = [
-  ['Zelo Club', zeloclub],
+  // ['MGM Resorts', mgm],
   ['Hurb', hurb],
   ['Qconcursos', qconcursos],
   ['Adentis', adentis],
