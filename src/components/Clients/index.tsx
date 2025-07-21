@@ -73,7 +73,7 @@ function Clients() {
 
       <Container>
         <FadeInStagger faster>
-          <ul className="mt-20 grid grid-cols-3 gap-x-8 gap-y-14 lg:grid-cols-7">
+          <ul className="mt-20 grid grid-cols-3 gap-x-8 gap-y-14 lg:grid-cols-6">
             {minorClients.map(([client, logo]) => (
               <li key={client} className="place-content-center">
                 <FadeIn className="flex items-center justify-center">
