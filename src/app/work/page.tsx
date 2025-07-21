@@ -14,12 +14,12 @@ import {
   cartier,
   farfetch,
   ferragamo,
-  hurb,
-  mgm,
+  ferrari,
   netlinks,
-  qconcursos,
+  sana,
   wella,
   worten,
+  zeloclub,
 } from '@div/images/brands'
 import { formatDate } from '@div/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@div/lib/mdx'
@@ -104,14 +104,14 @@ function CaseStudies({
 }
 
 const clients = [
+  ['Ferrari', ferrari],
   ['Wella', wella],
   ['Worten', worten],
-  ['MGM Resorts', mgm],
+  ['Cartier', cartier],
   ['Ferragamo', ferragamo],
   ['Farfetch', farfetch],
-  ['Hurb', hurb],
-  ['Cartier', cartier],
-  ['QConcursos', qconcursos],
+  ['Sana', sana],
+  ['Zelo Club', zeloclub],
 ]
 
 function Clients() {
@@ -135,7 +135,7 @@ function Clients() {
                     src={logo}
                     alt={client}
                     unoptimized
-                    className="w-44 invert"
+                    className="h-auto max-h-32 w-44 invert"
                   />
                 </Border>
               </FadeIn>
