@@ -53,7 +53,7 @@ export const clients = {
     en: "Trusted by demanding brands",
   },
   row1: ["Cartier", "Ferrari", "Farfetch", "Ferragamo", "Wella", "Worten"],
-  row2: ["Eli Lilly", "Sana", "Activ8", "Zelo Club", "Hurb", "Qconcursos"],
+  row2: ["Lilly", "Sana", "Activ8", "Zeloclub", "Hurb", "Q-Concursos"],
 };
 
 export const services = {
