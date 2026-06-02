@@ -2,6 +2,8 @@ import type { MailPayload } from "./mail-schema";
 
 const FROM = "DIV Tecnologia <contato@divtecnologia.com.br>";
 const DIV_INBOX = "contato@divtecnologia.com.br";
+const SITE = "https://www.divtecnologia.com.br";
+const LOGO_URL = `${SITE}/brand/div-logo.png`;
 
 /** Minimal structural shape of the Resend client we use — lets tests inject a
     fake. The real `Resend` instance is assignable to this. */
@@ -32,24 +34,50 @@ function esc(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
-const SHELL = (inner: string) =>
-  `<div style="font-family:ui-sans-serif,system-ui,Arial,sans-serif;background:#08080a;color:#f4f3ee;padding:32px">
-     <div style="max-width:560px;margin:0 auto">
-       <div style="font-weight:800;letter-spacing:-0.02em;font-size:22px;color:#f4f3ee">DIV<span style="color:#F4A13F">.</span></div>
-       <div style="height:1px;background:rgba(244,243,238,0.15);margin:20px 0"></div>
-       ${inner}
-       <div style="height:1px;background:rgba(244,243,238,0.15);margin:24px 0"></div>
-       <div style="font-size:12px;color:rgba(244,243,238,0.5)">DIV Tecnologia · Design Systems &amp; Front-end Performance</div>
-     </div>
-   </div>`;
+/* Table-based shell for broad email-client support (Gmail-safe). Dark "ink"
+   card, brand-orange accent bar, real DIV logo (hosted PNG), refined footer. */
+const SHELL = (inner: string) => `
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;background:#08080a;">
+  <tr>
+    <td align="center" style="padding:40px 16px;">
+      <table role="presentation" width="520" cellpadding="0" cellspacing="0" style="width:100%;max-width:520px;background:#0f0f12;border:1px solid rgba(244,243,238,0.12);border-radius:16px;overflow:hidden;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+        <tr><td style="height:3px;line-height:3px;font-size:0;background:#F4A13F;">&nbsp;</td></tr>
+        <tr>
+          <td style="padding:36px 40px 0;">
+            <img src="${LOGO_URL}" alt="DIV Tecnologia" width="92" height="26" style="display:block;width:92px;height:auto;border:0;outline:none;text-decoration:none;" />
+          </td>
+        </tr>
+        <tr><td style="padding:28px 40px 36px;">${inner}</td></tr>
+        <tr>
+          <td style="padding:22px 40px;border-top:1px solid rgba(244,243,238,0.1);">
+            <p style="margin:0;font-size:12px;line-height:1.7;color:rgba(244,243,238,0.45);">
+              DIV Tecnologia · Design Systems &amp; Front-end Performance<br />
+              <a href="${SITE}" style="color:#F4A13F;text-decoration:none;">divtecnologia.com.br</a>
+              &nbsp;·&nbsp; RJ · BR / Leiria · PT
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>`;
+
+const H1 =
+  "margin:0 0 14px;font-size:26px;line-height:1.15;font-weight:800;letter-spacing:-0.02em;color:#f4f3ee;";
+const P =
+  "margin:0 0 18px;font-size:15px;line-height:1.65;color:rgba(244,243,238,0.72);";
+const STRONG = "color:#f4f3ee;font-weight:600;";
+const BTN =
+  "display:inline-block;background:#F4A13F;color:#0a0a0a;font-size:14px;font-weight:700;letter-spacing:0.01em;text-decoration:none;padding:13px 22px;border-radius:9px;";
 
 function newsletterHtml(): string {
   return SHELL(
-    `<h1 style="font-size:24px;margin:0 0 12px">Inscrição confirmada 🎉</h1>
-     <p style="color:rgba(244,243,238,0.7);line-height:1.6;margin:0">
-       Você vai receber nossas notas sobre design systems, performance e IA
-       aplicada ao front-end. Sem ruído — só o que importa.
-     </p>`,
+    `<h1 style="${H1}">Inscrição confirmada</h1>
+     <p style="${P}">Você está na lista. Vamos enviar notas sobre
+       <strong style="${STRONG}">design systems</strong>,
+       <strong style="${STRONG}">performance</strong> e
+       <strong style="${STRONG}">IA aplicada ao front-end</strong> — sem ruído, só o que importa.</p>
+     <a href="${SITE}" style="${BTN}">Conhecer a DIV →</a>`,
   );
 }
 
@@ -57,17 +85,17 @@ function contactHtml(payload: Extract<MailPayload, { template: "contact" }>): st
   const message = buildContactMessage(payload.message, payload.services);
   const row = (label: string, value: string) =>
     `<tr>
-       <td style="padding:6px 0;color:rgba(244,243,238,0.5);font-size:13px;width:120px;vertical-align:top">${label}</td>
-       <td style="padding:6px 0;color:#f4f3ee;font-size:14px;line-height:1.5">${value}</td>
+       <td style="padding:11px 0;border-bottom:1px solid rgba(244,243,238,0.08);color:rgba(244,243,238,0.45);font-size:11px;text-transform:uppercase;letter-spacing:0.07em;width:108px;vertical-align:top;">${label}</td>
+       <td style="padding:11px 0;border-bottom:1px solid rgba(244,243,238,0.08);color:#f4f3ee;font-size:14px;line-height:1.55;">${value}</td>
      </tr>`;
   return SHELL(
-    `<h1 style="font-size:22px;margin:0 0 16px">Novo contato pelo site</h1>
-     <table style="width:100%;border-collapse:collapse">
+    `<h1 style="${H1}">Novo contato pelo site</h1>
+     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">
        ${row("Nome", esc(payload.name))}
-       ${row("E-mail", esc(payload.email))}
+       ${row("E-mail", `<a href="mailto:${esc(payload.email)}" style="color:#F4A13F;text-decoration:none;">${esc(payload.email)}</a>`)}
        ${payload.company ? row("Empresa", esc(payload.company)) : ""}
        ${payload.services.length ? row("Serviços", esc(payload.services.join(", "))) : ""}
-       ${row("Mensagem", esc(message).replace(/\n/g, "<br>"))}
+       ${row("Mensagem", esc(message).replace(/\n/g, "<br />"))}
      </table>`,
   );
 }
