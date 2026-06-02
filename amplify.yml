@@ -7,9 +7,9 @@ frontend:
     build:
       commands:
         # Amplify SSR runtimes don't get console env vars by default; write the
-        # MailerSend keys into .env.production so the Next server reads them at
-        # runtime (https://docs.aws.amazon.com/amplify/latest/userguide/ssr-environment-variables.html).
-        - env | grep -e MAILERSEND_API_KEY -e MAILERSEND_NEWSLETTER_TEMPLATE_ID -e MAILERSEND_CONTACT_TEMPLATE_ID >> .env.production
+        # Resend key into .env.production so the Next server reads it at runtime
+        # (https://docs.aws.amazon.com/amplify/latest/userguide/ssr-environment-variables.html).
+        - env | grep -e RESEND_API_KEY >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next

@@ -1,13 +1,13 @@
-import { MailerSend } from "mailersend";
 import { NextResponse } from "next/server";
-import { sendMail } from "../../lib/mail";
+import { Resend } from "resend";
+import { sendMail, type MailClient } from "../../lib/mail";
 import { mailPayloadSchema } from "../../lib/mail-schema";
 
 export async function POST(request: Request) {
-  const apiKey = process.env.MAILERSEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Configuração de e-mail ausente (MAILERSEND_API_KEY)" },
+      { error: "Configuração de e-mail ausente (RESEND_API_KEY)" },
       { status: 500 },
     );
   }
@@ -25,11 +25,8 @@ export async function POST(request: Request) {
   }
 
   try {
-    const client = new MailerSend({ apiKey });
-    await sendMail(client, parsed.data, {
-      newsletter: process.env.MAILERSEND_NEWSLETTER_TEMPLATE_ID ?? "",
-      contact: process.env.MAILERSEND_CONTACT_TEMPLATE_ID ?? "",
-    });
+    const client = new Resend(apiKey) as unknown as MailClient;
+    await sendMail(client, parsed.data);
     return NextResponse.json({ message: "Email enviado com sucesso" }, { status: 200 });
   } catch (error) {
     console.error("Erro ao enviar email:", error);

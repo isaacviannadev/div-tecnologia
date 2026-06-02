@@ -68,38 +68,40 @@ state, and motion is layered on only after mount (no blank flash for no-JS).
 - **Placeholder content to confirm with the client:** stat figures (−47% LCP, etc.)
   are illustrative, and `hello@divtecnologia.com.br` is a placeholder.
 
-## Newsletter & Contato (MailerSend)
+## Newsletter & Contato (Resend)
 
-`POST /api/mail` (server route) sends through MailerSend, mirroring the previous app:
-- `{ template: 'newsletter', email }` → welcome email.
+`POST /api/mail` (server route) sends through [Resend](https://resend.com):
+- `{ template: 'newsletter', email }` → welcome email to the subscriber.
 - `{ template: 'contact', name, email, company?, services?: string[], message }` →
-  confirmation to the user + BCC to `contato@divtecnologia.com.br`. Selected
-  services are folded into the message and sent as personalization data.
+  notification to `contato@divtecnologia.com.br` with **Reply-To** set to the
+  submitter (so the team replies directly). Selected services are folded into the
+  message; all user-provided fields are HTML-escaped.
 
-Client: `useMailer` (SWR) → forms use react-hook-form + zod + sonner toasts;
-validation/feedback strings come from the PT/EN `content.ts` context.
+Email bodies are inline-styled HTML built in `app/lib/mail.ts` (no external
+templates). Client: `useMailer` (SWR) → forms use react-hook-form + zod + sonner
+toasts; validation/feedback strings come from the PT/EN `content.ts` context.
 
-### Env vars (copy from the current app)
+### Env var
 
 ```
-MAILERSEND_API_KEY=
-MAILERSEND_NEWSLETTER_TEMPLATE_ID=
-MAILERSEND_CONTACT_TEMPLATE_ID=
+RESEND_API_KEY=
 ```
 
-Local: `cp .env.example .env.local` and fill in. Vercel: set the same three vars
-in the project that serves the domain.
+Setup: create a Resend account, **verify the domain `divtecnologia.com.br`**
+(add the DNS records Resend gives you — SPF/DKIM), create an API key. Free tier:
+3,000 emails/month, 100/day — sends to any recipient once the domain is verified.
 
-### Replacing the current site (`isaacviannadev/div-tecnologia`)
+Local: `cp .env.example .env.local` and fill in `RESEND_API_KEY`.
 
-1. Point this repo at the existing remote (or copy these files into it).
-2. Set the 3 MailerSend env vars on the host.
-3. Deploy. `/api/mail` runs on the Node runtime; pages stay static.
+### Deploy (AWS Amplify, SSR)
 
-> MailerSend template note: the contact template may still reference `{{phone}}`/
-> `{{budget}}`. The composed message already includes the services, so emails
-> render correctly; simplify the template to `{{name}}/{{email}}/{{company}}/
-> {{services}}/{{message}}` when convenient.
+1. Set `RESEND_API_KEY` in the Amplify app's environment variables.
+2. `amplify.yml` writes it into `.env.production` at build so the Next SSR
+   runtime can read it (Amplify doesn't inject console env into the SSR runtime
+   by default). Pages stay static; only `/api/mail` is dynamic.
+
+> Note: emails send from `contato@divtecnologia.com.br`, so that domain must be
+> verified in Resend or sends will fail.
 
 > Follow-up (out of scope): add a honeypot + simple rate-limit to `/api/mail`,
 > and make the contact service chips keyboard-accessible (currently `<span>`s).

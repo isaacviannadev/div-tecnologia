@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-// Mock the service layer and the MailerSend client constructor.
+// Mock the service layer and the Resend client constructor.
 vi.mock("../../lib/mail", () => ({ sendMail: vi.fn() }));
-vi.mock("mailersend", () => ({ MailerSend: vi.fn().mockImplementation(function () { return {}; }) }));
+vi.mock("resend", () => ({ Resend: vi.fn().mockImplementation(function () { return {}; }) }));
 
 import { sendMail } from "../../lib/mail";
 import { POST } from "./route";
@@ -17,14 +17,10 @@ function req(body: unknown) {
 describe("POST /api/mail", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    process.env.MAILERSEND_API_KEY = "key";
-    process.env.MAILERSEND_NEWSLETTER_TEMPLATE_ID = "nl";
-    process.env.MAILERSEND_CONTACT_TEMPLATE_ID = "ct";
+    process.env.RESEND_API_KEY = "re_test";
   });
   afterEach(() => {
-    delete process.env.MAILERSEND_API_KEY;
-    delete process.env.MAILERSEND_NEWSLETTER_TEMPLATE_ID;
-    delete process.env.MAILERSEND_CONTACT_TEMPLATE_ID;
+    delete process.env.RESEND_API_KEY;
   });
 
   it("returns 200 on a valid newsletter payload", async () => {
@@ -41,7 +37,7 @@ describe("POST /api/mail", () => {
   });
 
   it("returns 500 when the API key is missing", async () => {
-    delete process.env.MAILERSEND_API_KEY;
+    delete process.env.RESEND_API_KEY;
     const res = await POST(req({ template: "newsletter", email: "a@b.com" }));
     expect(res.status).toBe(500);
     expect(sendMail).not.toHaveBeenCalled();
