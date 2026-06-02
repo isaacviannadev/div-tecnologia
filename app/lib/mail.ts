@@ -32,14 +32,17 @@ export async function sendMail(
     return;
   }
 
+  // Contact submissions notify the DIV inbox (an address on the verified
+  // domain — works within MailerSend trial limits). Reply-To is set to the
+  // person who filled the form so the team can reply to them directly.
   const fullMessage = buildContactMessage(payload.message, payload.services);
   const params = new EmailParams()
     .setFrom(CONTACT_FROM)
-    .setTo([new Recipient(payload.email, payload.name)])
-    .setBcc([new Recipient(SENDER_EMAIL)])
+    .setTo([new Recipient(SENDER_EMAIL, "DIV Tecnologia")])
+    .setReplyTo(new Recipient(payload.email, payload.name))
     .setPersonalization([
       {
-        email: payload.email,
+        email: SENDER_EMAIL,
         data: {
           name: payload.name,
           email: payload.email,
@@ -49,7 +52,7 @@ export async function sendMail(
         },
       },
     ])
-    .setSubject("Recebemos sua mensagem, em breve retornaremos")
+    .setSubject(`Novo contato pelo site — ${payload.name}`)
     .setTemplateId(templates.contact);
   await client.email.send(params);
 }

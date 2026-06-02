@@ -30,7 +30,7 @@ describe("sendMail", () => {
     expect(params.template_id).toBe("nl-tpl");
   });
 
-  it("sends a contact email with BCC and personalization including services", async () => {
+  it("sends a contact email to the DIV inbox with personalization including services", async () => {
     const { client, send } = fakeClient();
     await sendMail(
       client,
@@ -45,10 +45,12 @@ describe("sendMail", () => {
       templates,
     );
     const params = send.mock.calls[0][0];
-    expect(params.to[0].email).toBe("a@b.com");
-    expect(params.bcc[0].email).toBe("contato@divtecnologia.com.br");
+    // notification goes to the DIV inbox on the verified domain
+    expect(params.to[0].email).toBe("contato@divtecnologia.com.br");
+    expect(params.personalization[0].email).toBe("contato@divtecnologia.com.br");
     expect(params.template_id).toBe("ct-tpl");
     const data = params.personalization[0].data;
+    expect(data.email).toBe("a@b.com"); // submitter's email carried in the data
     expect(data.message).toContain("Serviços de interesse: Tokens");
     expect(data.services).toEqual(["Tokens"]);
   });
