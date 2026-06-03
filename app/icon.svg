@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DIV">
+  <rect width="64" height="64" rx="13" fill="#08080a"/>
+  <g transform="translate(7 24.9) scale(0.1825)">
+    <path fill="#f4f3ee" d="M36.2571 73.008H0C0 -1.456 0 74.568 0 0.103999H36.2571C56.2503 0.103999 72.5142 16.536 72.5142 36.608C72.5142 56.68 56.2503 73.008 36.2571 73.008Z"/>
+    <path fill="#f4f3ee" d="M77.3878 0.103999H115.095V72.904H77.3878V0.103999Z"/>
+    <path fill="#f4f3ee" d="M207.484 0L161.696 78L115.805 0C195.881 0 127.822 0 207.484 0Z"/>
+    <path fill="#F4A13F" d="M205.112 47.424H274V72.904H205.112V47.424Z"/>
+  </g>
+</svg>
