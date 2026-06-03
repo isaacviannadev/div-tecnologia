@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Confidential client proposals — repo is public, keep pricing/strategy out of git
+docs/Proposta-*.pdf
+docs/proposta-*.html
