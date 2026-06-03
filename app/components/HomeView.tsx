@@ -93,18 +93,18 @@ export function HomeView() {
         </div>
         <div className="cl-row">
           <div className="cl-track">
-            {[...clients.row1, ...clients.row1].map((nm, i) => (
-              <span className="nm" key={i}>
-                {nm}
+            {[...clients.row1, ...clients.row1].map((c, i) => (
+              <span className={`nm logo ${c.name.toLowerCase()}`} key={i}>
+                <img src={c.logo} alt={c.name} loading="lazy" />
               </span>
             ))}
           </div>
         </div>
         <div className="cl-row">
           <div className="cl-track">
-            {[...clients.row2, ...clients.row2].map((nm, i) => (
-              <span className="nm" key={i}>
-                {nm}
+            {[...clients.row2, ...clients.row2].map((c, i) => (
+              <span className={`nm logo ${c.name.toLowerCase()}`} key={i}>
+                <img src={c.logo} alt={c.name} loading="lazy" />
               </span>
             ))}
           </div>

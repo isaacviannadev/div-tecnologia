@@ -52,8 +52,23 @@ export const clients = {
     pt: "Confiança de marcas exigentes",
     en: "Trusted by demanding brands",
   },
-  row1: ["Cartier", "Ferrari", "Farfetch", "Ferragamo", "Wella", "Worten"],
-  row2: ["Lilly", "Sana", "Activ8", "Zeloclub", "Hurb", "Q-Concursos"],
+  row1: [
+    { name: "Vodafone", logo: "/clients/vodafone.svg" },
+    { name: "Cartier", logo: "/clients/cartier.svg" },
+    { name: "Ferrari", logo: "/clients/ferrari.svg" },
+    { name: "Farfetch", logo: "/clients/farfetch.svg" },
+    { name: "Ferragamo", logo: "/clients/ferragamo.svg" },
+    { name: "Wella", logo: "/clients/wella.svg" },
+    { name: "Worten", logo: "/clients/worten.svg" },
+  ],
+  row2: [
+    { name: "Lilly", logo: "/clients/lilly.svg" },
+    { name: "Sana", logo: "/clients/sana.svg" },
+    { name: "Activ8", logo: "/clients/activ8.svg" },
+    { name: "Zeloclub", logo: "/clients/zeloclub.svg" },
+    { name: "Hurb", logo: "/clients/hurb.svg" },
+    { name: "Q-Concursos", logo: "/clients/qconcursos.svg" },
+  ],
 };
 
 export const services = {
