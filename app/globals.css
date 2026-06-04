@@ -564,3 +564,5 @@ html.js .reveal[data-d="4"]{transition-delay:.32s}
    ============================================================ */
 [data-palette="light"] .cl-track .nm.logo img{filter:brightness(0)}
 [data-palette="light"] .code{box-shadow:0 30px 80px -30px rgba(0,0,0,.16)}
+/* difference blend turns the orange dot blue on white — keep it on-brand */
+[data-palette="light"] .cursor-dot{mix-blend-mode:normal}
