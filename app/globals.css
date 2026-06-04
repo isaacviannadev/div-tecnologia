@@ -32,6 +32,20 @@
   --sel:var(--accent);
 }
 
+/* palette: light ("Pure") — toggled via <html data-palette="light"> */
+[data-palette="light"]{
+  --bg:#ffffff;
+  --surface:#f5f5f6;
+  --fg:#0a0a0c;
+  --muted:rgba(10,10,12,.58);
+  --faint:rgba(10,10,12,.32);
+  --line:rgba(10,10,12,.11);
+  --line-strong:rgba(10,10,12,.24);
+  --accent:#F4A13F;
+  --accent-ink:#0a0a0a;
+  --glow:rgba(244,161,63,.20);
+}
+
 /* ---------- Reset ---------- */
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -135,6 +149,16 @@ section{position:relative}
 .lang button{padding:5px 11px;color:var(--muted);transition:.2s}
 .lang button.on{background:var(--fg);color:var(--bg)}
 
+/* theme toggle (sun/moon) */
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;color:var(--muted);
+  border:1px solid var(--line-strong);border-radius:999px;
+  transition:color .2s,border-color .2s;flex:none;
+}
+.theme-toggle:hover{color:var(--fg);border-color:var(--fg)}
+.theme-toggle svg{width:16px;height:16px}
+
 /* mobile menu toggle (hidden on desktop) */
 .nav-toggle{display:none}
 .nav-panel{display:none}
@@ -144,6 +168,7 @@ section{position:relative}
   .nav-links{display:none}
   .nav-right .btn.sm{display:none}
   .nav-right .lang{display:none}
+  .nav-right .theme-toggle{display:none}
   .nav-toggle{
     display:inline-flex;align-items:center;justify-content:center;
     width:40px;height:40px;margin-right:-8px;color:var(--fg);
@@ -533,3 +558,9 @@ html.js .reveal[data-d="4"]{transition-delay:.32s}
 .big-mail{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,3vw,2.2rem);
   letter-spacing:-.02em;color:var(--fg)!important;word-break:break-all}
 .big-mail:hover{color:var(--accent)!important}
+
+/* ============================================================
+   Light-theme spot fixes (não herdam das variáveis)
+   ============================================================ */
+[data-palette="light"] .cl-track .nm.logo img{filter:brightness(0)}
+[data-palette="light"] .code{box-shadow:0 30px 80px -30px rgba(0,0,0,.16)}
