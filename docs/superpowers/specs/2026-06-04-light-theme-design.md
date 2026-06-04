@@ -64,7 +64,7 @@ Montado em `app/layout.tsx`, envolvendo o conteúdo (junto do `LangProvider`).
 ### 3. Anti-flash / FOUC (`app/layout.tsx`)
 
 O `data-palette="ink"` hardcoded no SSR sai do JSX. No lugar, um script inline
-**blocking** no `<head>`, que roda antes da pintura:
+**blocking** como primeiro filho do `<body>`, que roda antes da pintura:
 
 ```js
 (function(){try{var t=localStorage.getItem("div-theme");
@@ -74,9 +74,10 @@ document.documentElement.dataset.palette="ink";}})();
 
 Sem isso, um usuário que escolheu light veria um flash do tema escuro a cada
 carregamento antes da hidratação. Implementado como `<script
-dangerouslySetInnerHTML>` direto no `<head>` do `layout.tsx` (App Router) —
-roda síncrono, antes do `<body>`, garantindo o atributo já setado na primeira
-pintura.
+dangerouslySetInnerHTML>` como primeiro filho do `<body>` no `layout.tsx`
+(App Router) — roda síncrono antes de o conteúdo do body pintar, garantindo o
+atributo já setado na primeira pintura. O `<html>` recebe
+`suppressHydrationWarning` (o atributo é setado fora do render do React).
 
 ### 4. Botão no nav (`app/components/Nav.tsx`)
 

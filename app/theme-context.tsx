@@ -27,8 +27,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Boot: restore the stored theme. The inline <head>/pre-paint script already
   // set <html data-palette> to avoid FOUC; this syncs React state to it.
   useEffect(() => {
-    const stored = localStorage.getItem("div-theme");
-    if (stored === "ink" || stored === "light") setTheme(stored);
+    try {
+      const stored = localStorage.getItem("div-theme");
+      if (stored === "ink" || stored === "light") setTheme(stored);
+    } catch {
+      // storage blocked (sandboxed iframe, privacy mode) — keep the default.
+    }
   }, []);
 
   // Persist + reflect on <html data-palette>. Skip the first run: the pre-paint
@@ -40,7 +44,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       firstRun.current = false;
       return;
     }
-    localStorage.setItem("div-theme", theme);
+    // Reflect the visual change even if storage is blocked, so guard only the write.
+    try {
+      localStorage.setItem("div-theme", theme);
+    } catch {
+      // storage blocked — the palette still applies below.
+    }
     document.documentElement.dataset.palette = theme;
   }, [theme]);
 
