@@ -34,7 +34,11 @@ export default function RootLayout({
 }>) {
   // lang starts pt-BR; the client toggle updates documentElement.lang at runtime.
   return (
-    <html lang="pt-BR" className={`${bricolage.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className={`${bricolage.variable} ${jetbrainsMono.variable}`}
+    >
       <body>
         <script
           dangerouslySetInnerHTML={{
