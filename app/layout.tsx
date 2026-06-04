@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
-import { Toaster } from "sonner";
+import { ThemeProvider, ThemedToaster } from "./theme-context";
 import { CursorDot } from "./components/CursorDot";
 import { Nav } from "./components/Nav";
 import { RouteMotion } from "./components/RouteMotion";
@@ -34,17 +34,25 @@ export default function RootLayout({
 }>) {
   // lang starts pt-BR; the client toggle updates documentElement.lang at runtime.
   return (
-    <html lang="pt-BR" data-palette="ink" className={`${bricolage.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt-BR" className={`${bricolage.variable} ${jetbrainsMono.variable}`}>
       <body>
-        <LangProvider>
-          <div className="bg-grid" />
-          <div className="scanline" />
-          <Nav />
-          {children}
-          <CursorDot />
-          <RouteMotion />
-          <Toaster theme="dark" position="bottom-right" richColors closeButton />
-        </LangProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){try{var t=localStorage.getItem("div-theme");document.documentElement.dataset.palette=(t==="light"?"light":"ink");}catch(e){document.documentElement.dataset.palette="ink";}})();',
+          }}
+        />
+        <ThemeProvider>
+          <LangProvider>
+            <div className="bg-grid" />
+            <div className="scanline" />
+            <Nav />
+            {children}
+            <CursorDot />
+            <RouteMotion />
+            <ThemedToaster />
+          </LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
