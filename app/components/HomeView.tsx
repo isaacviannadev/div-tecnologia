@@ -65,7 +65,7 @@ export function HomeView() {
           <div className="hero-foot">
             <p className="hero-lead" {...html(hero.lead)} />
             <div className="hero-cta">
-              <Link href="/contato" className="btn" data-magnet>
+              <Link href="/diagnostico" className="btn" data-magnet>
                 <span>{t(hero.ctaPrimary)}</span>
                 <span className="arw">↗</span>
               </Link>

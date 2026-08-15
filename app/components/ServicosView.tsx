@@ -48,7 +48,7 @@ export function ServicosView() {
             {t(s.cta.heading)}
           </h2>
           <p className="sub">{t(s.cta.sub)}</p>
-          <Link href="/contato" className="btn" data-magnet>
+          <Link href="/diagnostico" className="btn" data-magnet>
             <span>{t(s.cta.button)}</span>
             <span className="arw">↗</span>
           </Link>

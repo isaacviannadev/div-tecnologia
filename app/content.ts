@@ -8,6 +8,7 @@ export type L = { pt: string; en: string };
 
 export const nav = {
   links: [
+    { href: "/diagnostico", label: { pt: "Diagnóstico", en: "Audit" } },
     { href: "/servicos", label: { pt: "Serviços", en: "Services" } },
     { href: "/#process", label: { pt: "Processo", en: "Process" } },
     { href: "/sobre", label: { pt: "Sobre", en: "About" } },
@@ -395,6 +396,230 @@ export const servicesPage = {
       en: "In a few weeks you walk away with a clear diagnosis and a prioritised plan — no long-term commitment.",
     },
     button: { pt: "Solicitar diagnóstico", en: "Request an audit" },
+  },
+};
+
+/* ============================================================
+   Inner page: Diagnóstico (entry offer)
+
+   Kept deliberately in lockstep with docs/proposta-diagnostico-executivo.html.
+   A prospect reads this page and then receives that PDF; if the two drift on
+   scope, price or deadline, the mismatch reads as sloppiness at exactly the
+   moment they are deciding. Change both or neither.
+   ============================================================ */
+
+/* Booking link. Leave empty and the page falls back to the contact form only.
+   Fill with a Cal.com / Google Calendar scheduling URL to show the button. */
+export const bookingUrl = "";
+
+export const diagnosticoPage = {
+  kicker: { pt: "Oferta de entrada", en: "Entry offer" },
+  titleLines: {
+    pt: ["Um diagnóstico", "que termina com", "código instalado."],
+    en: ["An audit that ends", "with code", "installed."],
+  },
+  lead: {
+    pt: "Seu time entrega com IA agora: a velocidade subiu e a consistência caiu. Em 1 a 2 semanas mapeamos onde o seu front-end perde consistência e performance, <b>instalamos no seu repositório</b> a base que humanos e agentes leem do mesmo jeito, e deixamos um roadmap priorizado.",
+    en: "Your team ships with AI now: velocity went up and consistency went down. In 1 to 2 weeks we map where your front-end loses consistency and performance, <b>install in your repository</b> the foundation humans and agents read the same way, and leave a prioritised roadmap.",
+  },
+  facts: [
+    {
+      label: { pt: "Prazo", en: "Timeline" },
+      value: { pt: "1 a 2 semanas", en: "1 to 2 weeks" },
+    },
+    {
+      label: { pt: "Investimento", en: "Investment" },
+      value: { pt: "R$ 3,5k a 6k", en: "R$ 3.5k to 6k" },
+    },
+    {
+      label: { pt: "Formato", en: "Format" },
+      value: { pt: "Remoto", en: "Remote" },
+    },
+  ],
+
+  problemIdx: "[ 01 — O PROBLEMA ]",
+  problemTitle: { pt: "Onde costuma doer.", en: "Where it usually hurts." },
+  problemNote: {
+    pt: "Sem um Design System explícito, o time recria o que já existe e a marca se descola entre telas. A camada nova é que isso agora acontece na velocidade da IA: o agente não infere o seu padrão, ele inventa um.",
+    en: "Without an explicit Design System, the team rebuilds what already exists and the brand drifts between screens. The new layer is that this now happens at AI speed: the agent doesn't infer your standard, it invents one.",
+  },
+  pains: [
+    {
+      pt: "<b>Retrabalho de UI</b> no code review: o componente gerado está quase certo, e alguém sempre reescreve.",
+      en: "<b>UI rework</b> in code review: the generated component is almost right, and someone always rewrites it.",
+    },
+    {
+      pt: "<b>Valores hardcoded</b> voltando ao código a cada tela nova, fora do sistema.",
+      en: "<b>Hardcoded values</b> creeping back in with every new screen, outside the system.",
+    },
+    {
+      pt: "<b>Dívida de componentes</b> e tokens espalhados, sem uma fonte única de verdade.",
+      en: "<b>Component debt</b> and scattered tokens, with no single source of truth.",
+    },
+    {
+      pt: "<b>Core Web Vitals no vermelho</b> (LCP, INP, CLS), afetando conversão e SEO.",
+      en: "<b>Core Web Vitals in the red</b> (LCP, INP, CLS), hurting conversion and SEO.",
+    },
+  ] as L[],
+
+  deliverIdx: "[ 02 — O QUE VOCÊ RECEBE ]",
+  deliverTitle: {
+    pt: "Quatro artefatos, não quatro slides.",
+    en: "Four artefacts, not four slides.",
+  },
+  deliverables: [
+    {
+      ix: "01",
+      title: {
+        pt: "Kit agent-ready, instalado via pull request",
+        en: "Agent-ready kit, installed via pull request",
+      },
+      desc: {
+        pt: "O núcleo da entrega, e o que fica com você depois que saímos. Não é anexo de e-mail: é um PR no seu repositório, revisável pelo seu time.",
+        en: "The core of the delivery, and what stays with you after we leave. Not an email attachment: a PR in your repository, reviewable by your team.",
+      },
+      bullets: [
+        { pt: "Tokens semânticos no padrão W3C (JSON)", en: "Semantic tokens, W3C standard (JSON)" },
+        { pt: "Specs executáveis de componentes", en: "Executable component specs" },
+        { pt: "AGENTS.md · llms.txt · Figma Code Connect", en: "AGENTS.md · llms.txt · Figma Code Connect" },
+      ] as L[],
+    },
+    {
+      ix: "02",
+      title: {
+        pt: "Demonstração ao vivo com o seu código",
+        en: "Live demo on your own code",
+      },
+      desc: {
+        pt: "No último dia abrimos o agente na frente do time e geramos um componente novo a partir da sua base, on-brand e usando os seus tokens.",
+        en: "On the last day we open the agent in front of your team and generate a new component from your own base, on-brand and using your tokens.",
+      },
+      bullets: [
+        { pt: "Antes e depois, medido", en: "Before and after, measured" },
+        { pt: "Quantos valores saem fora do sistema", en: "How many values land outside the system" },
+        { pt: "Com o time na sala", en: "With the team in the room" },
+      ] as L[],
+    },
+    {
+      ix: "03",
+      title: {
+        pt: "Auditoria de Design System e Performance",
+        en: "Design System and Performance audit",
+      },
+      desc: {
+        pt: "Onde a marca se quebra e o que padronizar primeiro, mais os pontos de performance com maior impacto em conversão.",
+        en: "Where the brand breaks and what to standardise first, plus the performance issues with the biggest impact on conversion.",
+      },
+      bullets: [
+        { pt: "Inconsistências e dívida de componentes", en: "Inconsistencies and component debt" },
+        { pt: "Lacunas de tokens", en: "Token gaps" },
+        { pt: "LCP, INP e CLS em campo", en: "LCP, INP and CLS in the field" },
+      ] as L[],
+    },
+    {
+      ix: "04",
+      title: { pt: "Roadmap priorizado", en: "Prioritised roadmap" },
+      desc: {
+        pt: "Um plano sequenciado por impacto x esforço, pronto para virar execução com o seu time ou com a DIV.",
+        en: "A plan sequenced by impact x effort, ready to become execution with your team or with DIV.",
+      },
+      bullets: [
+        { pt: "Quick wins primeiro", en: "Quick wins first" },
+        { pt: "Visão de médio prazo", en: "Medium-term view" },
+        { pt: "Estimativa de esforço", en: "Effort estimate" },
+      ] as L[],
+    },
+  ],
+
+  howIdx: "[ 03 — COMO FUNCIONA ]",
+  howTitle: { pt: "Quatro passos.", en: "Four steps." },
+  steps: [
+    {
+      n: "01",
+      title: { pt: "Kickoff", en: "Kickoff" },
+      desc: {
+        pt: "Alinhamento de objetivos e acesso ao código, design e métricas.",
+        en: "Goal alignment and access to code, design and metrics.",
+      },
+    },
+    {
+      n: "02",
+      title: { pt: "Auditoria", en: "Audit" },
+      desc: {
+        pt: "Análise de DS, tokens, performance e fluxo de contribuição.",
+        en: "Analysis of DS, tokens, performance and contribution flow.",
+      },
+    },
+    {
+      n: "03",
+      title: { pt: "Instalação", en: "Install" },
+      desc: {
+        pt: "Kit agent-ready aberto em PR no seu repo, mais o roadmap priorizado.",
+        en: "Agent-ready kit opened as a PR in your repo, plus the prioritised roadmap.",
+      },
+    },
+    {
+      n: "04",
+      title: { pt: "Demo ao vivo", en: "Live demo" },
+      desc: {
+        pt: "Agente gerando componente on-brand a partir da sua base, com o time na sala.",
+        en: "Agent generating an on-brand component from your base, with the team in the room.",
+      },
+    },
+  ],
+
+  priceIdx: "[ 04 — INVESTIMENTO ]",
+  priceTitle: { pt: "Comece pelo diagnóstico.", en: "Start with the audit." },
+  tiers: [
+    {
+      stage: { pt: "Passo 1 · Diagnóstico", en: "Step 1 · Audit" },
+      name: { pt: "Diagnóstico Executivo", en: "Executive Audit" },
+      value: "R$ 3,5–6k",
+      per: null as L | null,
+      lead: true,
+      note: {
+        pt: "Kit instalado, auditoria e roadmap. Valor único, 1 a 2 semanas.",
+        en: "Kit installed, audit and roadmap. One-off, 1 to 2 weeks.",
+      },
+    },
+    {
+      stage: { pt: "Passo 2 · Execução", en: "Step 2 · Build" },
+      name: { pt: "Implementação de Design System", en: "Design System Implementation" },
+      value: "R$ 18–45k",
+      per: null as L | null,
+      lead: false,
+      note: {
+        pt: "Construção e adoção do sistema, conforme o escopo do roadmap.",
+        en: "Building and adoption of the system, per the roadmap scope.",
+      },
+    },
+    {
+      stage: { pt: "Passo 3 · Evolução", en: "Step 3 · Evolve" },
+      name: { pt: "Retainer de continuidade", en: "Continuity retainer" },
+      value: "R$ 4–10k",
+      per: { pt: "/mês", en: "/mo" } as L | null,
+      lead: false,
+      note: {
+        pt: "Governança, evolução e suporte contínuo do sistema.",
+        en: "Governance, evolution and ongoing support of the system.",
+      },
+    },
+  ],
+  priceBadge: { pt: "Comece aqui", en: "Start here" },
+  creditNote: {
+    pt: "<b>Risco zero na decisão:</b> se você seguir para a Implementação em até <b>30 dias</b> após a entrega do Diagnóstico, o valor pago é <b>abatido integralmente</b> do escopo contratado. Na prática, o Diagnóstico deixa de ser um custo e vira a primeira parcela. As faixas se ajustam ao porte e à complexidade, e o Diagnóstico continua independente: sem compromisso com as etapas seguintes.",
+    en: "<b>Zero risk on the decision:</b> if you move to Implementation within <b>30 days</b> of the Audit delivery, what you paid is <b>fully credited</b> against the contracted scope. In practice the Audit stops being a cost and becomes the first instalment. Ranges adjust to size and complexity, and the Audit stays independent: no commitment to the next steps.",
+  },
+
+  cta: {
+    kicker: { pt: "Próximo passo", en: "Next step" },
+    heading: { pt: "Vamos diagnosticar.", en: "Let's diagnose." },
+    sub: {
+      pt: "Numa conversa de 30 minutos definimos escopo e início. Sem apresentação de vendas.",
+      en: "In a 30-minute conversation we define scope and start date. No sales deck.",
+    },
+    book: { pt: "Agendar 30 min", en: "Book 30 min" },
+    write: { pt: "Escrever para a DIV", en: "Write to DIV" },
   },
 };
 
