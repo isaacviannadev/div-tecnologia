@@ -409,8 +409,13 @@ export const servicesPage = {
    ============================================================ */
 
 /* Booking link. Leave empty and the page falls back to the contact form only.
-   Fill with a Cal.com / Google Calendar scheduling URL to show the button. */
-export const bookingUrl = "";
+
+   This is the direct event-type URL, not the Cal.com profile page: the profile
+   makes the visitor pick a duration first, which is a click we don't need.
+   The `-p2t7in` suffix is Cal.com's auto-generated username. If it gets renamed
+   under Settings > My Account > Profile, update this constant in the same
+   breath rather than assuming the old handle still resolves. */
+export const bookingUrl = "https://cal.com/div-tecnologia-p2t7in/30min";
 
 export const diagnosticoPage = {
   kicker: { pt: "Oferta de entrada", en: "Entry offer" },
