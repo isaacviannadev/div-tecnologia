@@ -49,12 +49,18 @@ export const ticker: string[] = [
 
 export const clients = {
   kicker: {
-    pt: "Confiança de marcas exigentes",
-    en: "Trusted by demanding brands",
+    pt: "Experiência em times de produto de",
+    en: "Experience on product teams at",
+  },
+  /* Honest framing: these are brands whose product teams we built for, not DIV
+     consulting contracts. The note below states the distinction explicitly so a
+     prospect never has to discover it themselves. */
+  note: {
+    pt: "Marcas onde nossa engenharia atuou. Como consultoria, a DIV atende Activ8, Worten e Zeloclub.",
+    en: "Brands our engineering worked for. As a consultancy, DIV serves Activ8, Worten and Zeloclub.",
   },
   row1: [
     { name: "Vodafone", logo: "/clients/vodafone.svg" },
-    { name: "Cartier", logo: "/clients/cartier.svg" },
     { name: "Ferrari", logo: "/clients/ferrari.svg" },
     { name: "Farfetch", logo: "/clients/farfetch.svg" },
     { name: "Ferragamo", logo: "/clients/ferragamo.svg" },
@@ -174,7 +180,8 @@ export const ai = {
 
 export const stats = [
   {
-    count: 47,
+    // Kept in sync with the figure quoted in docs/proposta-diagnostico-executivo.html.
+    count: 40,
     dec: 0,
     unit: "%",
     label: { pt: "Redução média de LCP", en: "Avg. LCP reduction" },
@@ -475,6 +482,32 @@ export const aboutPage = {
       },
     },
   ],
+  /* Founder block: at this price point the buyer is buying judgement, and
+     judgement has a name. Being one senior engineer is the differentiator, not
+     something to hide behind a plural voice. */
+  founderIdx: "[ QUEM FAZ ]",
+  founderName: "Isaac Vianna",
+  founderRole: {
+    pt: "Fundador · Engenheiro de front-end",
+    en: "Founder · Front-end engineer",
+  },
+  founderBio: [
+    {
+      pt: "Mais de 10 anos construindo front-end de produto. Passei por times de engenharia da Vodafone, Farfetch, Ferrari, Worten e Wella, quase sempre no mesmo ponto: onde o design system encosta no código de produção e alguma coisa quebra.",
+      en: "Over 10 years building product front-ends. I've worked on engineering teams at Vodafone, Farfetch, Ferrari, Worten and Wella, almost always at the same spot: where the design system meets production code and something breaks.",
+    },
+    {
+      pt: "A DIV nasceu dessa observação. Só que o problema mudou de forma: hoje os agentes de IA escrevem código no seu produto todo dia, e eles só respeitam o sistema se o sistema for explícito. É exatamente isso que eu construo.",
+      en: "DIV came out of that observation. Except the problem changed shape: AI agents now write code in your product every day, and they only respect the system if the system is explicit. That's exactly what I build.",
+    },
+    {
+      pt: "<b>Você fala comigo do primeiro e-mail à última entrega.</b> Sem camada de atendimento, sem repasse para júnior, sem telefone sem fio entre quem vendeu e quem executa.",
+      en: "<b>You talk to me from the first email to the last delivery.</b> No account layer, no handoff to a junior, no broken telephone between whoever sold it and whoever builds it.",
+    },
+  ] as L[],
+  founderLinks: [
+    { label: "GitHub ↗", href: "https://github.com/CodeTheApp" },
+  ],
   whereIdx: "[ ONDE ESTAMOS ]",
   whereTitle: {
     pt: ["Dois fusos,", "um sistema."],
@@ -484,16 +517,18 @@ export const aboutPage = {
     pt: "Operamos entre Brasil e Portugal, atendendo times na América Latina e na Europa.",
     en: "We operate between Brazil and Portugal, serving teams across Latin America and Europe.",
   },
+  /* City-level only. The street addresses that used to live here are residential;
+     publishing them on the open web is a privacy risk with no selling benefit. */
   offices: [
     {
       ix: "BR",
       city: "Rio de Janeiro",
-      addr: "R. Diogo Camarão, 18 — Duque de Caxias\nRio de Janeiro, Brasil",
+      addr: "Brasil\nAtendimento remoto · fuso BRT",
     },
     {
       ix: "PT",
       city: "Leiria",
-      addr: "R. dos Vinagres, 27 — Pombal\nLeiria, Portugal",
+      addr: "Portugal\nAtendimento remoto · fuso WET",
     },
   ],
   cta: {

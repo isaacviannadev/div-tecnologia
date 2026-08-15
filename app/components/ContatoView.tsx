@@ -121,14 +121,10 @@ export function ContatoView() {
               <p>
                 <b style={{ color: "var(--fg)" }}>Brasil</b>
                 <br />
-                R. Diogo Camarão, 18 — Duque de Caxias
-                <br />
-                Rio de Janeiro
+                Rio de Janeiro · RJ
               </p>
               <p style={{ marginTop: 14 }}>
                 <b style={{ color: "var(--fg)" }}>Portugal</b>
-                <br />
-                R. dos Vinagres, 27 — Pombal
                 <br />
                 Leiria
               </p>

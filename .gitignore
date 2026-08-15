@@ -44,6 +44,9 @@ next-env.d.ts
 # Confidential client proposals — repo is public, keep pricing/strategy out of git
 docs/Proposta-*.pdf
 docs/proposta-*.html
+# ...and the README that documents them: it carries as faixas de preço and the
+# cost-anchor formula, which is exactly the material that must stay out of git.
+docs/README.md
 
 # Visual brainstorming companion (local, ephemeral)
 .superpowers/

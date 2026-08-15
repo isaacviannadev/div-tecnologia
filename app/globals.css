@@ -322,7 +322,6 @@ html.js .reveal[data-d="4"]{transition-delay:.32s}
 .cl-track .nm.logo:hover img{opacity:.95}
 /* per-logo factor so wordmarks and icon-marks read at a consistent weight */
 .cl-track .nm.vodafone img{height:calc(var(--logo)*.58)}
-.cl-track .nm.cartier img{height:calc(var(--logo)*1.0)}
 .cl-track .nm.ferrari img{height:calc(var(--logo)*.69)}
 .cl-track .nm.farfetch img{height:calc(var(--logo)*.84)}
 .cl-track .nm.ferragamo img{height:calc(var(--logo)*1.1)}

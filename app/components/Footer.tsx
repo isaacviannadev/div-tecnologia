@@ -44,18 +44,14 @@ export function Footer({ variant = "full" }: { variant?: "full" | "minimal" }) {
                   <p>
                     <b style={{ color: "var(--fg)" }}>Brasil</b>
                     <br />
-                    R. Diogo Camarão, 18
-                    <br />
-                    Duque de Caxias · Rio de Janeiro
+                    Rio de Janeiro · RJ
                   </p>
                 </li>
                 <li style={{ marginTop: 14 }}>
                   <p>
                     <b style={{ color: "var(--fg)" }}>Portugal</b>
                     <br />
-                    R. dos Vinagres, 27
-                    <br />
-                    Pombal · Leiria
+                    Leiria
                   </p>
                 </li>
               </ul>

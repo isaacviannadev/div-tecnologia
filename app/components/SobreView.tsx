@@ -89,6 +89,59 @@ export function SobreView() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="ai-inner" style={{ alignItems: "start" }}>
+            <div className="reveal">
+              <span className="idx" style={idxStyle}>
+                {a.founderIdx}
+              </span>
+              <h2
+                className="display"
+                style={{ fontSize: "clamp(1.8rem,4vw,3.2rem)", margin: "18px 0 10px" }}
+              >
+                {a.founderName}
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 13,
+                  letterSpacing: ".08em",
+                  color: "var(--muted)",
+                  textTransform: "uppercase",
+                }}
+              >
+                {t(a.founderRole)}
+              </p>
+              <ul style={{ listStyle: "none", marginTop: 18, display: "flex", gap: 18 }}>
+                {a.founderLinks.map((l) => (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener"
+                      style={{
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 13,
+                        color: "var(--fg)",
+                      }}
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="prose reveal" data-d="2">
+              {a.founderBio.map((p, i) => (
+                <p key={i} {...html(p)} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Where we are */}
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

@@ -109,6 +109,11 @@ export function HomeView() {
             ))}
           </div>
         </div>
+        <div className="wrap" style={{ marginTop: 28 }}>
+          <p className="sec-note" style={{ maxWidth: "62ch" }}>
+            {t(clients.note)}
+          </p>
+        </div>
       </section>
 
       {/* ============ SERVICES ============ */}
