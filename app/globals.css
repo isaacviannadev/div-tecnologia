@@ -605,7 +605,9 @@ html.js .reveal[data-d="4"]{transition-delay:.32s}
 .tier .val .per{font-size:.42em;color:var(--muted);font-weight:600;margin-left:4px}
 .tier .note{color:var(--muted);font-size:14px;line-height:1.6}
 
-.credit{margin-top:clamp(24px,3vh,36px);color:var(--muted);font-size:15px;line-height:1.7;max-width:78ch}
+/* body copy in mono: 1ch is a full character, so the usual 45-75 char measure
+   maps straight onto the ch value. 78ch filled barely half the container. */
+.credit{margin-top:clamp(24px,3vh,36px);color:var(--muted);font-size:15px;line-height:1.7;max-width:92ch}
 .credit b{color:var(--fg);font-weight:500}
 
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}

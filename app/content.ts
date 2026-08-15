@@ -419,8 +419,8 @@ export const diagnosticoPage = {
     en: ["An audit that ends", "with code", "installed."],
   },
   lead: {
-    pt: "Seu time entrega com IA agora: a velocidade subiu e a consistência caiu. Em 1 a 2 semanas mapeamos onde o seu front-end perde consistência e performance, <b>instalamos no seu repositório</b> a base que humanos e agentes leem do mesmo jeito, e deixamos um roadmap priorizado.",
-    en: "Your team ships with AI now: velocity went up and consistency went down. In 1 to 2 weeks we map where your front-end loses consistency and performance, <b>install in your repository</b> the foundation humans and agents read the same way, and leave a prioritised roadmap.",
+    pt: "Seu time entrega com IA agora: a velocidade subiu e a consistência caiu. Em 1 a 2 semanas <b>instalamos no seu repositório</b> a base que humanos e agentes leem do mesmo jeito.",
+    en: "Your team ships with AI now: velocity went up and consistency went down. In 1 to 2 weeks we <b>install in your repository</b> the foundation humans and agents read the same way.",
   },
   facts: [
     {
@@ -440,25 +440,25 @@ export const diagnosticoPage = {
   problemIdx: "[ 01 — O PROBLEMA ]",
   problemTitle: { pt: "Onde costuma doer.", en: "Where it usually hurts." },
   problemNote: {
-    pt: "Sem um Design System explícito, o time recria o que já existe e a marca se descola entre telas. A camada nova é que isso agora acontece na velocidade da IA: o agente não infere o seu padrão, ele inventa um.",
-    en: "Without an explicit Design System, the team rebuilds what already exists and the brand drifts between screens. The new layer is that this now happens at AI speed: the agent doesn't infer your standard, it invents one.",
+    pt: "O agente não infere o seu padrão. Ele inventa um, na velocidade da IA.",
+    en: "The agent doesn't infer your standard. It invents one, at AI speed.",
   },
   pains: [
     {
-      pt: "<b>Retrabalho de UI</b> no code review: o componente gerado está quase certo, e alguém sempre reescreve.",
-      en: "<b>UI rework</b> in code review: the generated component is almost right, and someone always rewrites it.",
+      pt: "<b>Retrabalho de UI</b>: o gerado está quase certo, e alguém reescreve.",
+      en: "<b>UI rework</b>: the output is almost right, and someone rewrites it.",
     },
     {
-      pt: "<b>Valores hardcoded</b> voltando ao código a cada tela nova, fora do sistema.",
-      en: "<b>Hardcoded values</b> creeping back in with every new screen, outside the system.",
+      pt: "<b>Valores hardcoded</b> voltando ao código a cada tela nova.",
+      en: "<b>Hardcoded values</b> creeping back in with every new screen.",
     },
     {
-      pt: "<b>Dívida de componentes</b> e tokens espalhados, sem uma fonte única de verdade.",
-      en: "<b>Component debt</b> and scattered tokens, with no single source of truth.",
+      pt: "<b>Dívida de componentes</b> e tokens sem fonte única de verdade.",
+      en: "<b>Component debt</b> and tokens with no single source of truth.",
     },
     {
-      pt: "<b>Core Web Vitals no vermelho</b> (LCP, INP, CLS), afetando conversão e SEO.",
-      en: "<b>Core Web Vitals in the red</b> (LCP, INP, CLS), hurting conversion and SEO.",
+      pt: "<b>Core Web Vitals no vermelho</b>, afetando conversão e SEO.",
+      en: "<b>Core Web Vitals in the red</b>, hurting conversion and SEO.",
     },
   ] as L[],
 
@@ -607,8 +607,8 @@ export const diagnosticoPage = {
   ],
   priceBadge: { pt: "Comece aqui", en: "Start here" },
   creditNote: {
-    pt: "<b>Risco zero na decisão:</b> se você seguir para a Implementação em até <b>30 dias</b> após a entrega do Diagnóstico, o valor pago é <b>abatido integralmente</b> do escopo contratado. Na prática, o Diagnóstico deixa de ser um custo e vira a primeira parcela. As faixas se ajustam ao porte e à complexidade, e o Diagnóstico continua independente: sem compromisso com as etapas seguintes.",
-    en: "<b>Zero risk on the decision:</b> if you move to Implementation within <b>30 days</b> of the Audit delivery, what you paid is <b>fully credited</b> against the contracted scope. In practice the Audit stops being a cost and becomes the first instalment. Ranges adjust to size and complexity, and the Audit stays independent: no commitment to the next steps.",
+    pt: "<b>Risco zero na decisão:</b> se você seguir para a Implementação em até <b>30 dias</b>, o valor do Diagnóstico é <b>abatido integralmente</b>. Ele deixa de ser um custo e vira a primeira parcela. As faixas se ajustam ao porte, e o Diagnóstico continua independente.",
+    en: "<b>Zero risk on the decision:</b> move to Implementation within <b>30 days</b> and the Audit fee is <b>credited in full</b>. It stops being a cost and becomes the first instalment. Ranges adjust to size, and the Audit stays independent.",
   },
 
   cta: {
