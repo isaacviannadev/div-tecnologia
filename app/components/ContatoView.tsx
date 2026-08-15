@@ -113,8 +113,8 @@ export function ContatoView() {
 
             <aside className="contact-aside reveal" data-d="2">
               <h5>{t(c.aside.emailDirect)}</h5>
-              <a href="mailto:hello@divtecnologia.com.br" className="big-mail">
-                hello@divtecnologia.com.br
+              <a href="mailto:contato@divtecnologia.com.br" className="big-mail">
+                contato@divtecnologia.com.br
               </a>
 
               <h5>{t(c.aside.offices)}</h5>
