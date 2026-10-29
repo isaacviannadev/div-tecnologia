@@ -1,0 +1,133 @@
+.ascii-submit,
+.ascii-page {
+  --ascii-accent: var(--accent);
+  --ascii-glyph: var(--muted);
+  --ascii-skeleton: currentColor;
+  --ascii-font: var(--font-mono);
+  --ascii-surface: var(--surface);
+}
+
+.ascii-submit {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.ascii-submit button:disabled {
+  cursor: wait;
+}
+
+.ascii-submit-label {
+  display: grid;
+}
+
+.ascii-submit-label > span {
+  grid-area: 1 / 1;
+}
+
+.ascii-submit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  min-height: 24px;
+  flex: 0 0 24px;
+}
+
+.ascii-submit-icon .ars {
+  width: 24px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.ascii-submit--compact {
+  flex: none;
+  align-self: stretch;
+}
+
+.ascii-submit--compact button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot .news {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.ascii-submit-status {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.ascii-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ascii-page {
+  position: relative;
+  min-height: 100svh;
+  padding-block: clamp(144px, 20vh, 224px) 80px;
+}
+
+.ascii-page-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ascii-page-marker {
+  color: var(--accent);
+}
+
+.ascii-page-title {
+  display: block;
+  max-width: 900px;
+  font-size: clamp(30px, 6vw, 76px);
+}
+
+.ascii-page-lead {
+  display: block;
+  max-width: 540px;
+  margin-top: 32px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.ascii-page-panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 72px;
+}
+
+.ascii-page-panel {
+  display: grid;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .ascii-page-panels {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+}

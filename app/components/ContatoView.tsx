@@ -10,6 +10,7 @@ import { useLang } from "../lang-context";
 import { contactFormSchema, type ContactFormValues } from "../lib/mail-schema";
 import { Footer } from "./Footer";
 import { RisingLines } from "./RisingLines";
+import { AsciiSubmitButton } from "./AsciiLoading";
 
 // RHF input type: optional fields not yet transformed by zod defaults.
 type ContactFormInput = z.input<typeof contactFormSchema>;
@@ -99,16 +100,13 @@ export function ContatoView() {
                 <textarea id="ct-more" placeholder={t(c.form.morePlaceholder)} {...register("message")} />
                 {errors.message && <p style={{ color: "#ff6b6b", fontSize: 12 }}>{t(feedback.required)}</p>}
               </div>
-              <button
-                type="submit"
+              <AsciiSubmitButton
                 className="btn"
-                data-magnet
-                disabled={isLoading}
+                isLoading={isLoading}
+                label={t(c.form.submit)}
+                busyLabel={t(feedback.sending)}
                 style={{ marginTop: 8 }}
-              >
-                <span>{isLoading ? t(feedback.sending) : t(c.form.submit)}</span>
-                <span className="arw">↗</span>
-              </button>
+              />
             </form>
 
             <aside className="contact-aside reveal" data-d="2">
