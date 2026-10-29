@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AsciiReveal } from "ascii-reveal";
 import { useEffect, useRef, useState } from "react";
 import {
   ai,
@@ -8,7 +9,7 @@ import {
   cta,
   hero,
   type Lang,
-  process,
+  process as processContent,
   quote,
   services,
   stats,
@@ -16,6 +17,7 @@ import {
 } from "../content";
 import { useLang } from "../lang-context";
 import { Footer } from "./Footer";
+import { Logo } from "./Logo";
 import { Stat } from "./Stat";
 
 export function HomeView() {
@@ -28,28 +30,52 @@ export function HomeView() {
   const [swapIdx, setSwapIdx] = useState(0);
   const [swapStyle, setSwapStyle] = useState<React.CSSProperties>({});
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const trans = "opacity .25s, transform .25s";
-    const id = window.setInterval(() => {
-      setSwapStyle({ transition: trans, opacity: 0, transform: "translateY(-30%)" });
-      window.setTimeout(() => {
-        setSwapIdx((i) => (i + 1) % hero.words[langRef.current].length);
-        setSwapStyle({ transition: trans, opacity: 0, transform: "translateY(30%)" });
-        requestAnimationFrame(() =>
-          setSwapStyle({ transition: trans, opacity: 1, transform: "translateY(0)" }),
-        );
-      }, 250);
-    }, 2400);
-    return () => window.clearInterval(id);
+    let timeout = 0;
+    let frame = 0;
+    let interval = 0;
+    const stop = () => {
+      window.clearInterval(interval);
+      window.clearTimeout(timeout);
+      cancelAnimationFrame(frame);
+    };
+    const start = () => {
+      stop();
+      setSwapStyle({});
+      if (preference.matches) return;
+      interval = window.setInterval(() => {
+        if (document.hidden) return;
+        setSwapStyle({ transition: trans, opacity: 0, transform: "translateY(-30%)" });
+        timeout = window.setTimeout(() => {
+          setSwapIdx((i) => (i + 1) % hero.words[langRef.current].length);
+          setSwapStyle({ transition: trans, opacity: 0, transform: "translateY(30%)" });
+          frame = requestAnimationFrame(() =>
+            setSwapStyle({ transition: trans, opacity: 1, transform: "translateY(0)" }),
+          );
+        }, 250);
+      }, 2400);
+    };
+    start();
+    preference.addEventListener("change", start);
+    return () => {
+      stop();
+      preference.removeEventListener("change", start);
+    };
   }, []);
 
   return (
     <>
       {/* ============ HERO ============ */}
-      <header className="hero">
-        <div className="wrap">
+      <header className="hero motion-hero" data-hero-scene>
+        <div className="hero-blueprint" aria-hidden="true">
+          <div className="hero-blueprint-grid" />
+          <div className="hero-blueprint-mark"><Logo /></div>
+          <div className="hero-blueprint-rule" />
+        </div>
+        <div className="wrap hero-content">
           <span className="kicker">{t(hero.kicker)}</span>
-          <h1 className="display">
+          <h1 className="display hero-title">
             <span className="ln">
               <span>{t(hero.line1)}</span>
             </span>
@@ -128,9 +154,9 @@ export function HomeView() {
           </div>
         </div>
         <div className="wrap">
-          <div className="svc-grid reveal">
-            {services.items.map((s) => (
-              <article className="svc" key={s.num}>
+          <div className="svc-grid">
+            {services.items.map((s, i) => (
+              <article className="svc reveal" data-d={(i % 3) + 1} key={s.num}>
                 <div className="fill" />
                 <div className="num">{s.num}</div>
                 <span className="tag">{t(s.tag)}</span>
@@ -143,7 +169,7 @@ export function HomeView() {
       </section>
 
       {/* ============ AI-ALIGNED ============ */}
-      <section className="ai sec" id="ai">
+      <section className="ai sec" id="ai" data-scroll-scene>
         <div className="wrap">
           <div className="ai-inner">
             <div className="reveal">
@@ -157,7 +183,7 @@ export function HomeView() {
               </ul>
             </div>
             <div className="reveal" data-d="2">
-              <div className="code">
+              <AsciiReveal className="code depth-panel" preset="blueprint" duration="fast" revealOnHydrate selector=".tokenline">
                 <div className="code-bar">
                   <i />
                   <i />
@@ -165,56 +191,56 @@ export function HomeView() {
                   <span>tokens.semantic.json</span>
                 </div>
                 <div className="code-body">
-                  <span className="tokenline c" style={{ animationDelay: ".05s" }}>
+                  <span className="tokenline c">
                     {"// single source of truth · human + agent"}
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".15s" }}>
+                  <span className="tokenline">
                     {"{"}
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".25s" }}>
+                  <span className="tokenline">
                     {"  "}
                     <span className="k">&quot;color.bg.default&quot;</span>:{" "}
                     <span className="s">&quot;#08080a&quot;</span>,
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".35s" }}>
+                  <span className="tokenline">
                     {"  "}
                     <span className="k">&quot;color.accent&quot;</span>:{"     "}
                     <span className="s">&quot;#F4A13F&quot;</span>,
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".45s" }}>
+                  <span className="tokenline">
                     {"  "}
                     <span className="k">&quot;radius.control&quot;</span>:{"   "}
                     <span className="s">&quot;0&quot;</span>,
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".55s" }}>
+                  <span className="tokenline">
                     {"  "}
                     <span className="k">&quot;space.gutter&quot;</span>:{"     "}
                     <span className="s">&quot;clamp(16,4vw,64)&quot;</span>
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: ".65s" }}>
+                  <span className="tokenline">
                     {"}"}
                   </span>
                   {"\n"}
-                  <span className="tokenline c" style={{ animationDelay: ".85s" }}>
+                  <span className="tokenline c">
                     {"\n▸ agent: read tokens → generate <Button/>"}
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: "1s" }}>
+                  <span className="tokenline">
                     <span className="k">✓</span> contrast 7.1:1 · WCAG AAA
                   </span>
                   {"\n"}
-                  <span className="tokenline" style={{ animationDelay: "1.15s" }}>
+                  <span className="tokenline">
                     <span className="k">✓</span> matches brand guardrails{" "}
                     <span className="cursor" />
                   </span>
                 </div>
-              </div>
+              </AsciiReveal>
             </div>
           </div>
         </div>
@@ -238,18 +264,18 @@ export function HomeView() {
       </section>
 
       {/* ============ PROCESS ============ */}
-      <section className="sec" id="process">
-        <div className="wrap">
-          <div className="sec-head reveal">
+      <section className="sec process-scene" id="process" data-process-scene>
+        <div className="wrap process-layout">
+          <div className="sec-head process-heading reveal">
             <div>
-              <span className="idx">{process.idx}</span>
-              <h2>{t(process.title)}</h2>
+              <span className="idx">{processContent.idx}</span>
+              <h2>{t(processContent.title)}</h2>
             </div>
-            <p className="sec-note">{t(process.note)}</p>
+            <p className="sec-note">{t(processContent.note)}</p>
           </div>
-          <div className="proc reveal">
-            {process.steps.map((step) => (
-              <div className="step" key={step.n}>
+          <div className="proc process-timeline">
+            {processContent.steps.map((step) => (
+              <div className="step reveal" key={step.n}>
                 <div className="n">{step.n}</div>
                 <h4>{t(step.title)}</h4>
                 <p>{t(step.desc)}</p>
@@ -260,7 +286,7 @@ export function HomeView() {
       </section>
 
       {/* ============ QUOTE ============ */}
-      <section className="quote">
+      <section className="quote motion-quote" data-scroll-scene>
         <div className="wrap reveal">
           <blockquote {...html(quote.text)} />
           <div className="cite">

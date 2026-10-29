@@ -113,7 +113,7 @@ section{position:relative}
   background:linear-gradient(90deg,transparent,var(--accent),transparent);
   opacity:.5;animation:scan 7s linear infinite;
 }
-@keyframes scan{0%{top:0}100%{top:100%}}
+@keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(100vh)}}
 @media (prefers-reduced-motion:reduce){.scanline{display:none}}
 
 /* ============================================================
@@ -272,17 +272,16 @@ section{position:relative}
 /* ============================================================
    Reveal utility
    ============================================================ */
-.reveal{opacity:1;transform:none}
-html.js .reveal{opacity:0;transform:translateY(34px);
+.reveal{opacity:1;transform:none;
   transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-html.js .reveal.in{opacity:1;transform:none}
-/* Scoped under html.js so these out-specify the `transition` shorthand on
-   `html.js .reveal` (which would otherwise reset transition-delay to 0). */
-html.js .reveal[data-d="1"]{transition-delay:.08s}
-html.js .reveal[data-d="2"]{transition-delay:.16s}
-html.js .reveal[data-d="3"]{transition-delay:.24s}
-html.js .reveal[data-d="4"]{transition-delay:.32s}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.reveal.motion-pending{opacity:0;transform:translateY(34px)}
+.reveal.in{opacity:1;transform:none}
+/* Stagger only small groups, keeping each section's heading immediately available. */
+.reveal[data-d="1"]{transition-delay:.06s}
+.reveal[data-d="2"]{transition-delay:.12s}
+.reveal[data-d="3"]{transition-delay:.18s}
+.reveal[data-d="4"]{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.reveal.motion-pending{opacity:1;transform:none;transition:none}}
 
 /* ============================================================
    Section heading block

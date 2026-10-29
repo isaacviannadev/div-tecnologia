@@ -5,6 +5,7 @@ import { CursorDot } from "./components/CursorDot";
 import { Nav } from "./components/Nav";
 import { RouteMotion } from "./components/RouteMotion";
 import "./globals.css";
+import "./components/scroll-motion.css";
 import { LangProvider } from "./lang-context";
 
 // Display: Bricolage Grotesque (variable opsz/wght) · Mono: JetBrains Mono.
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${bricolage.variable} ${jetbrainsMono.variable}`}
     >

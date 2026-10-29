@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/* Count-up stat: renders the final value for SSR / no-JS, then resets to 0
-   and eases up when scrolled into view (IO threshold .5, cubic ease). */
+/* Final values remain available for SSR/no-JS. A visible count animates once;
+   changing to reduced motion resolves it immediately and cancels all work. */
 export function Stat({
   count,
   dec,
@@ -19,38 +19,62 @@ export function Stat({
   const [display, setDisplay] = useState(count.toFixed(dec));
 
   useEffect(() => {
-    const RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (RM) {
-      setDisplay(count.toFixed(dec));
-      return;
-    }
     const el = ref.current;
     if (!el) return;
-    let raf = 0;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((en) => {
-          if (!en.isIntersecting) return;
-          io.unobserve(en.target);
-          const dur = 1400;
-          let t0: number | null = null;
-          const step = (ts: number) => {
-            if (t0 === null) t0 = ts;
-            const p = Math.min((ts - t0) / dur, 1);
-            const e = 1 - Math.pow(1 - p, 3);
-            setDisplay((count * e).toFixed(dec));
-            if (p < 1) raf = requestAnimationFrame(step);
-          };
-          setDisplay((0).toFixed(dec));
-          raf = requestAnimationFrame(step);
-        });
-      },
-      { threshold: 0.5 },
-    );
-    io.observe(el);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finalValue = count.toFixed(dec);
+    let frame = 0;
+    let observer: IntersectionObserver | null = null;
+    let started = false;
+    let finished = false;
+
+    const finish = () => {
+      finished = true;
+      window.cancelAnimationFrame(frame);
+      frame = 0;
+      observer?.disconnect();
+      setDisplay(finalValue);
+    };
+    const onMotionChange = () => {
+      if (reducedMotion.matches) finish();
+    };
+    const onVisibility = () => {
+      if (document.hidden && started) finish();
+    };
+
+    setDisplay(finalValue);
+    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+      finish();
+    } else {
+      observer = new IntersectionObserver((entries) => {
+        if (started || finished || !entries.some((entry) => entry.isIntersecting)) return;
+        started = true;
+        observer?.disconnect();
+        let start: number | null = null;
+        const step = (time: number) => {
+          frame = 0;
+          if (finished || reducedMotion.matches) { finish(); return; }
+          start ??= time;
+          const progress = Math.min((time - start) / 1400, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setDisplay((count * eased).toFixed(dec));
+          if (progress < 1) frame = window.requestAnimationFrame(step);
+          else finish();
+        };
+        setDisplay((0).toFixed(dec));
+        frame = window.requestAnimationFrame(step);
+      }, { threshold: 0.5 });
+      observer.observe(el);
+    }
+
+    reducedMotion.addEventListener("change", onMotionChange);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      io.disconnect();
-      cancelAnimationFrame(raf);
+      finished = true;
+      observer?.disconnect();
+      window.cancelAnimationFrame(frame);
+      reducedMotion.removeEventListener("change", onMotionChange);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [count, dec]);
 
