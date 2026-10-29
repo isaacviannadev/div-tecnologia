@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { Fragment } from "react";
 import { aboutPage as a } from "../content";
 import { useLang } from "../lang-context";

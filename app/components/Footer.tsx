@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { feedback, footer, nav } from "../content";
@@ -9,6 +9,7 @@ import { useMailer } from "../hooks/useMailer";
 import { useLang } from "../lang-context";
 import { newsletterFormSchema, type NewsletterFormValues } from "../lib/mail-schema";
 import { Logo } from "./Logo";
+import { AsciiSubmitButton } from "./AsciiLoading";
 
 /* variant="full" renders the four-column top (home / serviços / sobre).
    variant="minimal" is just the wordmark + baseline row (contato). */
@@ -100,9 +101,12 @@ export function Footer({ variant = "full" }: { variant?: "full" | "minimal" }) {
                   placeholder={t(footer.emailPlaceholder)}
                   {...register("email")}
                 />
-                <button type="submit" aria-label="Subscribe" disabled={isLoading}>
-                  {isLoading ? "…" : "↗"}
-                </button>
+                <AsciiSubmitButton
+                  compact
+                  isLoading={isLoading}
+                  label={t({ pt: "Assinar newsletter", en: "Subscribe to newsletter" })}
+                  busyLabel={t(feedback.sending)}
+                />
               </form>
               {errors.email && (
                 <p style={{ color: "#ff6b6b", fontSize: 12, marginTop: 6 }}>

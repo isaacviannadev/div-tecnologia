@@ -1,0 +1,163 @@
+/* Natural scroll, shared progress variables, no synthetic scroll container. */
+:root { --scroll-progress: 0; }
+.nav::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(var(--scroll-progress));
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.motion-hero { isolation: isolate; overflow: clip; --hero-progress: 0; }
+.hero-content { position: relative; z-index: 1; }
+.motion-hero h1 { font-size: clamp(2.5rem, 10.2vw, 9.5rem); }
+.hero-title {
+  transform: translate3d(0, calc(var(--hero-progress) * 48px), 0);
+  transform-origin: left center;
+}
+.hero-blueprint { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.hero-blueprint-grid {
+  position: absolute;
+  inset: 12% 0 0 48%;
+  border-left: 1px solid var(--line);
+  background: repeating-linear-gradient(0deg, transparent 0 79px, var(--line) 79px 80px);
+  opacity: .35;
+  transform: translate3d(0, calc(var(--hero-progress) * -28px), 0);
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+.hero-blueprint-mark {
+  position: absolute;
+  width: clamp(280px, 43vw, 720px);
+  right: -4%;
+  top: 46%;
+  transform: translate3d(calc(var(--hero-progress) * -70px), calc(var(--hero-progress) * -110px), 0)
+    rotate(calc(-10deg + var(--hero-progress) * 10deg));
+}
+.hero-blueprint-mark svg { width: 100%; overflow: visible; }
+.hero-blueprint-mark .lk { fill: var(--bg); stroke: var(--line-strong); stroke-width: .4px; }
+.hero-blueprint-mark .la { fill: var(--accent); opacity: .24; }
+.hero-blueprint-rule {
+  position: absolute;
+  right: var(--gut);
+  top: 24%;
+  width: 16vw;
+  height: 1px;
+  background: var(--accent);
+  opacity: .5;
+  transform: translate3d(0, calc(var(--hero-progress) * 150px), 0);
+}
+.hero-blueprint-rule::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--accent);
+  background: var(--bg);
+}
+
+[data-scroll-scene] { --scene-progress: .5; }
+.depth-panel {
+  --ascii-accent: var(--accent);
+  --ascii-glyph: var(--muted);
+  --ascii-font: var(--font-mono);
+  transform: perspective(1200px)
+    translate3d(0, calc((.5 - var(--scene-progress)) * 64px), 0)
+    rotateX(calc((.5 - var(--scene-progress)) * 5deg));
+  box-shadow: 0 24px 50px -30px color-mix(in srgb, var(--fg) 20%, transparent);
+}
+.depth-panel .tokenline { opacity: 1; transform: none; animation: none; }
+.motion-quote blockquote {
+  transform: translate3d(calc((.5 - var(--scene-progress)) * 32px), 0, 0);
+}
+
+/* A four-stage method, with a heading that stays alongside the actual content. */
+.process-scene { --process-progress: 0; scroll-margin-top: 88px; }
+.process-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 7vw, 120px); align-items: start; }
+.process-heading { display: block; position: sticky; top: 112px; margin: 0; }
+.process-heading .sec-note { margin-top: 28px; max-width: 34ch; }
+.process-timeline.proc {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 0;
+  background: transparent;
+  gap: 0;
+  padding-left: 32px;
+}
+.process-timeline::before, .process-timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+  transform-origin: top;
+}
+.process-timeline::after {
+  background: var(--accent);
+  transform: scaleY(var(--process-progress));
+}
+.process-timeline .step {
+  position: relative;
+  padding: 28px 0 48px;
+  min-height: 250px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  transition: opacity .3s;
+}
+.process-timeline .step::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 32px;
+  left: -36px;
+  z-index: 1;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  transition: background .25s, border-color .25s;
+}
+.process-timeline .step[data-active="true"]::before { background: var(--accent); border-color: var(--accent); }
+.process-timeline .step h4 { font-size: clamp(1.8rem, 3vw, 3rem); max-width: 18ch; transition: color .3s; }
+.process-timeline .step[data-active="true"] h4 { color: var(--accent); }
+[data-palette="light"] .process-timeline .step[data-active="true"] h4 { color: var(--fg); }
+.process-timeline .step p { font-size: 15px; line-height: 1.75; max-width: 44ch; }
+.process-timeline .step .n { font-size: 12px; }
+
+/* Individual reveals retain the existing service grid, without hiding a whole section. */
+.svc.reveal { transition: opacity .65s, transform .65s, background .3s; }
+.svc-row.reveal.motion-pending { transform: translate3d(24px, 0, 0); }
+.reveal:focus-within { opacity: 1; transform: none; }
+:where(a, button, input, textarea, select):focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+
+@media (max-width: 760px) {
+  .hero-title { transform: translate3d(0, calc(var(--hero-progress) * 18px), 0); }
+  .hero-blueprint-mark { top: 44%; right: -26%; width: 78vw; opacity: .55; }
+  .hero-blueprint-rule { width: 12vw; top: 19%; }
+  .hero-blueprint-grid { inset: 10% 0 0 64%; }
+  .process-layout { grid-template-columns: 1fr; gap: 36px; }
+  .process-heading { position: static; }
+  .process-timeline.proc { padding-left: 24px; }
+  .process-timeline .step { min-height: 0; padding: 24px 0 36px; }
+  .process-timeline .step::before { left: -28px; top: 28px; }
+  .depth-panel { transform: translate3d(0, calc((.5 - var(--scene-progress)) * 24px), 0); }
+  .motion-quote blockquote { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title, .hero-blueprint-grid, .hero-blueprint-mark, .hero-blueprint-rule,
+  .depth-panel, .motion-quote blockquote { transform: none; }
+  .process-heading { position: static; }
+  .process-timeline::after { transform: none; }
+  .reveal, .reveal.motion-pending, .svc-row.reveal.motion-pending { opacity: 1; transform: none; transition: none; }
+  .hero .swap { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .cursor, .tokenline { animation: none; }
+  .btn::before, .btn .arw, .process-timeline .step::before, .process-timeline .step h4 { transition: none; }
+}

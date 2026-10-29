@@ -1,0 +1,88 @@
+.ascii-submit,
+.motion-link {
+  --ascii-accent: var(--accent);
+  --ascii-glyph: var(--muted);
+  --ascii-skeleton: currentColor;
+  --ascii-font: var(--font-mono);
+  --ascii-surface: var(--surface);
+}
+
+.ascii-submit {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.ascii-submit button:disabled {
+  cursor: wait;
+}
+
+.ascii-submit-label {
+  display: grid;
+}
+
+.ascii-submit-label > span {
+  grid-area: 1 / 1;
+}
+
+.ascii-submit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  min-height: 24px;
+  flex: 0 0 24px;
+}
+
+.ascii-submit-icon .ars {
+  width: 24px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.ascii-submit--compact {
+  flex: none;
+  align-self: stretch;
+}
+
+.ascii-submit--compact button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot .news {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.ascii-submit-status {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.ascii-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.motion-link { position: relative; }
+.motion-link > .ascii-link-pending {
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--accent);
+}
+.ascii-link-pending .ars { display: block; font-size: 8px; line-height: 3px; }

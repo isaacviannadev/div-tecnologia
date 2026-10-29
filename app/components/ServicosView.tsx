@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { servicesPage as s } from "../content";
 import { useLang } from "../lang-context";
 import { Footer } from "./Footer";
