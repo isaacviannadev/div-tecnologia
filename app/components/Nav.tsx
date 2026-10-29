@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav } from "../content";

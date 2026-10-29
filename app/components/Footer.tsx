@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { feedback, footer, nav } from "../content";

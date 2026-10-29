@@ -1,5 +1,5 @@
 .ascii-submit,
-.ascii-page {
+.motion-link {
   --ascii-accent: var(--accent);
   --ascii-glyph: var(--muted);
   --ascii-skeleton: currentColor;
@@ -76,58 +76,13 @@
   border: 0;
 }
 
-.ascii-page {
-  position: relative;
-  min-height: 100svh;
-  padding-block: clamp(144px, 20vh, 224px) 80px;
-}
-
-.ascii-page-status {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 36px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.ascii-page-marker {
+.motion-link { position: relative; }
+.motion-link > .ascii-link-pending {
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  overflow: hidden;
+  pointer-events: none;
   color: var(--accent);
 }
-
-.ascii-page-title {
-  display: block;
-  max-width: 900px;
-  font-size: clamp(30px, 6vw, 76px);
-}
-
-.ascii-page-lead {
-  display: block;
-  max-width: 540px;
-  margin-top: 32px;
-  font-size: 17px;
-  color: var(--muted);
-}
-
-.ascii-page-panels {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 72px;
-}
-
-.ascii-page-panel {
-  display: grid;
-  gap: 28px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-
-@media (max-width: 640px) {
-  .ascii-page-panels {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 48px;
-  }
-}
+.ascii-link-pending .ars { display: block; font-size: 8px; line-height: 3px; }

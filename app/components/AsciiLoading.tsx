@@ -2,7 +2,6 @@
 
 import { AsciiSkeleton } from "ascii-reveal";
 import { useId, type CSSProperties } from "react";
-import { useLang } from "../lang-context";
 import "./ascii-loading.css";
 
 type AsciiSubmitButtonProps = {
@@ -66,32 +65,5 @@ export function AsciiSubmitButton({
         {isLoading ? busyLabel : ""}
       </span>
     </>
-  );
-}
-
-/** Real App Router fallback; never holds up content with an artificial timer. */
-export function AsciiPageLoading() {
-  const { t } = useLang();
-  const label = t({ pt: "Carregando página…", en: "Loading page…" });
-
-  return (
-    <main className="ascii-page wrap">
-      <p className="ascii-page-status" role="status" aria-live="polite">
-        <span className="ascii-page-marker" aria-hidden="true">[ / ]</span>
-        {label}
-      </p>
-      <div className="ascii-page-content" aria-busy="true" aria-label={label}>
-        <AsciiSkeleton className="ascii-page-title" variant="scan" lines={2} widths={["84%", "66%"]} />
-        <AsciiSkeleton className="ascii-page-lead" variant="scan" lines={2} widths={["100%", "72%"]} />
-        <div className="ascii-page-panels">
-          {[1, 2, 3].map((seed) => (
-            <div className="ascii-page-panel" key={seed}>
-              <AsciiSkeleton variant="scan" lines={1} widths={["32%"]} seed={seed} />
-              <AsciiSkeleton variant="scan" lines={3} seed={seed + 3} animate={false} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </main>
   );
 }

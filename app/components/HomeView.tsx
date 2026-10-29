@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { MotionLink as Link } from "./MotionLink";
 import { AsciiReveal } from "ascii-reveal";
 import { useEffect, useRef, useState } from "react";
 import {
