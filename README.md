@@ -24,6 +24,21 @@ npm run dev      # http://localhost:3000
 npm run build && npm run start
 ```
 
+On external volumes where Turbopack's persistent cache cannot initialize, use
+`npm run dev -- --webpack --hostname 127.0.0.1` and
+`npm run build -- --webpack`. The local preview is http://127.0.0.1:3000.
+
+```bash
+npm test             # mail behavior and scroll timeline boundaries
+npm run typecheck
+npm run test:e2e     # Chrome on macOS, Playwright Chromium elsewhere
+```
+
+For a machine without Chrome, install the test browser with
+`npx playwright install chromium`. Browser tests intercept mail requests; they
+never send real inquiries or newsletter emails. `PLAYWRIGHT_BASE_URL` can point
+the suite at an already running local production build.
+
 ## Structure
 
 Routes: `/` (home), `/servicos`, `/sobre`, `/contato`. Each route's `page.tsx`
@@ -46,16 +61,33 @@ the root layout so the **PT/EN choice persists across client navigation**.
 `usePathname`), so reveals and magnetic buttons work after client navigation, not
 just on fresh loads.
 
-## Animations (ported faithfully)
+## Scroll motion and ASCII feedback
 
-Hero line `rise` + foot `fadein`, language-aware rotating hero word (2.4s),
-ticker + dual client marquees (pause on hover), scanline, masked background grid,
-reveal-on-scroll (IntersectionObserver + safety-net sweep), count-up stats,
-nav scrolled border, lerp cursor dot, magnetic buttons, service fill / button
-wipes, code-card token stagger. All gated by `prefers-reduced-motion`.
+The home hero separates its construction grid, actual DIV mark, headline and
+foreground rule into independent scroll planes. Services reveal individually,
+the semantic-token sample decodes with `ascii-reveal`, and the process becomes a
+vertical timeline beside a sticky heading. Mobile keeps normal document flow
+and uses shorter motion distances. The nav rule shows reading progress.
+
+`RouteMotion` shares clamped CSS progress variables through a single scheduled
+animation frame, observes streamed route content, and reveals focused content.
+Reveals, cursor, counters and rotating words respond to live changes to
+`prefers-reduced-motion`; the cursor stops rendering when settled.
+
+`AsciiSubmitButton` uses `AsciiSkeleton` for actual contact/newsletter mutations,
+with readable PT/EN labels, stable button widths and accessible status messages.
+`MotionLink` uses Next's `useLinkStatus` for a small ASCII indicator during real
+navigation. It keeps the current page readable and does not add artificial delays
+or a root Suspense boundary that would conceal content without JavaScript.
 
 Reveals and count-ups are SSR-safe: the server renders the final, fully-visible
 state, and motion is layered on only after mount (no blank flash for no-JS).
+
+The complete [Scrollcraft skill](https://github.com/nateherkai/scroll-craft) is
+vendored unchanged under `.cursor/skills/scroll-craft`, including references,
+engine, scripts and MIT license. The existing React app uses its own lifecycle
+adapter, avoiding a second global animation engine. The authored refactor brief
+and verification record live under `scrollcraft/builds/div-motion/`.
 
 ## Decisions / notes
 
