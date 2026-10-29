@@ -22,6 +22,9 @@
 
 # misc
 .DS_Store
+._*
+/playwright-report/
+/test-results/
 *.pem
 
 # debug
